@@ -20,18 +20,20 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
         public void Incluir(Hospede Hospede)
         {
             Hospede.Cpf.Replace(",", ".");
-
-            if (Hospede.Cpf != "")
-            {
-                Hospede.Passaporte = "XXXXXXXX";
-
-                Dao_Hospede.Create(Hospede);
-            }
-            else
-            {
-                Hospede.Cpf = "XXXXXXXX";
-            }
+                        
             Dao_Hospede.Create(Hospede);
+        }
+        
+        public void Alterar(Hospede Hospede)
+        {
+            Hospede.Cpf.Replace(",", ".");
+
+            Dao_Hospede.Update(Hospede);
+        }
+
+        public void Excluir(Hospede Hospede)
+        {
+            Dao_Hospede.Delete(Hospede);
         }
 
         public List<Hospede> Carrega_Hospede()

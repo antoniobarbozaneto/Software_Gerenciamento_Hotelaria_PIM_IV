@@ -1,4 +1,5 @@
 ﻿using Software_Gerenciamento_Hotelaria_PIM_IV.Control;
+using Software_Gerenciamento_Hotelaria_PIM_IV.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,20 +14,63 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 {
     public partial class Frm_ConsultaHospede : Form
     {
+        Hospede Hospede;
         Ctr_Hospede Ctr_Hospede;
+        Frm_CadastroHospede Frm_CadastroHospede;
 
         public Frm_ConsultaHospede()
         {
+            Hospede = new Hospede();
             Ctr_Hospede = new Ctr_Hospede();
+            Frm_CadastroHospede = new Frm_CadastroHospede();
             InitializeComponent();
         }
 
         private void Frm_ConsultaHospede_Load(object sender, EventArgs e)
         {
-            dataGridView_Hospedes.DataSource = Ctr_Hospede.Carrega_Hospede();
+            CarregaListaHospede();
         }
 
         private void btn_Atualizar_Click(object sender, EventArgs e)
+        {
+            CarregaListaHospede();
+        }
+
+        private void btn_Editar_Click(object sender, EventArgs e)
+        {
+            Frm_CadastroHospede.txb_Codigo.Text = dataGridView_Hospedes.CurrentRow.Cells[0].Value.ToString();
+            Frm_CadastroHospede.txb_Nome.Text = dataGridView_Hospedes.CurrentRow.Cells[1].Value.ToString();
+            Frm_CadastroHospede.maskedtxb_DtNasc.Text = dataGridView_Hospedes.CurrentRow.Cells[2].Value.ToString();
+            Frm_CadastroHospede.maskedtxb_Rg.Text = dataGridView_Hospedes.CurrentRow.Cells[3].Value.ToString();
+            Frm_CadastroHospede.maskedtxb_Cpf.Text = dataGridView_Hospedes.CurrentRow.Cells[4].Value.ToString();
+            Frm_CadastroHospede.maskedtxb_Passaporte.Text = dataGridView_Hospedes.CurrentRow.Cells[5].Value.ToString();
+            Frm_CadastroHospede.txb_Rua.Text = dataGridView_Hospedes.CurrentRow.Cells[6].Value.ToString();
+            Frm_CadastroHospede.txb_Numero.Text = dataGridView_Hospedes.CurrentRow.Cells[7].Value.ToString();
+            Frm_CadastroHospede.txb_Bairro.Text = dataGridView_Hospedes.CurrentRow.Cells[8].Value.ToString();
+            Frm_CadastroHospede.txb_Cidade.Text = dataGridView_Hospedes.CurrentRow.Cells[9].Value.ToString();
+            Frm_CadastroHospede.maskedtxb_Cep.Text = dataGridView_Hospedes.CurrentRow.Cells[10].Value.ToString();
+            Frm_CadastroHospede.maskedtxb_Telefone.Text = dataGridView_Hospedes.CurrentRow.Cells[11].Value.ToString();
+            Frm_CadastroHospede.maskedtxb_CelularUm.Text = dataGridView_Hospedes.CurrentRow.Cells[12].Value.ToString();
+            Frm_CadastroHospede.maskedtxb_CelularDois.Text = dataGridView_Hospedes.CurrentRow.Cells[13].Value.ToString();
+            Frm_CadastroHospede.txb_Email.Text = dataGridView_Hospedes.CurrentRow.Cells[14].Value.ToString();
+            Frm_CadastroHospede.txb_Obs.Text = dataGridView_Hospedes.CurrentRow.Cells[15].Value.ToString();
+            Frm_CadastroHospede.ShowDialog();
+        }
+
+        private void btn_Excluir_Click(object sender, EventArgs e)
+        {
+            Hospede.Id_Hospede = Convert.ToInt32(dataGridView_Hospedes.CurrentRow.Cells[0].Value.ToString());
+
+            var ResultResp = MessageBox.Show("Deseja realmente excluir o cliente selecionado?", "Exclusão Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (ResultResp == System.Windows.Forms.DialogResult.Yes)
+            {
+               Ctr_Hospede.Excluir(Hospede);
+                CarregaListaHospede();
+            }
+        }
+
+        public void CarregaListaHospede()
         {
             dataGridView_Hospedes.DataSource = Ctr_Hospede.Carrega_Hospede();
         }

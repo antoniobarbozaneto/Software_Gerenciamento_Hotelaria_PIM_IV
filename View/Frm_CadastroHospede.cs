@@ -24,9 +24,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         }
 
         private void btn_Gravar_Click(object sender, EventArgs e)
-        {
-
-            
+        {                
                 Hospede.Nome = txb_Nome.Text;
                 Hospede.Dt_Nascimento = maskedtxb_DtNasc.Text;
                 Hospede.RG = maskedtxb_Rg.Text;
@@ -45,8 +43,19 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
             if (VerificaCampos() == true)
             {
-                Ctr_Hospede.Incluir(Hospede);
-                LimparCampos();
+                if (txb_Codigo.Text == "") 
+                { 
+                    //Create!
+                    Ctr_Hospede.Incluir(Hospede);
+                    LimparCampos();
+                }
+                else
+                {
+                    //Update!  
+                    Hospede.Id_Hospede = Convert.ToInt32(txb_Codigo.Text);
+                    Ctr_Hospede.Alterar(Hospede);                    
+                }
+
             }
         }
 

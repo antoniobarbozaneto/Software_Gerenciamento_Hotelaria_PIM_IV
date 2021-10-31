@@ -148,6 +148,7 @@
             this.btn_Excluir.TabIndex = 29;
             this.btn_Excluir.Text = "EXCLUIR";
             this.btn_Excluir.UseVisualStyleBackColor = true;
+            this.btn_Excluir.Click += new System.EventHandler(this.btn_Excluir_Click);
             // 
             // btn_Atualizar
             // 
@@ -170,6 +171,7 @@
             this.btn_Editar.TabIndex = 27;
             this.btn_Editar.Text = "EDITAR";
             this.btn_Editar.UseVisualStyleBackColor = true;
+            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
             // 
             // Frm_ConsultaHospede
             // 
@@ -183,6 +185,7 @@
             this.Controls.Add(this.btn_Atualizar);
             this.Controls.Add(this.btn_Editar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Frm_ConsultaHospede";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Hóspedes";

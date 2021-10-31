@@ -44,6 +44,70 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             {
                 conexao.Open();
                 comando.ExecuteNonQuery();
+                MessageBox.Show("Hóspede Cadastrado com sucesso!!!");
+            }
+            catch (SqlException ex)
+            {
+                // Handle the SQL Exception as you wish
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public void Update(Hospede Hospede)
+        {
+            string comandoSql = "UPDATE tbl_Hospede SET Nome = @NOME, Dt_Nascimento = @DT_NASCIMENTO,Rg = @RG, Cpf = @CPF, Passaporte = @PASSAPORTE, Rua = @RUA, Numero = @NUMERO, Bairro = @BAIRRO, Cidade = @CIDADE, Cep = @CEP, Telefone = @TELEFONE, Celular_Um = @CELULAR_UM, Celular_Dois = @CELULAR_DOIS, Email = @EMAIL, Observacao = @OBS WHERE ID_HOSPEDE = @ID_HOSPEDE";
+
+            SqlCommand comando = new SqlCommand(comandoSql, conexao);
+
+            comando.Parameters.AddWithValue("@ID_HOSPEDE", Hospede.Id_Hospede);
+            comando.Parameters.AddWithValue("@NOME", Hospede.Nome);
+            comando.Parameters.AddWithValue("@DT_NASCIMENTO", Hospede.Dt_Nascimento);
+            comando.Parameters.AddWithValue("@RG", Hospede.RG);
+            comando.Parameters.AddWithValue("@CPF", Hospede.Cpf);
+            comando.Parameters.AddWithValue("@PASSAPORTE", Hospede.Passaporte);
+            comando.Parameters.AddWithValue("@RUA", Hospede.Rua);
+            comando.Parameters.AddWithValue("@NUMERO", Hospede.Num);
+            comando.Parameters.AddWithValue("@BAIRRO", Hospede.Bairro);
+            comando.Parameters.AddWithValue("@CIDADE", Hospede.Cidade);
+            comando.Parameters.AddWithValue("@CEP", Hospede.Cep);
+            comando.Parameters.AddWithValue("@TELEFONE", Hospede.Telefone);
+            comando.Parameters.AddWithValue("@CELULAR_UM", Hospede.Celular_Um);
+            comando.Parameters.AddWithValue("@CELULAR_DOIS", Hospede.Celular_Dois);
+            comando.Parameters.AddWithValue("@EMAIL", Hospede.Email);
+            comando.Parameters.AddWithValue("@OBS", Hospede.Obs);
+            try
+            {
+                conexao.Open();
+                comando.ExecuteNonQuery();
+                MessageBox.Show("Dados alterados com sucesso!!!");
+            }
+            catch (SqlException ex)
+            {
+                // Handle the SQL Exception as you wish
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public void Delete(Hospede Hospede)
+        {
+            string comandoSql = "DELETE tbl_Hospede WHERE ID_HOSPEDE = @ID_HOSPEDE";
+
+            SqlCommand comando = new SqlCommand(comandoSql, conexao);
+
+            comando.Parameters.AddWithValue("@ID_HOSPEDE", Hospede.Id_Hospede);
+            try
+            {
+                conexao.Open();
+                comando.ExecuteNonQuery();
+                MessageBox.Show("Hóspede apagado com sucesso!!!");
             }
             catch (SqlException ex)
             {
