@@ -55,19 +55,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Control\Ctr_Hospede.cs" />
+    <Compile Include="Control\Ctr_TipoQuarto.cs" />
     <Compile Include="Dao\Dao_Hospede.cs" />
+    <Compile Include="Dao\Dao_TipoQuarto.cs" />
     <Compile Include="Model\Hospede.cs" />
+    <Compile Include="Model\TipoQuarto.cs" />
     <Compile Include="View\Frm_CadastroHospede.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Frm_CadastroHospede.Designer.cs">
       <DependentUpon>Frm_CadastroHospede.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Frm_CadastroTipoQuarto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Frm_CadastroTipoQuarto.Designer.cs">
+      <DependentUpon>Frm_CadastroTipoQuarto.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Frm_ConsultaHospede.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Frm_ConsultaHospede.Designer.cs">
       <DependentUpon>Frm_ConsultaHospede.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Frm_ConsultaTipoQuarto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Frm_ConsultaTipoQuarto.Designer.cs">
+      <DependentUpon>Frm_ConsultaTipoQuarto.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Frm_Principal.cs">
       <SubType>Form</SubType>
@@ -80,8 +95,14 @@
     <EmbeddedResource Include="View\Frm_CadastroHospede.resx">
       <DependentUpon>Frm_CadastroHospede.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Frm_CadastroTipoQuarto.resx">
+      <DependentUpon>Frm_CadastroTipoQuarto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Frm_ConsultaHospede.resx">
       <DependentUpon>Frm_ConsultaHospede.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Frm_ConsultaTipoQuarto.resx">
+      <DependentUpon>Frm_ConsultaTipoQuarto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Frm_Principal.resx">
       <DependentUpon>Frm_Principal.cs</DependentUpon>

@@ -29,6 +29,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         private void Frm_ConsultaHospede_Load(object sender, EventArgs e)
         {
             CarregaListaHospede();
+
         }
 
         private void btn_Atualizar_Click(object sender, EventArgs e)
@@ -37,6 +38,52 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         }
 
         private void btn_Editar_Click(object sender, EventArgs e)
+        {
+            SetaDadosGridParaForms();
+        }
+
+        private void btn_Excluir_Click(object sender, EventArgs e)
+        {
+            Hospede.Id_Hospede = Convert.ToInt32(dataGridView_Hospedes.CurrentRow.Cells[0].Value.ToString());
+
+            var ResultResp = MessageBox.Show("Deseja realmente excluir o cliente selecionado?", "Exclusão Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (ResultResp == System.Windows.Forms.DialogResult.Yes)
+            {
+               Ctr_Hospede.Excluir(Hospede);
+               CarregaListaHospede();
+            }
+        }
+
+        private void btn_Buscar_Click(object sender, EventArgs e)
+        {
+            string ParamWhere;
+            string ParamBusca;
+
+            ParamBusca = txb_Consulta.Text;
+            ParamWhere = cbx_FiltroHospede.Text;
+            
+            if(ParamWhere != "")
+            {
+                dataGridView_Hospedes.DataSource = Ctr_Hospede.Busca_Hospede(ParamBusca, ParamWhere);
+            }
+            else
+            {
+                MessageBox.Show("Escolha uma opção no filtro", "Busca Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }            
+        }
+
+        private void dataGridView_Hospedes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SetaDadosGridParaForms();
+        }
+
+        //mtds uteis
+        public void CarregaListaHospede()
+        {
+            dataGridView_Hospedes.DataSource = Ctr_Hospede.Carrega_Hospede();
+        }
+        public void SetaDadosGridParaForms()
         {
             Frm_CadastroHospede.txb_Codigo.Text = dataGridView_Hospedes.CurrentRow.Cells[0].Value.ToString();
             Frm_CadastroHospede.txb_Nome.Text = dataGridView_Hospedes.CurrentRow.Cells[1].Value.ToString();
@@ -55,24 +102,6 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             Frm_CadastroHospede.txb_Email.Text = dataGridView_Hospedes.CurrentRow.Cells[14].Value.ToString();
             Frm_CadastroHospede.txb_Obs.Text = dataGridView_Hospedes.CurrentRow.Cells[15].Value.ToString();
             Frm_CadastroHospede.ShowDialog();
-        }
-
-        private void btn_Excluir_Click(object sender, EventArgs e)
-        {
-            Hospede.Id_Hospede = Convert.ToInt32(dataGridView_Hospedes.CurrentRow.Cells[0].Value.ToString());
-
-            var ResultResp = MessageBox.Show("Deseja realmente excluir o cliente selecionado?", "Exclusão Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (ResultResp == System.Windows.Forms.DialogResult.Yes)
-            {
-               Ctr_Hospede.Excluir(Hospede);
-                CarregaListaHospede();
-            }
-        }
-
-        public void CarregaListaHospede()
-        {
-            dataGridView_Hospedes.DataSource = Ctr_Hospede.Carrega_Hospede();
         }
     }
 }

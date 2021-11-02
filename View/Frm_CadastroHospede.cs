@@ -55,7 +55,6 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                     Hospede.Id_Hospede = Convert.ToInt32(txb_Codigo.Text);
                     Ctr_Hospede.Alterar(Hospede);                    
                 }
-
             }
         }
 

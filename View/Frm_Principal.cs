@@ -17,8 +17,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV
         //Frm_CadastroQuarto frm_CadastroQuarto;
         //Frm_FazerReserva frm_FazerReserva;
         //Frm_CadastroUsuario frm_CadastroUsuario;
-        //Frm_CadastroTipoQuarto frm_CadastroTipoQuarto;
+        Frm_CadastroTipoQuarto Frm_CadastroTipoQuarto;
         Frm_ConsultaHospede Frm_ConsultaHospede;
+        Frm_ConsultaTipoQuarto Frm_ConsultaTipoQuarto;
         //Frm_ConsultaReserva frm_ConsultaReserva;
         //Frm_ConsultaQuarto frm_ConsultaQuarto;
         //Frm_ConsultaPagamento frm_ConsultaPagamento;
@@ -28,8 +29,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV
             //frm_CadastroQuarto = new Frm_CadastroQuarto();
             //frm_FazerReserva = new Frm_FazerReserva();
             //frm_CadastroUsuario = new Frm_CadastroUsuario();
-            //frm_CadastroTipoQuarto = new Frm_CadastroTipoQuarto();
-            Frm_ConsultaHospede = new Frm_ConsultaHospede();            
+            Frm_CadastroTipoQuarto = new Frm_CadastroTipoQuarto();
+            Frm_ConsultaHospede = new Frm_ConsultaHospede();
+            Frm_ConsultaTipoQuarto = new Frm_ConsultaTipoQuarto();
             //frm_ConsultaReserva = new Frm_ConsultaReserva();
             //frm_ConsultaQuarto = new Frm_ConsultaQuarto();
             //frm_ConsultaPagamento = new Frm_ConsultaPagamento();
@@ -43,7 +45,18 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV
 
         private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Frm_ConsultaHospede.btn_Confirmar.Visible = true;
             Frm_ConsultaHospede.ShowDialog();
+        }
+
+        private void cadastroNovoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_CadastroTipoQuarto.ShowDialog();
+        }
+
+        private void consultaTipoQuartoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_ConsultaTipoQuarto.ShowDialog();
         }
     }
 }

@@ -18,16 +18,12 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
             Dao_Hospede = new Dao_Hospede();
         }
         public void Incluir(Hospede Hospede)
-        {
-            Hospede.Cpf.Replace(",", ".");
-                        
+        {       
             Dao_Hospede.Create(Hospede);
         }
         
         public void Alterar(Hospede Hospede)
         {
-            Hospede.Cpf.Replace(",", ".");
-
             Dao_Hospede.Update(Hospede);
         }
 
@@ -38,11 +34,14 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
 
         public List<Hospede> Carrega_Hospede()
         {
-            //Dao_Hospede.CarregaListaHospedes();
-
-            Lista_Hospede = Dao_Hospede.CarregaLista_Hospede();
-            Console.WriteLine(Lista_Hospede);
+            Lista_Hospede = Dao_Hospede.CarregarLista_Hospede();
             return Lista_Hospede;
+        }
+
+        public List<Hospede> Busca_Hospede(string ParamBusca, string ParamWhere)
+        {
+                Lista_Hospede = Dao_Hospede.BuscarLista_Hospede(ParamBusca, ParamWhere);
+                return Lista_Hospede;
         }
     }
 }

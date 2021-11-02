@@ -44,7 +44,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             {
                 conexao.Open();
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Hóspede Cadastrado com sucesso!!!");
+                MessageBox.Show("Hóspede Cadastrado com sucesso!!!", "Cadastro de Hóspede", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (SqlException ex)
             {
@@ -79,11 +79,12 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             comando.Parameters.AddWithValue("@CELULAR_DOIS", Hospede.Celular_Dois);
             comando.Parameters.AddWithValue("@EMAIL", Hospede.Email);
             comando.Parameters.AddWithValue("@OBS", Hospede.Obs);
+
             try
             {
                 conexao.Open();
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Dados alterados com sucesso!!!");
+                MessageBox.Show("Dados alterados com sucesso!!!","Alteração de Dados",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             catch (SqlException ex)
             {
@@ -121,7 +122,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
         }
 
         //Carrega Lista Hospedes
-        public List<Hospede> CarregaLista_Hospede()
+        public List<Hospede> CarregarLista_Hospede()
         {
             string comandoSql = "SELECT * FROM tbl_Hospede";
             SqlCommand comando = new SqlCommand(comandoSql, conexao);
@@ -166,8 +167,67 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                 }
 
             }
-            catch
+            catch (SqlException ex)
             {
+                // Handle the SQL Exception as you wish
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+        //
+        public List<Hospede> BuscarLista_Hospede(string ParamWhere, string ParamBusca)
+        {
+            string comandoSql = "SELECT * FROM tbl_Hospede WHERE " + ParamBusca + " LIKE '%" + ParamWhere + "%'";
+            SqlCommand comando = new SqlCommand(comandoSql, conexao);
+            Console.WriteLine(comandoSql);
+            List<Hospede> ListaHospede = new List<Hospede>();
+
+            try
+            {
+                conexao.Open();
+                SqlDataReader rd = comando.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    ListaHospede.Add(new Hospede()
+                    {
+                        Id_Hospede = Convert.ToInt32(rd["ID_HOSPEDE"]),
+                        Nome = Convert.ToString(rd["NOME"]),
+                        Dt_Nascimento = Convert.ToString(rd["DT_NASCIMENTO"]),
+                        RG = Convert.ToString(rd["RG"]),
+                        Cpf = Convert.ToString(rd["CPF"]),
+                        Passaporte = Convert.ToString(rd["PASSAPORTE"]),
+                        Rua = Convert.ToString(rd["RUA"]),
+                        Num = Convert.ToString(rd["NUMERO"]),
+                        Bairro = Convert.ToString(rd["BAIRRO"]),
+                        Cidade = Convert.ToString(rd["CIDADE"]),
+                        Cep = Convert.ToString(rd["CEP"]),
+                        Telefone = Convert.ToString(rd["TELEFONE"]),
+                        Celular_Um = Convert.ToString(rd["CELULAR_UM"]),
+                        Celular_Dois = Convert.ToString(rd["CELULAR_DOIS"]),
+                        Email = Convert.ToString(rd["EMAIL"]),
+                        Obs = Convert.ToString(rd["OBSERVACAO"])
+                    }); ;
+
+                }
+                if (ListaHospede.Count() > 0)
+                {
+                    return ListaHospede;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                // Handle the SQL Exception as you wish
+                Console.WriteLine(ex.ToString());
                 return null;
             }
             finally

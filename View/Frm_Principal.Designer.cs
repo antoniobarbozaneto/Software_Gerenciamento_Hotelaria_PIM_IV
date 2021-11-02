@@ -47,6 +47,7 @@
             this.cADASTROToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.cONSULTAToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.consultaTipoQuartoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -110,28 +111,30 @@
             // cadastroToolStripMenuItem1
             // 
             this.cadastroToolStripMenuItem1.Name = "cadastroToolStripMenuItem1";
-            this.cadastroToolStripMenuItem1.Size = new System.Drawing.Size(158, 22);
+            this.cadastroToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.cadastroToolStripMenuItem1.Text = "Cadastro";
             // 
             // consultaToolStripMenuItem1
             // 
             this.consultaToolStripMenuItem1.Name = "consultaToolStripMenuItem1";
-            this.consultaToolStripMenuItem1.Size = new System.Drawing.Size(158, 22);
+            this.consultaToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.consultaToolStripMenuItem1.Text = "Consulta";
             // 
             // tipoQuartoToolStripMenuItem
             // 
             this.tipoQuartoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastroNovoToolStripMenuItem});
+            this.cadastroNovoToolStripMenuItem,
+            this.consultaTipoQuartoToolStripMenuItem});
             this.tipoQuartoToolStripMenuItem.Name = "tipoQuartoToolStripMenuItem";
-            this.tipoQuartoToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.tipoQuartoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tipoQuartoToolStripMenuItem.Text = "Tipo Quarto";
             // 
             // cadastroNovoToolStripMenuItem
             // 
             this.cadastroNovoToolStripMenuItem.Name = "cadastroNovoToolStripMenuItem";
-            this.cadastroNovoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastroNovoToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.cadastroNovoToolStripMenuItem.Text = "Cadastro Novo";
+            this.cadastroNovoToolStripMenuItem.Click += new System.EventHandler(this.cadastroNovoToolStripMenuItem_Click);
             // 
             // hóspedesToolStripMenuItem
             // 
@@ -145,14 +148,14 @@
             // cadastroToolStripMenuItem
             // 
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
             this.cadastroToolStripMenuItem.Click += new System.EventHandler(this.cadastroToolStripMenuItem_Click);
             // 
             // consultaToolStripMenuItem
             // 
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.consultaToolStripMenuItem.Text = "Consulta";
             this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
@@ -204,6 +207,13 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // consultaTipoQuartoToolStripMenuItem
+            // 
+            this.consultaTipoQuartoToolStripMenuItem.Name = "consultaTipoQuartoToolStripMenuItem";
+            this.consultaTipoQuartoToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.consultaTipoQuartoToolStripMenuItem.Text = "Consulta Tipo Quarto";
+            this.consultaTipoQuartoToolStripMenuItem.Click += new System.EventHandler(this.consultaTipoQuartoToolStripMenuItem_Click);
+            // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,6 +255,7 @@
         private System.Windows.Forms.ToolStripMenuItem cADASTROToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem cONSULTAToolStripMenuItem3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem consultaTipoQuartoToolStripMenuItem;
     }
 }
 
