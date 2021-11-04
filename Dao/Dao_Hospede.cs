@@ -185,7 +185,6 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             SqlCommand comando = new SqlCommand(comandoSql, conexao);
             Console.WriteLine(comandoSql);
             List<Hospede> ListaHospede = new List<Hospede>();
-
             try
             {
                 conexao.Open();

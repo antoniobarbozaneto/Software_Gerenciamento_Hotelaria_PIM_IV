@@ -33,18 +33,28 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             TipoQuarto.Tipo = txb_Tipo.Text;
             TipoQuarto.Qtd_Max = Convert.ToInt32(txb_QtdHospede.Text);
             TipoQuarto.Valor_Diaria = Convert.ToDouble(txb_ValorDiaria.Text);
-            //TipoQuarto.Refeicao = Refeicao
+
             if (ckb_CafeDaManha.Checked)
             {
                 TipoQuarto.Refeicao = " Café da Manhã ";
             }
+            else
+            {
+                TipoQuarto.Refeicao = "";
+            }
             if (ckb_Almoco.Checked)
             {
-                TipoQuarto.Refeicao = TipoQuarto.Refeicao + " Almoço "; 
+                if (!TipoQuarto.Refeicao.Contains(" Almoço "))
+                {
+                    TipoQuarto.Refeicao = TipoQuarto.Refeicao + " Almoço ";
+                }
             }
             if (ckb_Jantar.Checked)
             {
-                TipoQuarto.Refeicao = TipoQuarto.Refeicao + " Jantar "; 
+                if (!TipoQuarto.Refeicao.Contains(" Jantar "))
+                {
+                    TipoQuarto.Refeicao = TipoQuarto.Refeicao + " Jantar ";
+                }
             }
 
             if(!ckb_CafeDaManha.Checked && !ckb_Almoco.Checked && !ckb_Jantar.Checked)

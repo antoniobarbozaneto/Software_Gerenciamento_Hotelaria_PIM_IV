@@ -47,6 +47,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         private void btn_Editar_Click(object sender, EventArgs e)
         {
             SetaDadosGridParaForms();
+            CarregaListaTipoQuarto();
         }
 
         private void Frm_ConsultaTipoQuarto_Load(object sender, EventArgs e)
@@ -76,30 +77,42 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         public void CarregaListaTipoQuarto()
         {
             dataGridView_TipoQuarto.DataSource = Ctr_TipoQuarto.Carrega_TipoQuarto();
+            dataGridView_TipoQuarto.Columns[4].Width = 220;
         }
         public void SetaDadosGridParaForms()
         {
             string tempRef = "";
-
             Frm_CadastroTipoQuarto.txb_Codigo.Text = dataGridView_TipoQuarto.CurrentRow.Cells[0].Value.ToString();
             Frm_CadastroTipoQuarto.txb_Tipo.Text = dataGridView_TipoQuarto.CurrentRow.Cells[1].Value.ToString();
             Frm_CadastroTipoQuarto.txb_QtdHospede.Text = dataGridView_TipoQuarto.CurrentRow.Cells[2].Value.ToString();
             Frm_CadastroTipoQuarto.txb_ValorDiaria.Text = dataGridView_TipoQuarto.CurrentRow.Cells[3].Value.ToString();
-
             tempRef = dataGridView_TipoQuarto.CurrentRow.Cells[4].Value.ToString();
+
             Console.WriteLine(tempRef);
 
             if (tempRef.Contains("Café"))
             {
                 Frm_CadastroTipoQuarto.ckb_CafeDaManha.Checked = true;
             }
+            else
+            {
+                Frm_CadastroTipoQuarto.ckb_CafeDaManha.Checked = false;
+            }
             if (tempRef.Contains("Almoço"))
             {
                 Frm_CadastroTipoQuarto.ckb_Almoco.Checked = true;
             }
+            else
+            {
+                Frm_CadastroTipoQuarto.ckb_Almoco.Checked = false;
+            }
             if (tempRef.Contains("Jantar"))
             {
                 Frm_CadastroTipoQuarto.ckb_Jantar.Checked = true;
+            }
+            else
+            {
+                Frm_CadastroTipoQuarto.ckb_Jantar.Checked = false;
             }
 
             Frm_CadastroTipoQuarto.ShowDialog();

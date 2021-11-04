@@ -25,7 +25,6 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
             SqlCommand comando = new SqlCommand(comandoSql, conexao);
 
-            comando.Parameters.AddWithValue("@ID_TIPOQUARTO", TipoQuarto.Id_TipoQuarto);
             comando.Parameters.AddWithValue("@TIPO", TipoQuarto.Tipo);
             comando.Parameters.AddWithValue("@QTD_HOSPEDE", TipoQuarto.Qtd_Max);
             comando.Parameters.AddWithValue("VALORDIARIA", TipoQuarto.Valor_Diaria);

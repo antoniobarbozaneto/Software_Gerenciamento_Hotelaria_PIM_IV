@@ -41,7 +41,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
         public List<TipoQuarto> Busca_TipoQuarto(string ParamBusca, string ParamWhere)
         {
             Lista_TipoQuarto = Dao_TipoQuarto.BuscarLista_TipoQuarto(ParamBusca, ParamWhere);
-           return Lista_TipoQuarto;
+            return Lista_TipoQuarto;
         }
     }
 }

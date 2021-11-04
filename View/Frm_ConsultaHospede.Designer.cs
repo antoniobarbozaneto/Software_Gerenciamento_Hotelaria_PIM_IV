@@ -32,6 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.dataGridView_Hospedes = new System.Windows.Forms.DataGridView();
+            this.cbx_FiltroHospede = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txb_Consulta = new System.Windows.Forms.TextBox();
@@ -39,7 +40,6 @@
             this.btn_Atualizar = new System.Windows.Forms.Button();
             this.btn_Editar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbx_FiltroHospede = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Hospedes)).BeginInit();
             this.SuspendLayout();
@@ -89,7 +89,20 @@
             this.dataGridView_Hospedes.ReadOnly = true;
             this.dataGridView_Hospedes.Size = new System.Drawing.Size(715, 323);
             this.dataGridView_Hospedes.TabIndex = 17;
-            this.dataGridView_Hospedes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Hospedes_CellContentClick);
+            // 
+            // cbx_FiltroHospede
+            // 
+            this.cbx_FiltroHospede.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_FiltroHospede.FormattingEnabled = true;
+            this.cbx_FiltroHospede.Items.AddRange(new object[] {
+            "Nome",
+            "Cpf",
+            "Rg",
+            "Passaporte"});
+            this.cbx_FiltroHospede.Location = new System.Drawing.Point(19, 42);
+            this.cbx_FiltroHospede.Name = "cbx_FiltroHospede";
+            this.cbx_FiltroHospede.Size = new System.Drawing.Size(121, 21);
+            this.cbx_FiltroHospede.TabIndex = 24;
             // 
             // label1
             // 
@@ -162,20 +175,6 @@
             this.label2.Size = new System.Drawing.Size(183, 19);
             this.label2.TabIndex = 28;
             this.label2.Text = "Consulta de Hóspedes";
-            // 
-            // cbx_FiltroHospede
-            // 
-            this.cbx_FiltroHospede.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_FiltroHospede.FormattingEnabled = true;
-            this.cbx_FiltroHospede.Items.AddRange(new object[] {
-            "Nome",
-            "Cpf",
-            "Rg",
-            "Passaporte"});
-            this.cbx_FiltroHospede.Location = new System.Drawing.Point(19, 42);
-            this.cbx_FiltroHospede.Name = "cbx_FiltroHospede";
-            this.cbx_FiltroHospede.Size = new System.Drawing.Size(121, 21);
-            this.cbx_FiltroHospede.TabIndex = 24;
             // 
             // Frm_ConsultaHospede
             // 

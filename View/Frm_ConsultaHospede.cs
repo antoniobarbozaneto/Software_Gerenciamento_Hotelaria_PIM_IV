@@ -40,6 +40,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         private void btn_Editar_Click(object sender, EventArgs e)
         {
             SetaDadosGridParaForms();
+            CarregaListaHospede();
         }
 
         private void btn_Excluir_Click(object sender, EventArgs e)
@@ -71,11 +72,6 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             {
                 MessageBox.Show("Escolha uma opção no filtro", "Busca Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }            
-        }
-
-        private void dataGridView_Hospedes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            SetaDadosGridParaForms();
         }
 
         //mtds uteis
