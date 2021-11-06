@@ -16,6 +16,8 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
     {
         TipoQuarto TipoQuarto;
         Ctr_TipoQuarto Ctr_TipoQuarto;
+        bool ver_resp;
+
         public Frm_CadastroTipoQuarto()
         {
             TipoQuarto = new TipoQuarto();
@@ -25,46 +27,47 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         private void Frm_CadastroTipoQuarto_Load(object sender, EventArgs e)
         {
-
+            ver_resp = Verifica_CreateOrUpdate();
         }
 
         private void btn_Gravar_Click(object sender, EventArgs e)
         {
-            TipoQuarto.Tipo = txb_Tipo.Text;
-            TipoQuarto.Qtd_Max = Convert.ToInt32(txb_QtdHospede.Text);
-            TipoQuarto.Valor_Diaria = Convert.ToDouble(txb_ValorDiaria.Text);
-
-            if (ckb_CafeDaManha.Checked)
-            {
-                TipoQuarto.Refeicao = " Café da Manhã ";
-            }
-            else
-            {
-                TipoQuarto.Refeicao = "";
-            }
-            if (ckb_Almoco.Checked)
-            {
-                if (!TipoQuarto.Refeicao.Contains(" Almoço "))
-                {
-                    TipoQuarto.Refeicao = TipoQuarto.Refeicao + " Almoço ";
-                }
-            }
-            if (ckb_Jantar.Checked)
-            {
-                if (!TipoQuarto.Refeicao.Contains(" Jantar "))
-                {
-                    TipoQuarto.Refeicao = TipoQuarto.Refeicao + " Jantar ";
-                }
-            }
-
-            if(!ckb_CafeDaManha.Checked && !ckb_Almoco.Checked && !ckb_Jantar.Checked)
-            {
-                TipoQuarto.Refeicao = "Nenhuma";
-            }
-
             if (VerificaCampos() == true)
             {
-                if (txb_Codigo.Text == "")
+
+                TipoQuarto.Tipo = txb_Tipo.Text;
+                TipoQuarto.Qtd_Max = Convert.ToInt32(txb_QtdHospede.Text);
+                TipoQuarto.Valor_Diaria = Convert.ToDouble(txb_ValorDiaria.Text);
+
+                if (ckb_CafeDaManha.Checked)
+                {
+                    TipoQuarto.Refeicao = " Café da Manhã ";
+                }
+                else
+                {
+                    TipoQuarto.Refeicao = "";
+                }
+                if (ckb_Almoco.Checked)
+                {
+                    if (!TipoQuarto.Refeicao.Contains(" Almoço "))
+                    {
+                        TipoQuarto.Refeicao = TipoQuarto.Refeicao + " Almoço ";
+                    }
+                }
+                if (ckb_Jantar.Checked)
+                {
+                    if (!TipoQuarto.Refeicao.Contains(" Jantar "))
+                    {
+                        TipoQuarto.Refeicao = TipoQuarto.Refeicao + " Jantar ";
+                    }
+                }
+
+                if (!ckb_CafeDaManha.Checked && !ckb_Almoco.Checked && !ckb_Jantar.Checked)
+                {
+                    TipoQuarto.Refeicao = "Nenhuma";
+                }
+
+                if (ver_resp == true)
                 {
                     //Create!
                     Ctr_TipoQuarto.Incluir(TipoQuarto);
@@ -73,10 +76,10 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 else
                 {
                     //Update!  
-                    TipoQuarto.Id_TipoQuarto = Convert.ToInt32(txb_Codigo.Text);
                     Ctr_TipoQuarto.Alterar(TipoQuarto);
                 }
             }
+
         }
         private void btn_Limpar_Click(object sender, EventArgs e)
         {
@@ -98,11 +101,11 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             ckb_Almoco.Checked = false;
             ckb_Jantar.Checked = false;
         }
-
+        //
         public bool VerificaCampos()
         {
             bool res;
-            if (txb_Tipo.Text != null && txb_QtdHospede.Text != null && txb_ValorDiaria.Text != null)
+            if (txb_Tipo.Text != "" && txb_QtdHospede.Text != "" && txb_ValorDiaria.Text != "")
             {
                 res = true; //Está tudo preenchido!
             }
@@ -112,6 +115,20 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 MessageBox.Show("Campos obrigatórios não foram preenchidos", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             return res;
+        }
+        //
+        public bool Verifica_CreateOrUpdate()
+        {
+            bool aux;
+            if(txb_Tipo.Text == "")
+            {
+                aux = true; //Create
+            }
+            else
+            {
+                aux = false; //Update
+            }
+            return aux;
         }
     }
 }

@@ -57,16 +57,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Control\Ctr_Hospede.cs" />
+    <Compile Include="Control\Ctr_Quarto.cs" />
     <Compile Include="Control\Ctr_TipoQuarto.cs" />
     <Compile Include="Dao\Dao_Hospede.cs" />
+    <Compile Include="Dao\Dao_Quarto.cs" />
     <Compile Include="Dao\Dao_TipoQuarto.cs" />
     <Compile Include="Model\Hospede.cs" />
+    <Compile Include="Model\Quarto.cs" />
     <Compile Include="Model\TipoQuarto.cs" />
     <Compile Include="View\Frm_CadastroHospede.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Frm_CadastroHospede.Designer.cs">
       <DependentUpon>Frm_CadastroHospede.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Frm_CadastroQuarto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Frm_CadastroQuarto.Designer.cs">
+      <DependentUpon>Frm_CadastroQuarto.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Frm_CadastroTipoQuarto.cs">
       <SubType>Form</SubType>
@@ -96,6 +105,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="View\Frm_CadastroHospede.resx">
       <DependentUpon>Frm_CadastroHospede.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Frm_CadastroQuarto.resx">
+      <DependentUpon>Frm_CadastroQuarto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Frm_CadastroTipoQuarto.resx">
       <DependentUpon>Frm_CadastroTipoQuarto.cs</DependentUpon>

@@ -28,7 +28,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         private void Frm_ConsultaHospede_Load(object sender, EventArgs e)
         {
-            CarregaListaHospede();
+            CarregaListaHospede();           
 
         }
 
@@ -78,6 +78,17 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         public void CarregaListaHospede()
         {
             dataGridView_Hospedes.DataSource = Ctr_Hospede.Carrega_Hospede();
+
+            if (dataGridView_Hospedes.DataSource == null)
+            {
+                btn_Editar.Enabled = false;
+                btn_Excluir.Enabled = false;
+            }
+            else
+            {
+                btn_Editar.Enabled = true;
+                btn_Excluir.Enabled = true;
+            }
         }
         public void SetaDadosGridParaForms()
         {

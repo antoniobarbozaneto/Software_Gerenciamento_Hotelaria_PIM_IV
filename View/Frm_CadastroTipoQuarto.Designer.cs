@@ -30,8 +30,6 @@
         {
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txb_Codigo = new System.Windows.Forms.TextBox();
             this.btn_Sair = new System.Windows.Forms.Button();
             this.btn_Limpar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -54,7 +52,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.label19.Location = new System.Drawing.Point(251, 359);
+            this.label19.Location = new System.Drawing.Point(251, 340);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(142, 15);
             this.label19.TabIndex = 53;
@@ -62,8 +60,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.txb_Codigo);
             this.groupBox2.Controls.Add(this.btn_Sair);
             this.groupBox2.Controls.Add(this.btn_Limpar);
             this.groupBox2.Controls.Add(this.groupBox1);
@@ -76,33 +72,15 @@
             this.groupBox2.Controls.Add(this.txb_ValorDiaria);
             this.groupBox2.Location = new System.Drawing.Point(12, 53);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(379, 303);
+            this.groupBox2.Size = new System.Drawing.Size(379, 284);
             this.groupBox2.TabIndex = 52;
             this.groupBox2.TabStop = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(168, 22);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(57, 16);
-            this.label11.TabIndex = 51;
-            this.label11.Text = "Código:";
-            // 
-            // txb_Codigo
-            // 
-            this.txb_Codigo.Location = new System.Drawing.Point(231, 21);
-            this.txb_Codigo.Name = "txb_Codigo";
-            this.txb_Codigo.ReadOnly = true;
-            this.txb_Codigo.Size = new System.Drawing.Size(51, 20);
-            this.txb_Codigo.TabIndex = 50;
             // 
             // btn_Sair
             // 
             this.btn_Sair.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Sair.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btn_Sair.Location = new System.Drawing.Point(164, 255);
+            this.btn_Sair.Location = new System.Drawing.Point(162, 233);
             this.btn_Sair.Name = "btn_Sair";
             this.btn_Sair.Size = new System.Drawing.Size(89, 33);
             this.btn_Sair.TabIndex = 8;
@@ -114,7 +92,7 @@
             // 
             this.btn_Limpar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Limpar.ForeColor = System.Drawing.Color.Red;
-            this.btn_Limpar.Location = new System.Drawing.Point(259, 255);
+            this.btn_Limpar.Location = new System.Drawing.Point(257, 233);
             this.btn_Limpar.Name = "btn_Limpar";
             this.btn_Limpar.Size = new System.Drawing.Size(89, 33);
             this.btn_Limpar.TabIndex = 9;
@@ -128,7 +106,7 @@
             this.groupBox1.Controls.Add(this.ckb_CafeDaManha);
             this.groupBox1.Controls.Add(this.ckb_Jantar);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.Location = new System.Drawing.Point(107, 136);
+            this.groupBox1.Location = new System.Drawing.Point(105, 114);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 100);
             this.groupBox1.TabIndex = 19;
@@ -169,7 +147,7 @@
             // 
             this.btn_Gravar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Gravar.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btn_Gravar.Location = new System.Drawing.Point(69, 255);
+            this.btn_Gravar.Location = new System.Drawing.Point(67, 233);
             this.btn_Gravar.Name = "btn_Gravar";
             this.btn_Gravar.Size = new System.Drawing.Size(89, 33);
             this.btn_Gravar.TabIndex = 7;
@@ -181,7 +159,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(113, 48);
+            this.label3.Location = new System.Drawing.Point(111, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 16);
             this.label3.TabIndex = 21;
@@ -189,7 +167,7 @@
             // 
             // txb_QtdHospede
             // 
-            this.txb_QtdHospede.Location = new System.Drawing.Point(231, 73);
+            this.txb_QtdHospede.Location = new System.Drawing.Point(229, 51);
             this.txb_QtdHospede.Name = "txb_QtdHospede";
             this.txb_QtdHospede.Size = new System.Drawing.Size(100, 20);
             this.txb_QtdHospede.TabIndex = 2;
@@ -198,7 +176,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(14, 74);
+            this.label2.Location = new System.Drawing.Point(12, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(211, 16);
             this.label2.TabIndex = 20;
@@ -206,7 +184,7 @@
             // 
             // txb_Tipo
             // 
-            this.txb_Tipo.Location = new System.Drawing.Point(231, 47);
+            this.txb_Tipo.Location = new System.Drawing.Point(229, 25);
             this.txb_Tipo.Name = "txb_Tipo";
             this.txb_Tipo.Size = new System.Drawing.Size(100, 20);
             this.txb_Tipo.TabIndex = 1;
@@ -215,7 +193,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(39, 101);
+            this.label5.Location = new System.Drawing.Point(37, 79);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(166, 16);
             this.label5.TabIndex = 22;
@@ -223,7 +201,7 @@
             // 
             // txb_ValorDiaria
             // 
-            this.txb_ValorDiaria.Location = new System.Drawing.Point(231, 100);
+            this.txb_ValorDiaria.Location = new System.Drawing.Point(229, 78);
             this.txb_ValorDiaria.Name = "txb_ValorDiaria";
             this.txb_ValorDiaria.Size = new System.Drawing.Size(100, 20);
             this.txb_ValorDiaria.TabIndex = 3;
@@ -242,7 +220,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(405, 383);
+            this.ClientSize = new System.Drawing.Size(405, 366);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label17);
@@ -271,8 +249,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label11;
-        public System.Windows.Forms.TextBox txb_Codigo;
         public System.Windows.Forms.TextBox txb_QtdHospede;
         public System.Windows.Forms.TextBox txb_Tipo;
         public System.Windows.Forms.TextBox txb_ValorDiaria;

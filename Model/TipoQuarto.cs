@@ -8,7 +8,6 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Model
 {
     class TipoQuarto
     {
-        public int Id_TipoQuarto { get; set; }
         public string Tipo { get; set; }
         public int Qtd_Max { get; set; }
         public double Valor_Diaria { get; set; }

@@ -38,6 +38,7 @@
             this.consultaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoQuartoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroNovoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaTipoQuartoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hóspedesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,7 +48,6 @@
             this.cADASTROToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.cONSULTAToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.consultaTipoQuartoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -113,6 +113,7 @@
             this.cadastroToolStripMenuItem1.Name = "cadastroToolStripMenuItem1";
             this.cadastroToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.cadastroToolStripMenuItem1.Text = "Cadastro";
+            this.cadastroToolStripMenuItem1.Click += new System.EventHandler(this.cadastroToolStripMenuItem1_Click);
             // 
             // consultaToolStripMenuItem1
             // 
@@ -135,6 +136,13 @@
             this.cadastroNovoToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.cadastroNovoToolStripMenuItem.Text = "Cadastro Novo";
             this.cadastroNovoToolStripMenuItem.Click += new System.EventHandler(this.cadastroNovoToolStripMenuItem_Click);
+            // 
+            // consultaTipoQuartoToolStripMenuItem
+            // 
+            this.consultaTipoQuartoToolStripMenuItem.Name = "consultaTipoQuartoToolStripMenuItem";
+            this.consultaTipoQuartoToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.consultaTipoQuartoToolStripMenuItem.Text = "Consulta Tipo Quarto";
+            this.consultaTipoQuartoToolStripMenuItem.Click += new System.EventHandler(this.consultaTipoQuartoToolStripMenuItem_Click);
             // 
             // hóspedesToolStripMenuItem
             // 
@@ -206,13 +214,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // consultaTipoQuartoToolStripMenuItem
-            // 
-            this.consultaTipoQuartoToolStripMenuItem.Name = "consultaTipoQuartoToolStripMenuItem";
-            this.consultaTipoQuartoToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
-            this.consultaTipoQuartoToolStripMenuItem.Text = "Consulta Tipo Quarto";
-            this.consultaTipoQuartoToolStripMenuItem.Click += new System.EventHandler(this.consultaTipoQuartoToolStripMenuItem_Click);
             // 
             // Frm_Principal
             // 

@@ -14,7 +14,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV
     public partial class Frm_Principal : Form
     {
         Frm_CadastroHospede Frm_CadastroHospede;
-        //Frm_CadastroQuarto frm_CadastroQuarto;
+        Frm_CadastroQuarto Frm_CadastroQuarto;
         //Frm_FazerReserva frm_FazerReserva;
         //Frm_CadastroUsuario frm_CadastroUsuario;
         Frm_CadastroTipoQuarto Frm_CadastroTipoQuarto;
@@ -26,7 +26,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV
         public Frm_Principal()
         {
             Frm_CadastroHospede = new Frm_CadastroHospede();
-            //frm_CadastroQuarto = new Frm_CadastroQuarto();
+            Frm_CadastroQuarto = new Frm_CadastroQuarto();
             //frm_FazerReserva = new Frm_FazerReserva();
             //frm_CadastroUsuario = new Frm_CadastroUsuario();
             Frm_CadastroTipoQuarto = new Frm_CadastroTipoQuarto();
@@ -45,7 +45,6 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV
 
         private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Frm_ConsultaHospede.btn_Confirmar.Visible = true;
             Frm_ConsultaHospede.ShowDialog();
         }
 
@@ -57,6 +56,11 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV
         private void consultaTipoQuartoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_ConsultaTipoQuarto.ShowDialog();
+        }
+
+        private void cadastroToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Frm_CadastroQuarto.ShowDialog();
         }
     }
 }

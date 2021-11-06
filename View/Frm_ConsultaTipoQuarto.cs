@@ -28,7 +28,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         private void btn_Excluir_Click(object sender, EventArgs e)
         {
-            TipoQuarto.Id_TipoQuarto = Convert.ToInt32(dataGridView_TipoQuarto.CurrentRow.Cells[0].Value.ToString());
+            TipoQuarto.Tipo = dataGridView_TipoQuarto.CurrentRow.Cells[0].Value.ToString();
 
             var ResultResp = MessageBox.Show("Deseja realmente excluir o Tipo Quarto selecionado?", "Exclusão Tipo Quarto", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -77,16 +77,26 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         public void CarregaListaTipoQuarto()
         {
             dataGridView_TipoQuarto.DataSource = Ctr_TipoQuarto.Carrega_TipoQuarto();
-            dataGridView_TipoQuarto.Columns[4].Width = 220;
+
+            if (dataGridView_TipoQuarto.DataSource == null)
+            {
+                btn_Editar.Enabled = false;
+                btn_Excluir.Enabled = false;
+            }
+            else
+            {
+                dataGridView_TipoQuarto.Columns[3].Width = 320;
+                btn_Editar.Enabled = true;
+                btn_Excluir.Enabled = true;
+            }
         }
         public void SetaDadosGridParaForms()
         {
             string tempRef = "";
-            Frm_CadastroTipoQuarto.txb_Codigo.Text = dataGridView_TipoQuarto.CurrentRow.Cells[0].Value.ToString();
-            Frm_CadastroTipoQuarto.txb_Tipo.Text = dataGridView_TipoQuarto.CurrentRow.Cells[1].Value.ToString();
-            Frm_CadastroTipoQuarto.txb_QtdHospede.Text = dataGridView_TipoQuarto.CurrentRow.Cells[2].Value.ToString();
-            Frm_CadastroTipoQuarto.txb_ValorDiaria.Text = dataGridView_TipoQuarto.CurrentRow.Cells[3].Value.ToString();
-            tempRef = dataGridView_TipoQuarto.CurrentRow.Cells[4].Value.ToString();
+            Frm_CadastroTipoQuarto.txb_Tipo.Text = dataGridView_TipoQuarto.CurrentRow.Cells[0].Value.ToString();
+            Frm_CadastroTipoQuarto.txb_QtdHospede.Text = dataGridView_TipoQuarto.CurrentRow.Cells[1].Value.ToString();
+            Frm_CadastroTipoQuarto.txb_ValorDiaria.Text = dataGridView_TipoQuarto.CurrentRow.Cells[2].Value.ToString();
+            tempRef = dataGridView_TipoQuarto.CurrentRow.Cells[3].Value.ToString();
 
             Console.WriteLine(tempRef);
 

@@ -21,13 +21,13 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
         public void Create(TipoQuarto TipoQuarto)
         {
-            string comandoSql = "INSERT INTO tbl_TipoQuarto (Tipo, Qtd_Hospede, ValorDiaria, Refeicao) VALUES (@TIPO, @QTD_HOSPEDE, @VALORDIARIA, @REFEICAO)";
+            string comandoSql = "INSERT INTO tbl_TipoQuarto (Tipo, Qtd_Hospede, Valor_Diaria, Refeicao) VALUES (@TIPO, @QTD_HOSPEDE, @VALOR_DIARIA, @REFEICAO)";
 
             SqlCommand comando = new SqlCommand(comandoSql, conexao);
 
             comando.Parameters.AddWithValue("@TIPO", TipoQuarto.Tipo);
             comando.Parameters.AddWithValue("@QTD_HOSPEDE", TipoQuarto.Qtd_Max);
-            comando.Parameters.AddWithValue("VALORDIARIA", TipoQuarto.Valor_Diaria);
+            comando.Parameters.AddWithValue("VALOR_DIARIA", TipoQuarto.Valor_Diaria);
             comando.Parameters.AddWithValue("REFEICAO", TipoQuarto.Refeicao);
 
             try
@@ -49,13 +49,12 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
         public void Update(TipoQuarto TipoQuarto)
         {
-            string comandoSql = "UPDATE tbl_tipoQuarto SET Tipo = @TIPO, Qtd_Hospede = @QTD_HOSPEDE, ValorDiaria = @VALORDIARIA, Refeicao = @REFEICAO WHERE Id_TipoQuarto = @ID_TIPOQUARTO";
+            string comandoSql = "UPDATE tbl_tipoQuarto SET Tipo = @TIPO, Qtd_Hospede = @QTD_HOSPEDE, Valor_Diaria = @VALOR_DIARIA, Refeicao = @REFEICAO WHERE Tipo = @TIPO";
             SqlCommand comando = new SqlCommand(comandoSql, conexao);
 
-            comando.Parameters.AddWithValue("@ID_TIPOQUARTO", TipoQuarto.Id_TipoQuarto);
             comando.Parameters.AddWithValue("@TIPO", TipoQuarto.Tipo);
             comando.Parameters.AddWithValue("@QTD_HOSPEDE", TipoQuarto.Qtd_Max);
-            comando.Parameters.AddWithValue("VALORDIARIA", TipoQuarto.Valor_Diaria);
+            comando.Parameters.AddWithValue("VALOR_DIARIA", TipoQuarto.Valor_Diaria);
             comando.Parameters.AddWithValue("REFEICAO", TipoQuarto.Refeicao);
 
             try
@@ -77,11 +76,11 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
         public void Delete(TipoQuarto TipoQuarto)
         {
-            string comandoSql = "DELETE tbl_tipoQuarto WHERE Id_TipoQuarto = @ID_TIPOQUARTO";
+            string comandoSql = "DELETE tbl_tipoQuarto WHERE Tipo = @TIPO";
 
             SqlCommand comando = new SqlCommand(comandoSql, conexao);
 
-            comando.Parameters.AddWithValue("@ID_TIPOQUARTO", TipoQuarto.Id_TipoQuarto);
+            comando.Parameters.AddWithValue("@TIPO", TipoQuarto.Tipo);
             try
             {
                 conexao.Open();
@@ -115,10 +114,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                 {
                     ListaTipoQuarto.Add(new TipoQuarto()
                     {
-                        Id_TipoQuarto = Convert.ToInt32(rd["ID_TIPOQUARTO"]),
                         Tipo = Convert.ToString(rd["TIPO"]),
                         Qtd_Max = Convert.ToInt32(rd["QTD_HOSPEDE"]),
-                        Valor_Diaria = Convert.ToDouble(rd["VALORDIARIA"]),
+                        Valor_Diaria = Convert.ToDouble(rd["VALOR_DIARIA"]),
                         Refeicao = Convert.ToString(rd["REFEICAO"]),
                     }); ;
 
@@ -161,10 +159,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                 {
                     ListaTipoQuarto.Add(new TipoQuarto()
                     {
-                        Id_TipoQuarto = Convert.ToInt32(rd["ID_TIPOQUARTO"]),
                         Tipo = Convert.ToString(rd["TIPO"]),
                         Qtd_Max = Convert.ToInt32(rd["QTD_HOSPEDE"]),
-                        Valor_Diaria = Convert.ToDouble(rd["VALORDIARIA"]),
+                        Valor_Diaria = Convert.ToDouble(rd["VALOR_DIARIA"]),
                         Refeicao = Convert.ToString(rd["REFEICAO"]),
                     }); ;
 
@@ -190,6 +187,5 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                 conexao.Close();
             }
         }
-
     }
 }

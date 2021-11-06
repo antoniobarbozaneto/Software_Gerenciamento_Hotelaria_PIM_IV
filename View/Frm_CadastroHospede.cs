@@ -95,7 +95,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         public bool VerificaCampos()
         {
             bool res;
-            if (txb_Nome.Text != null && maskedtxb_DtNasc.MaskCompleted && (maskedtxb_Cpf.MaskCompleted || maskedtxb_Passaporte.MaskCompleted))
+            if (txb_Nome.Text != "" && maskedtxb_DtNasc.MaskCompleted && (maskedtxb_Cpf.MaskCompleted || maskedtxb_Passaporte.MaskCompleted))
             {
                 res = true; //Está tudo preenchido!
             }

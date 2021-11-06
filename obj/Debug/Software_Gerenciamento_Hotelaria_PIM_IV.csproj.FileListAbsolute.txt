@@ -15,3 +15,4 @@ C:\Users\neto_\Documents\GitHub\Software_Gerenciamento_Hotelaria_PIM_IV\obj\Debu
 C:\Users\neto_\Documents\GitHub\Software_Gerenciamento_Hotelaria_PIM_IV\obj\Debug\Software_Gerenciamento_Hotelaria_PIM_IV.View.Frm_ConsultaHospede.resources
 C:\Users\neto_\Documents\GitHub\Software_Gerenciamento_Hotelaria_PIM_IV\obj\Debug\Software_Gerenciamento_Hotelaria_PIM_IV.View.Frm_CadastroTipoQuarto.resources
 C:\Users\neto_\Documents\GitHub\Software_Gerenciamento_Hotelaria_PIM_IV\obj\Debug\Software_Gerenciamento_Hotelaria_PIM_IV.View.Frm_ConsultaTipoQuarto.resources
+C:\Users\neto_\Documents\GitHub\Software_Gerenciamento_Hotelaria_PIM_IV\obj\Debug\Software_Gerenciamento_Hotelaria_PIM_IV.View.Frm_CadastroQuarto.resources
