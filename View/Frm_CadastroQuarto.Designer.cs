@@ -94,7 +94,8 @@
             this.cbx_Tipo.Location = new System.Drawing.Point(222, 76);
             this.cbx_Tipo.Name = "cbx_Tipo";
             this.cbx_Tipo.Size = new System.Drawing.Size(100, 21);
-            this.cbx_Tipo.TabIndex = 16;
+            this.cbx_Tipo.TabIndex = 3;
+            this.cbx_Tipo.SelectedIndexChanged += new System.EventHandler(this.cbx_Tipo_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -120,7 +121,7 @@
             this.btn_Sair.Location = new System.Drawing.Point(164, 166);
             this.btn_Sair.Name = "btn_Sair";
             this.btn_Sair.Size = new System.Drawing.Size(89, 33);
-            this.btn_Sair.TabIndex = 6;
+            this.btn_Sair.TabIndex = 7;
             this.btn_Sair.Text = "SAIR";
             this.btn_Sair.UseVisualStyleBackColor = true;
             this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
@@ -131,7 +132,7 @@
             this.txb_QtdHospede.Name = "txb_QtdHospede";
             this.txb_QtdHospede.ReadOnly = true;
             this.txb_QtdHospede.Size = new System.Drawing.Size(100, 20);
-            this.txb_QtdHospede.TabIndex = 3;
+            this.txb_QtdHospede.TabIndex = 4;
             // 
             // btn_Limpar
             // 
@@ -140,7 +141,7 @@
             this.btn_Limpar.Location = new System.Drawing.Point(259, 166);
             this.btn_Limpar.Name = "btn_Limpar";
             this.btn_Limpar.Size = new System.Drawing.Size(89, 33);
-            this.btn_Limpar.TabIndex = 7;
+            this.btn_Limpar.TabIndex = 8;
             this.btn_Limpar.Text = "LIMPAR";
             this.btn_Limpar.UseVisualStyleBackColor = true;
             this.btn_Limpar.Click += new System.EventHandler(this.btn_Limpar_Click);
@@ -152,7 +153,7 @@
             this.btn_Gravar.Location = new System.Drawing.Point(69, 166);
             this.btn_Gravar.Name = "btn_Gravar";
             this.btn_Gravar.Size = new System.Drawing.Size(89, 33);
-            this.btn_Gravar.TabIndex = 5;
+            this.btn_Gravar.TabIndex = 6;
             this.btn_Gravar.Text = "GRAVAR";
             this.btn_Gravar.UseVisualStyleBackColor = true;
             this.btn_Gravar.Click += new System.EventHandler(this.btn_Gravar_Click);
@@ -163,7 +164,7 @@
             this.txb_ValorDiaria.Name = "txb_ValorDiaria";
             this.txb_ValorDiaria.ReadOnly = true;
             this.txb_ValorDiaria.Size = new System.Drawing.Size(100, 20);
-            this.txb_ValorDiaria.TabIndex = 4;
+            this.txb_ValorDiaria.TabIndex = 5;
             // 
             // label5
             // 
@@ -216,7 +217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 297);
+            this.ClientSize = new System.Drawing.Size(456, 297);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label17);

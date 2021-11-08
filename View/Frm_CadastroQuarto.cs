@@ -26,10 +26,10 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         private void Frm_CadastroQuarto_Load(object sender, EventArgs e)
         {
-          ver_resp = Verifica_CreateOrUpdate();
-          cbx_Tipo.DataSource = Ctr_Quarto.Buscar_TipoQuarto();
-          cbx_Tipo.ValueMember = "Tipo"; //Seleciona os Tipos da Lista
-            
+            ver_resp = Verifica_CreateOrUpdate();
+            cbx_Tipo.DataSource = Ctr_Quarto.Buscar_TipoQuarto();
+            cbx_Tipo.ValueMember = "Tipo"; //Seleciona os Tipos da Lista
+
         }
 
         private void btn_Gravar_Click(object sender, EventArgs e)
@@ -102,6 +102,22 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 aux = false; //Update
             }
             return aux;
+        }
+
+        private void cbx_Tipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Quarto> Lista_QtdH_ValorD;
+
+            txb_QtdHospede.DataBindings.Clear();
+            txb_ValorDiaria.DataBindings.Clear();
+
+            Lista_QtdH_ValorD = Ctr_Quarto.Buscar_QtdHospedeMax_ValorDiaria(cbx_Tipo.Text);
+
+            if (Lista_QtdH_ValorD != null)
+            {
+                txb_QtdHospede.DataBindings.Add("Text", Lista_QtdH_ValorD, "Qtd_Max");
+                txb_ValorDiaria.DataBindings.Add("Text", Lista_QtdH_ValorD, "Valor_Diaria");
+            }  
         }
     }
 }

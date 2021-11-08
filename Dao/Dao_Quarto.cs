@@ -107,7 +107,50 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                 {
                     ListaTipoQuarto.Add(new Quarto()
                     {
-                        Tipo = Convert.ToString(rd["TIPO"])
+                        Tipo = Convert.ToString(rd["TIPO"])                        
+                    }); ;
+
+                }
+                if (ListaTipoQuarto.Count() > 0)
+                {
+                    return ListaTipoQuarto;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                // Handle the SQL Exception as you wish
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+        //
+        public List<Quarto> Obter_QtdHospede_ValorDiaria(string ParamBusca)
+        {
+            string comandoSql = "SELECT QTD_HOSPEDE, VALOR_DIARIA FROM tbl_TipoQuarto WHERE TIPO LIKE '%" + ParamBusca + "%'";
+            SqlCommand comando = new SqlCommand(comandoSql, conexao);
+
+            List<Quarto> ListaTipoQuarto = new List<Quarto>();
+
+            try
+            {
+                conexao.Open();
+                SqlDataReader rd = comando.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    ListaTipoQuarto.Add(new Quarto()
+                    {
+                        Qtd_Max = Convert.ToInt32(rd["QTD_HOSPEDE"]),
+                        Valor_Diaria = Convert.ToDouble(rd["VALOR_DIARIA"]),
                     }); ;
 
                 }
