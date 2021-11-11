@@ -1,4 +1,5 @@
-﻿using Software_Gerenciamento_Hotelaria_PIM_IV.Model;
+﻿using Npgsql;
+using Software_Gerenciamento_Hotelaria_PIM_IV.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -11,19 +12,22 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 {
     class Dao_TipoQuarto
     {
-        SqlConnection conexao;
+        NpgsqlConnection conexao;
 
         public Dao_TipoQuarto()
         {
             //string conexao BD AZURE
-            conexao = new SqlConnection("Server = tcp:dbanetobarboza.database.windows.net, 1433; Initial Catalog = DB_Hotelaria; Persist Security Info = False; User ID = admxpto; Password = adm123456@; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+            //conexao = new NpgsqlConnection("Server = tcp:dbanetobarboza.database.windows.net, 1433; Initial Catalog = DB_Hotelaria; Persist Security Info = False; User ID = admxpto; Password = adm123456@; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30");
+            //
+            //string conexando Heroku + Postgresql
+            conexao = new NpgsqlConnection("Server = ec2-44-194-54-186.compute-1.amazonaws.com, Port = 5432; DataBase = d7jt6pi3k8522j; User ID = mupfpakzcvzazq; Password = 6ca9b83c31140b0bde6e651f96a92ae7deba1354762395ac2dfd98ad49ba0550");
         }
 
         public void Create(TipoQuarto TipoQuarto)
         {
             string comandoSql = "INSERT INTO tbl_TipoQuarto (Tipo, Qtd_Hospede, Valor_Diaria, Refeicao) VALUES (@TIPO, @QTD_HOSPEDE, @VALOR_DIARIA, @REFEICAO)";
 
-            SqlCommand comando = new SqlCommand(comandoSql, conexao);
+            NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
             comando.Parameters.AddWithValue("@TIPO", TipoQuarto.Tipo);
             comando.Parameters.AddWithValue("@QTD_HOSPEDE", TipoQuarto.Qtd_Max);
@@ -36,7 +40,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Tipo Quarto Cadastrado com sucesso!!!", "Tipo de Quarto", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (SqlException ex)
+            catch (NpgsqlException ex)
             {
                 // Handle the SQL Exception as you wish
                 Console.WriteLine(ex.ToString());
@@ -50,7 +54,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
         public void Update(TipoQuarto TipoQuarto)
         {
             string comandoSql = "UPDATE tbl_tipoQuarto SET Tipo = @TIPO, Qtd_Hospede = @QTD_HOSPEDE, Valor_Diaria = @VALOR_DIARIA, Refeicao = @REFEICAO WHERE Tipo = @TIPO";
-            SqlCommand comando = new SqlCommand(comandoSql, conexao);
+            NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
             comando.Parameters.AddWithValue("@TIPO", TipoQuarto.Tipo);
             comando.Parameters.AddWithValue("@QTD_HOSPEDE", TipoQuarto.Qtd_Max);
@@ -63,7 +67,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Dados alterados com sucesso!!!", "Alteração de Dados", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (SqlException ex)
+            catch (NpgsqlException ex)
             {
                 // Handle the SQL Exception as you wish
                 Console.WriteLine(ex.ToString());
@@ -78,7 +82,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
         {
             string comandoSql = "DELETE tbl_tipoQuarto WHERE Tipo = @TIPO";
 
-            SqlCommand comando = new SqlCommand(comandoSql, conexao);
+            NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
             comando.Parameters.AddWithValue("@TIPO", TipoQuarto.Tipo);
             try
@@ -87,7 +91,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Tipo Quarto apagado com sucesso!!!");
             }
-            catch (SqlException ex)
+            catch (NpgsqlException ex)
             {
                 // Handle the SQL Exception as you wish
                 Console.WriteLine(ex.ToString());
@@ -101,14 +105,14 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
         public List<TipoQuarto> CarregarLista_TipoQuarto()
         {
             string comandoSql = "SELECT * FROM tbl_TipoQuarto";
-            SqlCommand comando = new SqlCommand(comandoSql, conexao);
+            NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
             List<TipoQuarto> ListaTipoQuarto = new List<TipoQuarto>();
 
             try
             {
                 conexao.Open();
-                SqlDataReader rd = comando.ExecuteReader();
+                NpgsqlDataReader rd = comando.ExecuteReader();
 
                 while (rd.Read())
                 {
@@ -131,7 +135,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                 }
 
             }
-            catch (SqlException ex)
+            catch (NpgsqlException ex)
             {
                 // Handle the SQL Exception as you wish
                 Console.WriteLine(ex.ToString());
@@ -146,14 +150,14 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
         public List<TipoQuarto> BuscarLista_TipoQuarto(string ParamWhere, string ParamBusca)
         {
             string comandoSql = "SELECT * FROM tbl_TipoQuarto WHERE " + ParamBusca + " LIKE '%" + ParamWhere + "%'";
-            SqlCommand comando = new SqlCommand(comandoSql, conexao);
+            NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
             Console.WriteLine(comandoSql);
             List<TipoQuarto> ListaTipoQuarto = new List<TipoQuarto>();
 
             try
             {
                 conexao.Open();
-                SqlDataReader rd = comando.ExecuteReader();
+                NpgsqlDataReader rd = comando.ExecuteReader();
 
                 while (rd.Read())
                 {
@@ -176,7 +180,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                 }
 
             }
-            catch (SqlException ex)
+            catch (NpgsqlException ex)
             {
                 // Handle the SQL Exception as you wish
                 Console.WriteLine(ex.ToString());

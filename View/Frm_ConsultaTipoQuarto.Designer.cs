@@ -51,7 +51,7 @@
             this.groupBox30.Controls.Add(this.label1);
             this.groupBox30.Controls.Add(this.label3);
             this.groupBox30.Controls.Add(this.txb_Consulta);
-            this.groupBox30.Location = new System.Drawing.Point(14, 54);
+            this.groupBox30.Location = new System.Drawing.Point(14, 77);
             this.groupBox30.Name = "groupBox30";
             this.groupBox30.Size = new System.Drawing.Size(699, 413);
             this.groupBox30.TabIndex = 37;
@@ -119,7 +119,7 @@
             // 
             this.btn_Excluir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Excluir.ForeColor = System.Drawing.Color.Red;
-            this.btn_Excluir.Location = new System.Drawing.Point(427, 473);
+            this.btn_Excluir.Location = new System.Drawing.Point(427, 496);
             this.btn_Excluir.Name = "btn_Excluir";
             this.btn_Excluir.Size = new System.Drawing.Size(87, 30);
             this.btn_Excluir.TabIndex = 35;
@@ -130,7 +130,7 @@
             // btn_Atualizar
             // 
             this.btn_Atualizar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_Atualizar.Location = new System.Drawing.Point(241, 473);
+            this.btn_Atualizar.Location = new System.Drawing.Point(241, 496);
             this.btn_Atualizar.Name = "btn_Atualizar";
             this.btn_Atualizar.Size = new System.Drawing.Size(87, 30);
             this.btn_Atualizar.TabIndex = 36;
@@ -142,7 +142,7 @@
             // 
             this.btn_Editar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Editar.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btn_Editar.Location = new System.Drawing.Point(334, 473);
+            this.btn_Editar.Location = new System.Drawing.Point(334, 496);
             this.btn_Editar.Name = "btn_Editar";
             this.btn_Editar.Size = new System.Drawing.Size(87, 30);
             this.btn_Editar.TabIndex = 33;
@@ -154,7 +154,7 @@
             // 
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label50.Location = new System.Drawing.Point(264, 32);
+            this.label50.Location = new System.Drawing.Point(237, 41);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(227, 19);
             this.label50.TabIndex = 29;
@@ -164,7 +164,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(727, 515);
+            this.ClientSize = new System.Drawing.Size(735, 538);
             this.Controls.Add(this.label50);
             this.Controls.Add(this.groupBox30);
             this.Controls.Add(this.btn_Excluir);

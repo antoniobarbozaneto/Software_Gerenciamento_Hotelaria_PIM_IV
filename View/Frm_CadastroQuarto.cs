@@ -29,7 +29,6 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             ver_resp = Verifica_CreateOrUpdate();
             cbx_Tipo.DataSource = Ctr_Quarto.Buscar_TipoQuarto();
             cbx_Tipo.ValueMember = "Tipo"; //Seleciona os Tipos da Lista
-
         }
 
         private void btn_Gravar_Click(object sender, EventArgs e)

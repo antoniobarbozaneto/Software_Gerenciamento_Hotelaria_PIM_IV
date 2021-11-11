@@ -238,18 +238,18 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbx_Tipo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txb_Andar;
         private System.Windows.Forms.Button btn_Sair;
         private System.Windows.Forms.TextBox txb_QtdHospede;
         private System.Windows.Forms.Button btn_Limpar;
         private System.Windows.Forms.Button btn_Gravar;
         private System.Windows.Forms.TextBox txb_ValorDiaria;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txb_NumQuarto;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label17;
+        public System.Windows.Forms.ComboBox cbx_Tipo;
+        public System.Windows.Forms.TextBox txb_Andar;
+        public System.Windows.Forms.TextBox txb_NumQuarto;
     }
 }

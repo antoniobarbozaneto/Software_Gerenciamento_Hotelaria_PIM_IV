@@ -11,7 +11,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
     class Ctr_Quarto
     {
         Dao_Quarto Dao_Quarto;
-        //List<Quarto> Lista_Quarto;
+        List<Quarto> Lista_Quarto;
         List<Quarto> Lista_TipoQuarto; //Lista de tipos de quartos
         List<Quarto> Lista_QtdHospede_ValorDiaria; //Lista QtdMaxHospede e Valor_Diaria de um determinado tipo de quarto
         public Ctr_Quarto()
@@ -27,7 +27,6 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
         {
             Dao_Quarto.Update(Quarto);
         }
-        /*
         public void Excluir(Quarto Quarto)
         {
             Dao_Quarto.Delete(Quarto);
@@ -37,12 +36,11 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
             Lista_Quarto = Dao_Quarto.CarregarLista_Quarto();
             return Lista_Quarto;
         }
-
         public List<Quarto> Buscar_Quarto(string ParamBusca, string ParamWhere)
         {
-            Lista_Quarto = Dao_TipoQuarto.BuscarLista_Quarto(ParamBusca, ParamWhere);
+            Lista_Quarto = Dao_Quarto.BuscarLista_Quarto(ParamBusca, ParamWhere);
             return Lista_Quarto;
-        }*/
+        }
 
         public List<Quarto> Buscar_TipoQuarto()
         {
