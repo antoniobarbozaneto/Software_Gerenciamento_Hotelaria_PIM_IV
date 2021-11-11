@@ -17,6 +17,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         Quarto Quarto;
         Ctr_Quarto Ctr_Quarto;
         bool ver_resp;
+        string tipo_q;
         public Frm_CadastroQuarto()
         {
             Quarto = new Quarto();
@@ -27,8 +28,20 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         private void Frm_CadastroQuarto_Load(object sender, EventArgs e)
         {
             ver_resp = Verifica_CreateOrUpdate();
-            cbx_Tipo.DataSource = Ctr_Quarto.Buscar_TipoQuarto();
-            cbx_Tipo.ValueMember = "Tipo"; //Seleciona os Tipos da Lista
+
+            tipo_q = cbx_Tipo.Text;
+
+            if (cbx_Tipo.Text == "")
+            {
+                cbx_Tipo.DataSource = Ctr_Quarto.Buscar_TipoQuarto();
+                cbx_Tipo.ValueMember = "Tipo"; //Seleciona os Tipos da Lista
+            }
+            else
+            {
+                cbx_Tipo.DataSource = Ctr_Quarto.Buscar_TipoQuarto();
+                cbx_Tipo.ValueMember = "Tipo"; //Seleciona os Tipos da Lista
+                cbx_Tipo.Text = tipo_q;
+            }
         }
 
         private void btn_Gravar_Click(object sender, EventArgs e)
@@ -116,7 +129,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             {
                 txb_QtdHospede.DataBindings.Add("Text", Lista_QtdH_ValorD, "Qtd_Max");
                 txb_ValorDiaria.DataBindings.Add("Text", Lista_QtdH_ValorD, "Valor_Diaria");
-            }  
+            }
         }
     }
 }

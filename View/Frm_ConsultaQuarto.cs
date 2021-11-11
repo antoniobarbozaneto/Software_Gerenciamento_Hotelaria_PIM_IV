@@ -29,6 +29,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         private void Frm_ConsultaQuarto_Load(object sender, EventArgs e)
         {
+            EscondeColunas();
             CarregaListaQuarto();            
         }
         private void btn_Excluir_Click(object sender, EventArgs e)
@@ -77,17 +78,25 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         public void CarregaListaQuarto()
         {
             dataGridView_Quartos.DataSource = Ctr_Quarto.Carregar_Quarto();
-            dataGridView_Quartos.Columns.Remove("Qtd_Max");
-            dataGridView_Quartos.Columns.Remove("Valor_Diaria");
-            dataGridView_Quartos.Columns.Remove("Refeicao");
+            dataGridView_Quartos.Columns[3].Width = 320;
+            EscondeColunas();
         }
         public void SetaSetaDadosGridParaForms()
         {
             Frm_CadastroQuarto.txb_NumQuarto.Text = dataGridView_Quartos.CurrentRow.Cells[0].Value.ToString();
             Frm_CadastroQuarto.txb_Andar.Text = dataGridView_Quartos.CurrentRow.Cells[1].Value.ToString();
             Frm_CadastroQuarto.cbx_Tipo.Text = dataGridView_Quartos.CurrentRow.Cells[3].Value.ToString();
-
             Frm_CadastroQuarto.ShowDialog();
+        }
+
+        public void EscondeColunas()
+        {
+            if (dataGridView_Quartos.Columns.Count > 3)
+            {
+                dataGridView_Quartos.Columns["Qtd_Max"].Visible = false;
+                dataGridView_Quartos.Columns["Valor_Diaria"].Visible = false;
+                dataGridView_Quartos.Columns["Refeicao"].Visible = false;
+            }
         }
     }
 }
