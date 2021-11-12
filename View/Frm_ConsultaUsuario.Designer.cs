@@ -1,6 +1,6 @@
 ﻿namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 {
-    partial class Frm_ConsultaQuarto
+    partial class Frm_ConsultaUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -28,44 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btn_Excluir = new System.Windows.Forms.Button();
             this.label50 = new System.Windows.Forms.Label();
             this.groupBox30 = new System.Windows.Forms.GroupBox();
             this.btn_Buscar = new System.Windows.Forms.Button();
-            this.dataGridView_Quartos = new System.Windows.Forms.DataGridView();
+            this.dataGridView_Usuarios = new System.Windows.Forms.DataGridView();
             this.cbx_FiltroTipoQuarto = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txb_Consulta = new System.Windows.Forms.TextBox();
             this.btn_Atualizar = new System.Windows.Forms.Button();
             this.btn_Editar = new System.Windows.Forms.Button();
-            this.btn_Excluir = new System.Windows.Forms.Button();
-            this.btn_Confirmar = new System.Windows.Forms.Button();
             this.groupBox30.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Quartos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Usuarios)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btn_Excluir
+            // 
+            this.btn_Excluir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btn_Excluir.ForeColor = System.Drawing.Color.Red;
+            this.btn_Excluir.Location = new System.Drawing.Point(420, 482);
+            this.btn_Excluir.Name = "btn_Excluir";
+            this.btn_Excluir.Size = new System.Drawing.Size(87, 30);
+            this.btn_Excluir.TabIndex = 49;
+            this.btn_Excluir.Text = "EXCLUIR";
+            this.btn_Excluir.UseVisualStyleBackColor = true;
             // 
             // label50
             // 
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label50.Location = new System.Drawing.Point(294, 28);
+            this.label50.Location = new System.Drawing.Point(257, 28);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(166, 19);
-            this.label50.TabIndex = 38;
-            this.label50.Text = "Consulta de Quartos";
+            this.label50.Size = new System.Drawing.Size(174, 19);
+            this.label50.TabIndex = 45;
+            this.label50.Text = "Consulta de Usuários";
             // 
             // groupBox30
             // 
             this.groupBox30.Controls.Add(this.btn_Buscar);
-            this.groupBox30.Controls.Add(this.dataGridView_Quartos);
+            this.groupBox30.Controls.Add(this.dataGridView_Usuarios);
             this.groupBox30.Controls.Add(this.cbx_FiltroTipoQuarto);
             this.groupBox30.Controls.Add(this.label1);
             this.groupBox30.Controls.Add(this.label3);
             this.groupBox30.Controls.Add(this.txb_Consulta);
-            this.groupBox30.Location = new System.Drawing.Point(18, 63);
+            this.groupBox30.Location = new System.Drawing.Point(12, 63);
             this.groupBox30.Name = "groupBox30";
             this.groupBox30.Size = new System.Drawing.Size(699, 413);
-            this.groupBox30.TabIndex = 42;
+            this.groupBox30.TabIndex = 48;
             this.groupBox30.TabStop = false;
             // 
             // btn_Buscar
@@ -77,16 +87,15 @@
             this.btn_Buscar.TabIndex = 27;
             this.btn_Buscar.Text = "BUSCAR";
             this.btn_Buscar.UseVisualStyleBackColor = true;
-            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click_1);
             // 
-            // dataGridView_Quartos
+            // dataGridView_Usuarios
             // 
-            this.dataGridView_Quartos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Quartos.Location = new System.Drawing.Point(19, 69);
-            this.dataGridView_Quartos.Name = "dataGridView_Quartos";
-            this.dataGridView_Quartos.ReadOnly = true;
-            this.dataGridView_Quartos.Size = new System.Drawing.Size(663, 323);
-            this.dataGridView_Quartos.TabIndex = 17;
+            this.dataGridView_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Usuarios.Location = new System.Drawing.Point(19, 69);
+            this.dataGridView_Usuarios.Name = "dataGridView_Usuarios";
+            this.dataGridView_Usuarios.ReadOnly = true;
+            this.dataGridView_Usuarios.Size = new System.Drawing.Size(663, 323);
+            this.dataGridView_Usuarios.TabIndex = 17;
             // 
             // cbx_FiltroTipoQuarto
             // 
@@ -131,70 +140,41 @@
             // btn_Atualizar
             // 
             this.btn_Atualizar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_Atualizar.Location = new System.Drawing.Point(245, 482);
+            this.btn_Atualizar.Location = new System.Drawing.Point(234, 482);
             this.btn_Atualizar.Name = "btn_Atualizar";
             this.btn_Atualizar.Size = new System.Drawing.Size(87, 30);
-            this.btn_Atualizar.TabIndex = 41;
+            this.btn_Atualizar.TabIndex = 47;
             this.btn_Atualizar.Text = "ATUALIZAR";
             this.btn_Atualizar.UseVisualStyleBackColor = true;
-            this.btn_Atualizar.Click += new System.EventHandler(this.btn_Atualizar_Click_1);
             // 
             // btn_Editar
             // 
             this.btn_Editar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Editar.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btn_Editar.Location = new System.Drawing.Point(338, 482);
+            this.btn_Editar.Location = new System.Drawing.Point(327, 482);
             this.btn_Editar.Name = "btn_Editar";
             this.btn_Editar.Size = new System.Drawing.Size(87, 30);
-            this.btn_Editar.TabIndex = 39;
+            this.btn_Editar.TabIndex = 46;
             this.btn_Editar.Text = "EDITAR";
             this.btn_Editar.UseVisualStyleBackColor = true;
-            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click_1);
             // 
-            // btn_Excluir
-            // 
-            this.btn_Excluir.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_Excluir.ForeColor = System.Drawing.Color.Red;
-            this.btn_Excluir.Location = new System.Drawing.Point(431, 482);
-            this.btn_Excluir.Name = "btn_Excluir";
-            this.btn_Excluir.Size = new System.Drawing.Size(87, 30);
-            this.btn_Excluir.TabIndex = 43;
-            this.btn_Excluir.Text = "EXCLUIR";
-            this.btn_Excluir.UseVisualStyleBackColor = true;
-            this.btn_Excluir.Click += new System.EventHandler(this.btn_Excluir_Click);
-            // 
-            // btn_Confirmar
-            // 
-            this.btn_Confirmar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btn_Confirmar.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btn_Confirmar.Location = new System.Drawing.Point(18, 482);
-            this.btn_Confirmar.Name = "btn_Confirmar";
-            this.btn_Confirmar.Size = new System.Drawing.Size(102, 30);
-            this.btn_Confirmar.TabIndex = 44;
-            this.btn_Confirmar.Text = "CONFIRMAR";
-            this.btn_Confirmar.UseVisualStyleBackColor = true;
-            this.btn_Confirmar.Visible = false;
-            this.btn_Confirmar.Click += new System.EventHandler(this.btn_Confirmar_Click);
-            // 
-            // Frm_ConsultaQuarto
+            // Frm_ConsultaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(735, 522);
-            this.Controls.Add(this.btn_Confirmar);
+            this.ClientSize = new System.Drawing.Size(727, 523);
             this.Controls.Add(this.btn_Excluir);
             this.Controls.Add(this.label50);
             this.Controls.Add(this.groupBox30);
             this.Controls.Add(this.btn_Atualizar);
             this.Controls.Add(this.btn_Editar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "Frm_ConsultaQuarto";
+            this.Name = "Frm_ConsultaUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Consulta Quarto";
-            this.Load += new System.EventHandler(this.Frm_ConsultaQuarto_Load);
+            this.Text = "Consulta Usuário";
             this.groupBox30.ResumeLayout(false);
             this.groupBox30.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Quartos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Usuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,17 +182,16 @@
 
         #endregion
 
+        public System.Windows.Forms.Button btn_Excluir;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.GroupBox groupBox30;
         private System.Windows.Forms.Button btn_Buscar;
-        private System.Windows.Forms.DataGridView dataGridView_Quartos;
+        private System.Windows.Forms.DataGridView dataGridView_Usuarios;
         private System.Windows.Forms.ComboBox cbx_FiltroTipoQuarto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txb_Consulta;
         public System.Windows.Forms.Button btn_Atualizar;
         public System.Windows.Forms.Button btn_Editar;
-        public System.Windows.Forms.Button btn_Excluir;
-        public System.Windows.Forms.Button btn_Confirmar;
     }
 }

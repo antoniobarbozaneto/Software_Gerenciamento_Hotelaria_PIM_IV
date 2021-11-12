@@ -110,12 +110,6 @@
     <Compile Include="Model\Hospede.cs" />
     <Compile Include="Model\Quarto.cs" />
     <Compile Include="Model\TipoQuarto.cs" />
-    <Compile Include="View\Frm_CadastroHospede.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Frm_CadastroHospede.Designer.cs">
-      <DependentUpon>Frm_CadastroHospede.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Frm_CadastroQuarto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +121,12 @@
     </Compile>
     <Compile Include="View\Frm_CadastroTipoQuarto.Designer.cs">
       <DependentUpon>Frm_CadastroTipoQuarto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Frm_CadastroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Frm_CadastroUsuario.Designer.cs">
+      <DependentUpon>Frm_CadastroUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Frm_ConsultaHospede.cs">
       <SubType>Form</SubType>
@@ -146,6 +146,24 @@
     <Compile Include="View\Frm_ConsultaTipoQuarto.Designer.cs">
       <DependentUpon>Frm_ConsultaTipoQuarto.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Frm_ConsultaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Frm_ConsultaUsuario.Designer.cs">
+      <DependentUpon>Frm_ConsultaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Frm_FazerReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Frm_FazerReserva.Designer.cs">
+      <DependentUpon>Frm_FazerReserva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Frm_Login.Designer.cs">
+      <DependentUpon>Frm_Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Frm_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,14 +172,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="View\Frm_CadastroHospede.resx">
+    <Compile Include="View\Frm_CadastroHospede.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Frm_CadastroHospede.Designer.cs">
       <DependentUpon>Frm_CadastroHospede.cs</DependentUpon>
-    </EmbeddedResource>
+    </Compile>
     <EmbeddedResource Include="View\Frm_CadastroQuarto.resx">
       <DependentUpon>Frm_CadastroQuarto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Frm_CadastroTipoQuarto.resx">
       <DependentUpon>Frm_CadastroTipoQuarto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Frm_CadastroUsuario.resx">
+      <DependentUpon>Frm_CadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Frm_ConsultaHospede.resx">
       <DependentUpon>Frm_ConsultaHospede.cs</DependentUpon>
@@ -171,6 +195,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Frm_ConsultaTipoQuarto.resx">
       <DependentUpon>Frm_ConsultaTipoQuarto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Frm_ConsultaUsuario.resx">
+      <DependentUpon>Frm_ConsultaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Frm_FazerReserva.resx">
+      <DependentUpon>Frm_FazerReserva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Frm_Login.resx">
+      <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Frm_Principal.resx">
       <DependentUpon>Frm_Principal.cs</DependentUpon>
@@ -185,6 +218,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\Frm_CadastroHospede.resx">
+      <DependentUpon>Frm_CadastroHospede.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

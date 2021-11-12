@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 {
-    public partial class Frm_CadastroHospede : Form
+    public partial class Frm_ConsultaUsuario : Form
     {
-        public Frm_CadastroHospede()
+        public Frm_ConsultaUsuario()
         {
             InitializeComponent();
         }

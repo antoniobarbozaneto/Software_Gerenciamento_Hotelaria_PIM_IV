@@ -82,7 +82,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
         public void Delete(Quarto Quarto)
         {
-            string comandoSql = "DELETE tbl_Quarto WHERE Numero = @NUMERO";
+            string comandoSql = "DELETE FROM tbl_Quarto WHERE Numero = @NUMERO";
 
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 

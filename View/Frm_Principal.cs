@@ -15,26 +15,28 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV
     {
         Frm_CadastroHospede Frm_CadastroHospede;
         Frm_CadastroQuarto Frm_CadastroQuarto;
-        //Frm_FazerReserva frm_FazerReserva;
-        //Frm_CadastroUsuario frm_CadastroUsuario;
+        Frm_FazerReserva Frm_FazerReserva;
+        Frm_CadastroUsuario Frm_CadastroUsuario;
         Frm_CadastroTipoQuarto Frm_CadastroTipoQuarto;
         Frm_ConsultaHospede Frm_ConsultaHospede;
         Frm_ConsultaTipoQuarto Frm_ConsultaTipoQuarto;
-        //Frm_ConsultaReserva frm_ConsultaReserva;
+        Frm_ConsultaUsuario Frm_ConsultaUsuario;
+        //Frm_ConsultaReserva Frm_ConsultaReserva;
         Frm_ConsultaQuarto Frm_ConsultaQuarto;
-        //Frm_ConsultaPagamento frm_ConsultaPagamento;
+        //Frm_ConsultaPagamento Frm_ConsultaPagamento;
         public Frm_Principal()
         {
             Frm_CadastroHospede = new Frm_CadastroHospede();
             Frm_CadastroQuarto = new Frm_CadastroQuarto();
-            //frm_FazerReserva = new Frm_FazerReserva();
-            //frm_CadastroUsuario = new Frm_CadastroUsuario();
+            Frm_FazerReserva = new Frm_FazerReserva();
+            Frm_CadastroUsuario = new Frm_CadastroUsuario();
             Frm_CadastroTipoQuarto = new Frm_CadastroTipoQuarto();
             Frm_ConsultaHospede = new Frm_ConsultaHospede();
             Frm_ConsultaTipoQuarto = new Frm_ConsultaTipoQuarto();
-            //frm_ConsultaReserva = new Frm_ConsultaReserva();
+            //Frm_ConsultaReserva = new Frm_ConsultaReserva();
             Frm_ConsultaQuarto = new Frm_ConsultaQuarto();
-            //frm_ConsultaPagamento = new Frm_ConsultaPagamento();
+            Frm_ConsultaUsuario = new Frm_ConsultaUsuario();
+            //Ffrm_ConsultaPagamento = new Frm_ConsultaPagamento();
             InitializeComponent();
         }
 
@@ -66,6 +68,21 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV
         private void consultaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Frm_ConsultaQuarto.ShowDialog();
+        }
+
+        private void reservarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frm_FazerReserva.ShowDialog();
+        }
+
+        private void cADASTROToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Frm_CadastroUsuario.ShowDialog();
+        }
+
+        private void cONSULTAToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            Frm_ConsultaUsuario.ShowDialog();
         }
     }
 }
