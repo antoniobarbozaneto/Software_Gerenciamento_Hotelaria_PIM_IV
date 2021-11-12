@@ -45,7 +45,7 @@
             this.txb_TipoQuarto = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.maskedtxb_dt_Checkin = new System.Windows.Forms.MaskedTextBox();
+            this.maskedtxb_dtCheckin = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.maskedtxb_dtCheckout = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -68,10 +68,10 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.SystemColors.Control;
             this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(184, 21);
+            this.label11.Location = new System.Drawing.Point(184, 33);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(165, 19);
-            this.label11.TabIndex = 61;
+            this.label11.TabIndex = 64;
             this.label11.Text = "Reservar / Hospedar";
             // 
             // groupBox1
@@ -83,10 +83,10 @@
             this.groupBox1.Controls.Add(this.btn_Limpar);
             this.groupBox1.Controls.Add(this.btn_Confirmar);
             this.groupBox1.Controls.Add(this.btn_Cancelar);
-            this.groupBox1.Location = new System.Drawing.Point(12, 43);
+            this.groupBox1.Location = new System.Drawing.Point(12, 55);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(530, 456);
-            this.groupBox1.TabIndex = 60;
+            this.groupBox1.TabIndex = 63;
             this.groupBox1.TabStop = false;
             // 
             // groupBox2
@@ -244,7 +244,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.maskedtxb_dt_Checkin);
+            this.groupBox4.Controls.Add(this.maskedtxb_dtCheckin);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.maskedtxb_dtCheckout);
             this.groupBox4.Controls.Add(this.label5);
@@ -260,15 +260,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Dados Reserva";
             // 
-            // maskedtxb_dt_Checkin
+            // maskedtxb_dtCheckin
             // 
-            this.maskedtxb_dt_Checkin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.maskedtxb_dt_Checkin.Location = new System.Drawing.Point(175, 21);
-            this.maskedtxb_dt_Checkin.Mask = "00/00/0000";
-            this.maskedtxb_dt_Checkin.Name = "maskedtxb_dt_Checkin";
-            this.maskedtxb_dt_Checkin.Size = new System.Drawing.Size(83, 20);
-            this.maskedtxb_dt_Checkin.TabIndex = 15;
-            this.maskedtxb_dt_Checkin.ValidatingType = typeof(System.DateTime);
+            this.maskedtxb_dtCheckin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.maskedtxb_dtCheckin.Location = new System.Drawing.Point(175, 21);
+            this.maskedtxb_dtCheckin.Mask = "00/00/0000";
+            this.maskedtxb_dtCheckin.Name = "maskedtxb_dtCheckin";
+            this.maskedtxb_dtCheckin.Size = new System.Drawing.Size(83, 20);
+            this.maskedtxb_dtCheckin.TabIndex = 15;
+            this.maskedtxb_dtCheckin.ValidatingType = typeof(System.DateTime);
             // 
             // label6
             // 
@@ -347,6 +347,7 @@
             this.btn_Limpar.TabIndex = 43;
             this.btn_Limpar.Text = "LIMPAR";
             this.btn_Limpar.UseVisualStyleBackColor = true;
+            this.btn_Limpar.Click += new System.EventHandler(this.btn_Limpar_Click);
             // 
             // btn_Confirmar
             // 
@@ -369,23 +370,24 @@
             this.btn_Cancelar.TabIndex = 44;
             this.btn_Cancelar.Text = "CANCELAR";
             this.btn_Cancelar.UseVisualStyleBackColor = true;
+            this.btn_Cancelar.Click += new System.EventHandler(this.btn_Cancelar_Click);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.SystemColors.Control;
             this.label19.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.label19.Location = new System.Drawing.Point(400, 502);
+            this.label19.Location = new System.Drawing.Point(402, 514);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(142, 15);
-            this.label19.TabIndex = 59;
+            this.label19.TabIndex = 62;
             this.label19.Text = "(* Campos obrigatórios)";
             // 
             // Frm_FazerReserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 525);
+            this.ClientSize = new System.Drawing.Size(556, 535);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label19);
@@ -411,30 +413,30 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btn_BuscarHospede;
+        public System.Windows.Forms.TextBox txb_Nome;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.MaskedTextBox maskedtxb_Passaporte;
+        public System.Windows.Forms.MaskedTextBox maskedtxb_Cpf;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btn_BuscarQuarto;
         private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.TextBox txb_NumQuarto;
+        public System.Windows.Forms.TextBox txb_TipoQuarto;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox4;
+        public System.Windows.Forms.MaskedTextBox maskedtxb_dtCheckin;
         private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.MaskedTextBox maskedtxb_dtCheckout;
         private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.TextBox txb_ValorTotal;
         private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.TextBox txb_QtdHospede;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_Limpar;
         private System.Windows.Forms.Button btn_Confirmar;
         private System.Windows.Forms.Button btn_Cancelar;
         private System.Windows.Forms.Label label19;
-        public System.Windows.Forms.TextBox txb_Nome;
-        public System.Windows.Forms.MaskedTextBox maskedtxb_Passaporte;
-        public System.Windows.Forms.MaskedTextBox maskedtxb_Cpf;
-        public System.Windows.Forms.TextBox txb_NumQuarto;
-        public System.Windows.Forms.TextBox txb_TipoQuarto;
-        public System.Windows.Forms.MaskedTextBox maskedtxb_dt_Checkin;
-        public System.Windows.Forms.MaskedTextBox maskedtxb_dtCheckout;
-        public System.Windows.Forms.TextBox txb_ValorTotal;
-        public System.Windows.Forms.TextBox txb_QtdHospede;
     }
 }

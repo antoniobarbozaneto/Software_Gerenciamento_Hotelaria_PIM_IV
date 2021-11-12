@@ -55,6 +55,7 @@
             this.btn_Confirmar.Text = "CONFIRMAR";
             this.btn_Confirmar.UseVisualStyleBackColor = true;
             this.btn_Confirmar.Visible = false;
+            this.btn_Confirmar.Click += new System.EventHandler(this.btn_Confirmar_Click);
             // 
             // groupBox1
             // 
@@ -206,7 +207,6 @@
         public System.Windows.Forms.Button btn_Confirmar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_Buscar;
-        private System.Windows.Forms.DataGridView dataGridView_Hospedes;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txb_Consulta;
@@ -215,5 +215,6 @@
         public System.Windows.Forms.Button btn_Editar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbx_FiltroHospede;
+        public System.Windows.Forms.DataGridView dataGridView_Hospedes;
     }
 }

@@ -17,7 +17,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         Hospede Hospede;
         Ctr_Hospede Ctr_Hospede;
         Frm_CadastroHospede Frm_CadastroHospede;
-
+        Frm_FazerReserva Frm_FazerReserva;
         public Frm_ConsultaHospede()
         {
             Hospede = new Hospede();
@@ -109,6 +109,12 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             Frm_CadastroHospede.txb_Email.Text = dataGridView_Hospedes.CurrentRow.Cells[14].Value.ToString();
             Frm_CadastroHospede.txb_Obs.Text = dataGridView_Hospedes.CurrentRow.Cells[15].Value.ToString();
             Frm_CadastroHospede.ShowDialog();
+        }
+
+        private void btn_Confirmar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK; // para indicar ao Form chamador que o usuário adicionou um cliente
+            this.Close();
         }
     }
 }

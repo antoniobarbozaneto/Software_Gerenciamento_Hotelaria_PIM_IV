@@ -205,7 +205,6 @@
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.GroupBox groupBox30;
         private System.Windows.Forms.Button btn_Buscar;
-        private System.Windows.Forms.DataGridView dataGridView_Quartos;
         private System.Windows.Forms.ComboBox cbx_FiltroTipoQuarto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
@@ -214,5 +213,6 @@
         public System.Windows.Forms.Button btn_Editar;
         public System.Windows.Forms.Button btn_Excluir;
         public System.Windows.Forms.Button btn_Confirmar;
+        public System.Windows.Forms.DataGridView dataGridView_Quartos;
     }
 }

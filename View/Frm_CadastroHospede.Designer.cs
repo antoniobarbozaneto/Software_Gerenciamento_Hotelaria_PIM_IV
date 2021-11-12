@@ -84,7 +84,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.label19.Location = new System.Drawing.Point(230, 638);
+            this.label19.Location = new System.Drawing.Point(236, 635);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(142, 15);
             this.label19.TabIndex = 52;
@@ -162,6 +162,7 @@
             this.checkBox_Estrang.TabIndex = 5;
             this.checkBox_Estrang.Text = "Estrangeiro";
             this.checkBox_Estrang.UseVisualStyleBackColor = true;
+            this.checkBox_Estrang.CheckedChanged += new System.EventHandler(this.checkBox_Estrang_CheckedChanged);
             // 
             // label20
             // 
@@ -191,6 +192,7 @@
             this.btn_Sair.TabIndex = 20;
             this.btn_Sair.Text = "SAIR";
             this.btn_Sair.UseVisualStyleBackColor = true;
+            this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
             // 
             // maskedtxb_DtNasc
             // 
@@ -386,6 +388,7 @@
             this.btn_Limpar.TabIndex = 21;
             this.btn_Limpar.Text = "LIMPAR";
             this.btn_Limpar.UseVisualStyleBackColor = true;
+            this.btn_Limpar.Click += new System.EventHandler(this.btn_Limpar_Click);
             // 
             // label10
             // 
@@ -407,6 +410,7 @@
             this.btn_Gravar.TabIndex = 19;
             this.btn_Gravar.Text = "GRAVAR";
             this.btn_Gravar.UseVisualStyleBackColor = true;
+            this.btn_Gravar.Click += new System.EventHandler(this.btn_Gravar_Click);
             // 
             // txb_Cidade
             // 
@@ -466,11 +470,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 662);
+            this.ClientSize = new System.Drawing.Size(386, 656);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label17);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Frm_CadastroHospede";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Hóspede";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

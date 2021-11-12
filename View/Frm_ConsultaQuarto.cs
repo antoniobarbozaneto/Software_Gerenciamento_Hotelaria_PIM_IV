@@ -17,14 +17,12 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         Quarto Quarto;
         Ctr_Quarto Ctr_Quarto;
         Frm_CadastroQuarto Frm_CadastroQuarto;
-        Frm_FazerReserva Frm_FazerReserva;
 
         public Frm_ConsultaQuarto()
         {
             Quarto = new Quarto();
             Ctr_Quarto = new Ctr_Quarto();
             Frm_CadastroQuarto = new Frm_CadastroQuarto();
-            Frm_FazerReserva = new Frm_FazerReserva();
             InitializeComponent();
             
         }
@@ -103,9 +101,8 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         private void btn_Confirmar_Click(object sender, EventArgs e)
         {
-            Frm_FazerReserva.txb_NumQuarto.Text = dataGridView_Quartos.CurrentRow.Cells[0].Value.ToString();
-            Frm_FazerReserva.txb_TipoQuarto.Text = dataGridView_Quartos.CurrentRow.Cells[3].Value.ToString();
-            //this.Close();
+            this.DialogResult = DialogResult.OK; // para indicar ao Form chamador que o usuário adicionou um cliente
+            this.Close();
         }
     }
 }
