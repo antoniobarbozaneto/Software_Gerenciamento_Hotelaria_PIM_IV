@@ -50,7 +50,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             {
                 Quarto.Numero = txb_NumQuarto.Text;
                 Quarto.Andar = txb_Andar.Text;
-                Quarto.Status = "Disponível";
+                Quarto.Status = "DISPONÍVEL";
                 Quarto.Tipo = cbx_Tipo.Text;
 
                 if (ver_resp == true)

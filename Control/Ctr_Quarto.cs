@@ -38,7 +38,14 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
         }
         public List<Quarto> Buscar_Quarto(string ParamBusca, string ParamWhere)
         {
-            Lista_Quarto = Dao_Quarto.BuscarLista_Quarto(ParamBusca, ParamWhere);
+            if(ParamBusca == "Status")
+            {
+
+            }
+            else
+            {
+                Lista_Quarto = Dao_Quarto.BuscarLista_Quarto(ParamBusca, ParamWhere);
+            }
             return Lista_Quarto;
         }
 

@@ -78,7 +78,18 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         public void CarregaListaQuarto()
         {
             dataGridView_Quartos.DataSource = Ctr_Quarto.Carregar_Quarto();
-            dataGridView_Quartos.Columns[3].Width = 320;
+
+            if (dataGridView_Quartos.DataSource == null)
+            {
+                btn_Editar.Enabled = false;
+                btn_Excluir.Enabled = false;
+            }
+            else
+            {
+                dataGridView_Quartos.Columns[3].Width = 320;
+                btn_Editar.Enabled = true;
+                btn_Excluir.Enabled = true;
+            }
             EscondeColunas();
         }
         public void SetaSetaDadosGridParaForms()
