@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Software_Gerenciamento_Hotelaria_PIM_IV.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Principal());
+            Application.Run(new Frm_Login());
         }
     }
 }

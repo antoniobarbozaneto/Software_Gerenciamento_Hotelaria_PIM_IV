@@ -84,5 +84,13 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV
         {
             Frm_ConsultaUsuario.ShowDialog();
         }
+
+        private void Frm_Principal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (Application.OpenForms.Count != 0)//se o total de forms ABERTAS FOR diferente de 0 fechar aplicação
+            {
+                Application.Exit();
+            }
+        }
     }
 }

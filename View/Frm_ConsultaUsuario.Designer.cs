@@ -33,7 +33,7 @@
             this.groupBox30 = new System.Windows.Forms.GroupBox();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.dataGridView_Usuarios = new System.Windows.Forms.DataGridView();
-            this.cbx_FiltroTipoQuarto = new System.Windows.Forms.ComboBox();
+            this.cbx_FiltroUsuario = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txb_Consulta = new System.Windows.Forms.TextBox();
@@ -53,6 +53,7 @@
             this.btn_Excluir.TabIndex = 49;
             this.btn_Excluir.Text = "EXCLUIR";
             this.btn_Excluir.UseVisualStyleBackColor = true;
+            this.btn_Excluir.Click += new System.EventHandler(this.btn_Excluir_Click);
             // 
             // label50
             // 
@@ -68,7 +69,7 @@
             // 
             this.groupBox30.Controls.Add(this.btn_Buscar);
             this.groupBox30.Controls.Add(this.dataGridView_Usuarios);
-            this.groupBox30.Controls.Add(this.cbx_FiltroTipoQuarto);
+            this.groupBox30.Controls.Add(this.cbx_FiltroUsuario);
             this.groupBox30.Controls.Add(this.label1);
             this.groupBox30.Controls.Add(this.label3);
             this.groupBox30.Controls.Add(this.txb_Consulta);
@@ -87,6 +88,7 @@
             this.btn_Buscar.TabIndex = 27;
             this.btn_Buscar.Text = "BUSCAR";
             this.btn_Buscar.UseVisualStyleBackColor = true;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // dataGridView_Usuarios
             // 
@@ -97,18 +99,16 @@
             this.dataGridView_Usuarios.Size = new System.Drawing.Size(663, 323);
             this.dataGridView_Usuarios.TabIndex = 17;
             // 
-            // cbx_FiltroTipoQuarto
+            // cbx_FiltroUsuario
             // 
-            this.cbx_FiltroTipoQuarto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_FiltroTipoQuarto.FormattingEnabled = true;
-            this.cbx_FiltroTipoQuarto.Items.AddRange(new object[] {
-            "Numero",
-            "Andar",
-            "Status"});
-            this.cbx_FiltroTipoQuarto.Location = new System.Drawing.Point(19, 42);
-            this.cbx_FiltroTipoQuarto.Name = "cbx_FiltroTipoQuarto";
-            this.cbx_FiltroTipoQuarto.Size = new System.Drawing.Size(121, 21);
-            this.cbx_FiltroTipoQuarto.TabIndex = 24;
+            this.cbx_FiltroUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_FiltroUsuario.FormattingEnabled = true;
+            this.cbx_FiltroUsuario.Items.AddRange(new object[] {
+            "Usuario"});
+            this.cbx_FiltroUsuario.Location = new System.Drawing.Point(19, 42);
+            this.cbx_FiltroUsuario.Name = "cbx_FiltroUsuario";
+            this.cbx_FiltroUsuario.Size = new System.Drawing.Size(121, 21);
+            this.cbx_FiltroUsuario.TabIndex = 24;
             // 
             // label1
             // 
@@ -146,6 +146,7 @@
             this.btn_Atualizar.TabIndex = 47;
             this.btn_Atualizar.Text = "ATUALIZAR";
             this.btn_Atualizar.UseVisualStyleBackColor = true;
+            this.btn_Atualizar.Click += new System.EventHandler(this.btn_Atualizar_Click);
             // 
             // btn_Editar
             // 
@@ -157,6 +158,7 @@
             this.btn_Editar.TabIndex = 46;
             this.btn_Editar.Text = "EDITAR";
             this.btn_Editar.UseVisualStyleBackColor = true;
+            this.btn_Editar.Click += new System.EventHandler(this.btn_Editar_Click);
             // 
             // Frm_ConsultaUsuario
             // 
@@ -172,6 +174,7 @@
             this.Name = "Frm_ConsultaUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Usuário";
+            this.Load += new System.EventHandler(this.Frm_ConsultaUsuario_Load);
             this.groupBox30.ResumeLayout(false);
             this.groupBox30.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Usuarios)).EndInit();
@@ -187,7 +190,7 @@
         private System.Windows.Forms.GroupBox groupBox30;
         private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.DataGridView dataGridView_Usuarios;
-        private System.Windows.Forms.ComboBox cbx_FiltroTipoQuarto;
+        private System.Windows.Forms.ComboBox cbx_FiltroUsuario;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txb_Consulta;

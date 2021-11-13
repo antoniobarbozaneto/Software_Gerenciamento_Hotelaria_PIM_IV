@@ -195,14 +195,14 @@
             // cadastroToolStripMenuItem2
             // 
             this.cadastroToolStripMenuItem2.Name = "cadastroToolStripMenuItem2";
-            this.cadastroToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.cadastroToolStripMenuItem2.Size = new System.Drawing.Size(139, 22);
             this.cadastroToolStripMenuItem2.Text = "Cadastro";
             this.cadastroToolStripMenuItem2.Click += new System.EventHandler(this.cADASTROToolStripMenuItem2_Click);
             // 
             // cONSULTAToolStripMenuItem3
             // 
             this.cONSULTAToolStripMenuItem3.Name = "cONSULTAToolStripMenuItem3";
-            this.cONSULTAToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.cONSULTAToolStripMenuItem3.Size = new System.Drawing.Size(139, 22);
             this.cONSULTAToolStripMenuItem3.Text = "Consulta";
             this.cONSULTAToolStripMenuItem3.Click += new System.EventHandler(this.cONSULTAToolStripMenuItem3_Click);
             // 
@@ -231,6 +231,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tela Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_Principal_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

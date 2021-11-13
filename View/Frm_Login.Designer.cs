@@ -54,9 +54,10 @@
             this.btn_Sair.Location = new System.Drawing.Point(143, 119);
             this.btn_Sair.Name = "btn_Sair";
             this.btn_Sair.Size = new System.Drawing.Size(82, 36);
-            this.btn_Sair.TabIndex = 12;
+            this.btn_Sair.TabIndex = 4;
             this.btn_Sair.Text = "SAIR";
             this.btn_Sair.UseVisualStyleBackColor = true;
+            this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
             // 
             // btn_Entrar
             // 
@@ -65,9 +66,10 @@
             this.btn_Entrar.Location = new System.Drawing.Point(55, 119);
             this.btn_Entrar.Name = "btn_Entrar";
             this.btn_Entrar.Size = new System.Drawing.Size(82, 36);
-            this.btn_Entrar.TabIndex = 11;
+            this.btn_Entrar.TabIndex = 3;
             this.btn_Entrar.Text = "ENTRAR";
             this.btn_Entrar.UseVisualStyleBackColor = true;
+            this.btn_Entrar.Click += new System.EventHandler(this.btn_Entrar_Click);
             // 
             // label2
             // 
@@ -95,14 +97,14 @@
             this.txb_Senha.Name = "txb_Senha";
             this.txb_Senha.PasswordChar = '*';
             this.txb_Senha.Size = new System.Drawing.Size(127, 20);
-            this.txb_Senha.TabIndex = 8;
+            this.txb_Senha.TabIndex = 2;
             // 
             // txb_Usuario
             // 
             this.txb_Usuario.Location = new System.Drawing.Point(79, 67);
             this.txb_Usuario.Name = "txb_Usuario";
             this.txb_Usuario.Size = new System.Drawing.Size(127, 20);
-            this.txb_Usuario.TabIndex = 7;
+            this.txb_Usuario.TabIndex = 1;
             // 
             // Frm_Login
             // 
@@ -120,6 +122,7 @@
             this.Name = "Frm_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Frm_Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

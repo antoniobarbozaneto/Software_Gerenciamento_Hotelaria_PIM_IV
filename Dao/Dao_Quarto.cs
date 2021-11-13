@@ -91,7 +91,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             {
                 conexao.Open();
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Quarto apagado com sucesso!!!");
+                MessageBox.Show("Quarto deletado com sucesso!!!");
             }
             catch (NpgsqlException ex)
             {
