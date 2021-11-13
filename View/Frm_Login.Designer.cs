@@ -119,6 +119,7 @@
             this.Controls.Add(this.txb_Senha);
             this.Controls.Add(this.txb_Usuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Frm_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
