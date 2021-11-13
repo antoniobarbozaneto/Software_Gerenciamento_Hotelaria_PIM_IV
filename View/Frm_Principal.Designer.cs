@@ -47,6 +47,8 @@
             this.uSUÁRIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.cONSULTAToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbl_usuario = new System.Windows.Forms.Label();
+            this.lbl_DateTime = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -206,11 +208,40 @@
             this.cONSULTAToolStripMenuItem3.Text = "Consulta";
             this.cONSULTAToolStripMenuItem3.Click += new System.EventHandler(this.cONSULTAToolStripMenuItem3_Click);
             // 
+            // lbl_usuario
+            // 
+            this.lbl_usuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_usuario.AutoSize = true;
+            this.lbl_usuario.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_usuario.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_usuario.ForeColor = System.Drawing.Color.White;
+            this.lbl_usuario.Location = new System.Drawing.Point(12, 425);
+            this.lbl_usuario.Name = "lbl_usuario";
+            this.lbl_usuario.Size = new System.Drawing.Size(60, 16);
+            this.lbl_usuario.TabIndex = 3;
+            this.lbl_usuario.Text = "Usuário:";
+            this.lbl_usuario.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // lbl_DateTime
+            // 
+            this.lbl_DateTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_DateTime.AutoSize = true;
+            this.lbl_DateTime.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_DateTime.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DateTime.ForeColor = System.Drawing.Color.White;
+            this.lbl_DateTime.Location = new System.Drawing.Point(619, 425);
+            this.lbl_DateTime.Name = "lbl_DateTime";
+            this.lbl_DateTime.Size = new System.Drawing.Size(73, 16);
+            this.lbl_DateTime.TabIndex = 4;
+            this.lbl_DateTime.Text = "Date Time";
+            this.lbl_DateTime.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Software_Gerenciamento_Hotelaria_PIM_IV.Properties.Resources.HOtech;
             this.pictureBox1.Location = new System.Drawing.Point(0, 27);
             this.pictureBox1.Name = "pictureBox1";
@@ -223,7 +254,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
+            this.BackgroundImage = global::Software_Gerenciamento_Hotelaria_PIM_IV.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(704, 450);
+            this.Controls.Add(this.lbl_DateTime);
+            this.Controls.Add(this.lbl_usuario);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -232,6 +267,7 @@
             this.Text = "Tela Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_Principal_FormClosed);
+            this.Load += new System.EventHandler(this.Frm_Principal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -260,8 +296,10 @@
         private System.Windows.Forms.ToolStripMenuItem uSUÁRIOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem cONSULTAToolStripMenuItem3;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem consultaTipoQuartoToolStripMenuItem;
+        public System.Windows.Forms.Label lbl_usuario;
+        public System.Windows.Forms.Label lbl_DateTime;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

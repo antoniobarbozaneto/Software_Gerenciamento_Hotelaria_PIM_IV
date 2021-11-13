@@ -92,5 +92,10 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV
                 Application.Exit();
             }
         }
+
+        private void Frm_Principal_Load(object sender, EventArgs e)
+        {
+            lbl_DateTime.Text = (DateTime.Now.ToString("dd/MMM/yyyy"));
+        }
     }
 }

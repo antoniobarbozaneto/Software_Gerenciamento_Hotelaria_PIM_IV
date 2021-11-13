@@ -41,7 +41,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(96, 22);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(96, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 30);
             this.label3.TabIndex = 13;
@@ -51,7 +52,7 @@
             // 
             this.btn_Sair.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Sair.ForeColor = System.Drawing.Color.Red;
-            this.btn_Sair.Location = new System.Drawing.Point(143, 119);
+            this.btn_Sair.Location = new System.Drawing.Point(143, 124);
             this.btn_Sair.Name = "btn_Sair";
             this.btn_Sair.Size = new System.Drawing.Size(82, 36);
             this.btn_Sair.TabIndex = 4;
@@ -63,7 +64,7 @@
             // 
             this.btn_Entrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Entrar.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btn_Entrar.Location = new System.Drawing.Point(55, 119);
+            this.btn_Entrar.Location = new System.Drawing.Point(55, 124);
             this.btn_Entrar.Name = "btn_Entrar";
             this.btn_Entrar.Size = new System.Drawing.Size(82, 36);
             this.btn_Entrar.TabIndex = 3;
@@ -75,6 +76,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(20, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 16);
@@ -85,6 +87,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(13, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 16);
@@ -110,7 +113,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(262, 162);
+            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.ClientSize = new System.Drawing.Size(262, 168);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_Sair);
             this.Controls.Add(this.btn_Entrar);

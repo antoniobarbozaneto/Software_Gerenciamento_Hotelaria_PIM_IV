@@ -40,6 +40,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 if(Ctr_Usuario.FazerLogin(Usuario) == true)
                 {
                     this.Hide();
+                    Frm_Principal.lbl_usuario.Text = "Usuário: " + Usuario.User;
                     Frm_Principal.ShowDialog();
                 }
                 else
