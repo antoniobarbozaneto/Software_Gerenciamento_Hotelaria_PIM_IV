@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Software_Gerenciamento_Hotelaria_PIM_IV.Model
 {
-    class Hospede
+    class Hospede : Quarto
     {
         public int Id_Hospede { get; set; } //AutoIncremento Feito pelo BD
         public string Nome { get; set; }

@@ -57,6 +57,8 @@
             this.btn_Confirmar = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
+            this.txb_IdHospede = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -85,12 +87,14 @@
             this.groupBox1.Controls.Add(this.btn_Cancelar);
             this.groupBox1.Location = new System.Drawing.Point(12, 55);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(530, 456);
+            this.groupBox1.Size = new System.Drawing.Size(530, 487);
             this.groupBox1.TabIndex = 63;
             this.groupBox1.TabStop = false;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.txb_IdHospede);
             this.groupBox2.Controls.Add(this.btn_BuscarHospede);
             this.groupBox2.Controls.Add(this.txb_Nome);
             this.groupBox2.Controls.Add(this.label4);
@@ -101,7 +105,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(13, 18);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(503, 137);
+            this.groupBox2.Size = new System.Drawing.Size(503, 168);
             this.groupBox2.TabIndex = 53;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dados Hóspede";
@@ -110,7 +114,7 @@
             // 
             this.btn_BuscarHospede.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
             this.btn_BuscarHospede.ForeColor = System.Drawing.Color.Black;
-            this.btn_BuscarHospede.Location = new System.Drawing.Point(175, 16);
+            this.btn_BuscarHospede.Location = new System.Drawing.Point(174, 25);
             this.btn_BuscarHospede.Name = "btn_BuscarHospede";
             this.btn_BuscarHospede.Size = new System.Drawing.Size(113, 33);
             this.btn_BuscarHospede.TabIndex = 55;
@@ -121,7 +125,7 @@
             // txb_Nome
             // 
             this.txb_Nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txb_Nome.Location = new System.Drawing.Point(175, 55);
+            this.txb_Nome.Location = new System.Drawing.Point(174, 91);
             this.txb_Nome.Name = "txb_Nome";
             this.txb_Nome.ReadOnly = true;
             this.txb_Nome.Size = new System.Drawing.Size(203, 20);
@@ -131,7 +135,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(82, 108);
+            this.label4.Location = new System.Drawing.Point(81, 143);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 16);
             this.label4.TabIndex = 14;
@@ -141,7 +145,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(115, 56);
+            this.label1.Location = new System.Drawing.Point(114, 92);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 16);
             this.label1.TabIndex = 51;
@@ -151,7 +155,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(131, 82);
+            this.label3.Location = new System.Drawing.Point(130, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 16);
             this.label3.TabIndex = 13;
@@ -160,7 +164,7 @@
             // maskedtxb_Passaporte
             // 
             this.maskedtxb_Passaporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.maskedtxb_Passaporte.Location = new System.Drawing.Point(175, 107);
+            this.maskedtxb_Passaporte.Location = new System.Drawing.Point(174, 142);
             this.maskedtxb_Passaporte.Mask = "00000000";
             this.maskedtxb_Passaporte.Name = "maskedtxb_Passaporte";
             this.maskedtxb_Passaporte.ReadOnly = true;
@@ -170,7 +174,7 @@
             // maskedtxb_Cpf
             // 
             this.maskedtxb_Cpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.maskedtxb_Cpf.Location = new System.Drawing.Point(175, 81);
+            this.maskedtxb_Cpf.Location = new System.Drawing.Point(174, 116);
             this.maskedtxb_Cpf.Mask = "000.000.000-00";
             this.maskedtxb_Cpf.Name = "maskedtxb_Cpf";
             this.maskedtxb_Cpf.ReadOnly = true;
@@ -185,7 +189,7 @@
             this.groupBox3.Controls.Add(this.txb_TipoQuarto);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(13, 161);
+            this.groupBox3.Location = new System.Drawing.Point(13, 192);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(503, 108);
             this.groupBox3.TabIndex = 53;
@@ -196,7 +200,7 @@
             // 
             this.btn_BuscarQuarto.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
             this.btn_BuscarQuarto.ForeColor = System.Drawing.Color.Black;
-            this.btn_BuscarQuarto.Location = new System.Drawing.Point(174, 17);
+            this.btn_BuscarQuarto.Location = new System.Drawing.Point(174, 18);
             this.btn_BuscarQuarto.Name = "btn_BuscarQuarto";
             this.btn_BuscarQuarto.Size = new System.Drawing.Size(113, 33);
             this.btn_BuscarQuarto.TabIndex = 56;
@@ -208,7 +212,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(101, 57);
+            this.label10.Location = new System.Drawing.Point(101, 58);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(67, 16);
             this.label10.TabIndex = 56;
@@ -217,7 +221,7 @@
             // txb_NumQuarto
             // 
             this.txb_NumQuarto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txb_NumQuarto.Location = new System.Drawing.Point(174, 56);
+            this.txb_NumQuarto.Location = new System.Drawing.Point(174, 57);
             this.txb_NumQuarto.Name = "txb_NumQuarto";
             this.txb_NumQuarto.ReadOnly = true;
             this.txb_NumQuarto.Size = new System.Drawing.Size(51, 20);
@@ -253,7 +257,7 @@
             this.groupBox4.Controls.Add(this.txb_QtdHospede);
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(13, 275);
+            this.groupBox4.Location = new System.Drawing.Point(13, 306);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(503, 132);
             this.groupBox4.TabIndex = 54;
@@ -263,7 +267,7 @@
             // maskedtxb_dtCheckin
             // 
             this.maskedtxb_dtCheckin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.maskedtxb_dtCheckin.Location = new System.Drawing.Point(175, 21);
+            this.maskedtxb_dtCheckin.Location = new System.Drawing.Point(174, 21);
             this.maskedtxb_dtCheckin.Mask = "00/00/0000";
             this.maskedtxb_dtCheckin.Name = "maskedtxb_dtCheckin";
             this.maskedtxb_dtCheckin.Size = new System.Drawing.Size(83, 20);
@@ -274,7 +278,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(56, 48);
+            this.label6.Location = new System.Drawing.Point(55, 48);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(113, 16);
             this.label6.TabIndex = 18;
@@ -283,7 +287,7 @@
             // maskedtxb_dtCheckout
             // 
             this.maskedtxb_dtCheckout.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.maskedtxb_dtCheckout.Location = new System.Drawing.Point(175, 47);
+            this.maskedtxb_dtCheckout.Location = new System.Drawing.Point(174, 47);
             this.maskedtxb_dtCheckout.Mask = "00/00/0000";
             this.maskedtxb_dtCheckout.Name = "maskedtxb_dtCheckout";
             this.maskedtxb_dtCheckout.Size = new System.Drawing.Size(83, 20);
@@ -294,7 +298,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(64, 22);
+            this.label5.Location = new System.Drawing.Point(63, 22);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 16);
             this.label5.TabIndex = 16;
@@ -303,7 +307,7 @@
             // txb_ValorTotal
             // 
             this.txb_ValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txb_ValorTotal.Location = new System.Drawing.Point(175, 100);
+            this.txb_ValorTotal.Location = new System.Drawing.Point(174, 99);
             this.txb_ValorTotal.Name = "txb_ValorTotal";
             this.txb_ValorTotal.ReadOnly = true;
             this.txb_ValorTotal.Size = new System.Drawing.Size(83, 20);
@@ -313,7 +317,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 74);
+            this.label8.Location = new System.Drawing.Point(2, 74);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(166, 16);
             this.label8.TabIndex = 22;
@@ -322,7 +326,7 @@
             // txb_QtdHospede
             // 
             this.txb_QtdHospede.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txb_QtdHospede.Location = new System.Drawing.Point(175, 73);
+            this.txb_QtdHospede.Location = new System.Drawing.Point(174, 73);
             this.txb_QtdHospede.Name = "txb_QtdHospede";
             this.txb_QtdHospede.Size = new System.Drawing.Size(51, 20);
             this.txb_QtdHospede.TabIndex = 21;
@@ -331,7 +335,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(89, 100);
+            this.label2.Location = new System.Drawing.Point(88, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 16);
             this.label2.TabIndex = 24;
@@ -341,7 +345,7 @@
             // 
             this.btn_Limpar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Limpar.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btn_Limpar.Location = new System.Drawing.Point(204, 413);
+            this.btn_Limpar.Location = new System.Drawing.Point(194, 444);
             this.btn_Limpar.Name = "btn_Limpar";
             this.btn_Limpar.Size = new System.Drawing.Size(107, 33);
             this.btn_Limpar.TabIndex = 43;
@@ -353,18 +357,19 @@
             // 
             this.btn_Confirmar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Confirmar.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btn_Confirmar.Location = new System.Drawing.Point(91, 413);
+            this.btn_Confirmar.Location = new System.Drawing.Point(81, 444);
             this.btn_Confirmar.Name = "btn_Confirmar";
             this.btn_Confirmar.Size = new System.Drawing.Size(107, 33);
             this.btn_Confirmar.TabIndex = 42;
             this.btn_Confirmar.Text = "CONFIRMAR";
             this.btn_Confirmar.UseVisualStyleBackColor = true;
+            this.btn_Confirmar.Click += new System.EventHandler(this.btn_Confirmar_Click);
             // 
             // btn_Cancelar
             // 
             this.btn_Cancelar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cancelar.ForeColor = System.Drawing.Color.Red;
-            this.btn_Cancelar.Location = new System.Drawing.Point(317, 413);
+            this.btn_Cancelar.Location = new System.Drawing.Point(307, 444);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(107, 33);
             this.btn_Cancelar.TabIndex = 44;
@@ -377,17 +382,36 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.SystemColors.Control;
             this.label19.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.label19.Location = new System.Drawing.Point(402, 514);
+            this.label19.Location = new System.Drawing.Point(402, 545);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(142, 15);
             this.label19.TabIndex = 62;
             this.label19.Text = "(* Campos obrigatórios)";
             // 
+            // txb_IdHospede
+            // 
+            this.txb_IdHospede.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txb_IdHospede.Location = new System.Drawing.Point(174, 64);
+            this.txb_IdHospede.Name = "txb_IdHospede";
+            this.txb_IdHospede.ReadOnly = true;
+            this.txb_IdHospede.Size = new System.Drawing.Size(51, 20);
+            this.txb_IdHospede.TabIndex = 57;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(139, 65);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(29, 16);
+            this.label9.TabIndex = 58;
+            this.label9.Text = "*Id:";
+            // 
             // Frm_FazerReserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 535);
+            this.ClientSize = new System.Drawing.Size(556, 569);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label19);
@@ -438,5 +462,7 @@
         private System.Windows.Forms.Button btn_Confirmar;
         private System.Windows.Forms.Button btn_Cancelar;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.TextBox txb_IdHospede;
     }
 }

@@ -25,24 +25,24 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         private void btn_Gravar_Click(object sender, EventArgs e)
         {
-            Hospede.Nome = txb_Nome.Text;
-            Hospede.Dt_Nascimento = maskedtxb_DtNasc.Text;
-            Hospede.RG = maskedtxb_Rg.Text;
-            Hospede.Cpf = maskedtxb_Cpf.Text;
-            Hospede.Passaporte = maskedtxb_Passaporte.Text;
-            Hospede.Rua = txb_Rua.Text;
-            Hospede.Num = txb_Numero.Text;
-            Hospede.Bairro = txb_Bairro.Text;
-            Hospede.Cidade = txb_Cidade.Text;
-            Hospede.Cep = maskedtxb_Cep.Text;
-            Hospede.Telefone = maskedtxb_Telefone.Text;
-            Hospede.Celular_Um = maskedtxb_CelularUm.Text;
-            Hospede.Celular_Dois = maskedtxb_CelularDois.Text;
-            Hospede.Email = txb_Email.Text;
-            Hospede.Obs = txb_Obs.Text;
-
             if (VerificaCampos() == true)
             {
+                Hospede.Nome = txb_Nome.Text;
+                Hospede.Dt_Nascimento = maskedtxb_DtNasc.Text;
+                Hospede.RG = maskedtxb_Rg.Text;
+                Hospede.Cpf = maskedtxb_Cpf.Text;
+                Hospede.Passaporte = maskedtxb_Passaporte.Text;
+                Hospede.Rua = txb_Rua.Text;
+                Hospede.Num = txb_Numero.Text;
+                Hospede.Bairro = txb_Bairro.Text;
+                Hospede.Cidade = txb_Cidade.Text;
+                Hospede.Cep = maskedtxb_Cep.Text;
+                Hospede.Telefone = maskedtxb_Telefone.Text;
+                Hospede.Celular_Um = maskedtxb_CelularUm.Text;
+                Hospede.Celular_Dois = maskedtxb_CelularDois.Text;
+                Hospede.Email = txb_Email.Text;
+                Hospede.Obs = txb_Obs.Text;
+                //
                 if (txb_Codigo.Text == "")
                 {
                     //Create!

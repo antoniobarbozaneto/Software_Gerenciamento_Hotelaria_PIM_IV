@@ -103,14 +103,17 @@
   <ItemGroup>
     <Compile Include="Control\Ctr_Hospede.cs" />
     <Compile Include="Control\Ctr_Quarto.cs" />
+    <Compile Include="Control\Ctr_Reserva.cs" />
     <Compile Include="Control\Ctr_TipoQuarto.cs" />
     <Compile Include="Control\Ctr_Usuario.cs" />
     <Compile Include="Dao\Dao_Hospede.cs" />
     <Compile Include="Dao\Dao_Quarto.cs" />
+    <Compile Include="Dao\Dao_Reserva.cs" />
     <Compile Include="Dao\Dao_TipoQuarto.cs" />
     <Compile Include="Dao\Dao_Usuario.cs" />
     <Compile Include="Model\Hospede.cs" />
     <Compile Include="Model\Quarto.cs" />
+    <Compile Include="Model\Reserva.cs" />
     <Compile Include="Model\TipoQuarto.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="View\Frm_CadastroQuarto.cs">

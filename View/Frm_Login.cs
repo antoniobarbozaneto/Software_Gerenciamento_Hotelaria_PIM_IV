@@ -32,29 +32,17 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         private void btn_Entrar_Click(object sender, EventArgs e)
         {
-            Usuario.User = txb_Usuario.Text;
-            Usuario.Senha = txb_Senha.Text;
-
-            if (VerificaCampos() == true)
-            {
-                if(Ctr_Usuario.FazerLogin(Usuario) == true)
-                {
-                    this.Hide();
-                    Frm_Principal.lbl_usuario.Text = "Usuário: " + Usuario.User;
-                    Frm_Principal.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Usuário não cadastrado, verifique login ou senha!", "ERRO!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txb_Usuario.Text = "";
-                    txb_Senha.Text = "";
-                }
-            }
+            Login();            
         }
 
         private void btn_Sair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Frm_Login_Click(object sender, EventArgs e)
+        {
+            Login();
         }
 
         //mtds uteis
@@ -72,6 +60,26 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             }
             return res;
         }
+        public void Login()
+        {
+            Usuario.User = txb_Usuario.Text;
+            Usuario.Senha = txb_Senha.Text;
 
+            if (VerificaCampos() == true)
+            {
+                if (Ctr_Usuario.FazerLogin(Usuario) == true)
+                {
+                    this.Hide();
+                    Frm_Principal.lbl_usuario.Text = "Usuário: " + Usuario.User;
+                    Frm_Principal.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Usuário não cadastrado, verifique login ou senha!", "ERRO!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txb_Usuario.Text = "";
+                    txb_Senha.Text = "";
+                }
+            }
+        }
     }
 }
