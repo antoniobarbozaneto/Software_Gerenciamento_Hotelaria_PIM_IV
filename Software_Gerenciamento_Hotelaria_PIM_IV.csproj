@@ -146,6 +146,12 @@
     <Compile Include="View\Frm_ConsultaQuarto.Designer.cs">
       <DependentUpon>Frm_ConsultaQuarto.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Frm_ConsultaReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Frm_ConsultaReserva.Designer.cs">
+      <DependentUpon>Frm_ConsultaReserva.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Frm_ConsultaTipoQuarto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Frm_ConsultaQuarto.resx">
       <DependentUpon>Frm_ConsultaQuarto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Frm_ConsultaReserva.resx">
+      <DependentUpon>Frm_ConsultaReserva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Frm_ConsultaTipoQuarto.resx">
       <DependentUpon>Frm_ConsultaTipoQuarto.cs</DependentUpon>

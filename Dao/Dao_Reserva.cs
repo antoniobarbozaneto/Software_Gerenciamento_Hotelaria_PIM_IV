@@ -50,7 +50,31 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                 conexao.Close();
             }
         }
+        //
+        public void UpdateStatus(Reserva Reserva)
+        {
+            string comandoSql = "UPDATE tbl_quarto SET Status = 'OCUPADO' WHERE Numero = @NUM_QUARTO";
 
+            NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
+
+            comando.Parameters.AddWithValue("@NUM_QUARTO", Reserva.Numero);
+
+            try
+            {
+                conexao.Open();
+                comando.ExecuteNonQuery();                
+            }
+            catch (NpgsqlException ex)
+            {
+                // Handle the SQL Exception as you wish
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+        //
         public int Verif_QtdHospede(Reserva Reserva)
         {
             int Qtd_Hospede = 0;

@@ -21,6 +21,11 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
             Dao_Reserva.Create(Reserva);
         }
         //
+        public void AlterarStatus(Reserva Reserva)
+        {
+            Dao_Reserva.UpdateStatus(Reserva);
+        }
+        //
         public bool Verifica_QtdHospede(Reserva Reserva)
         {
             bool resp = false ;
@@ -28,11 +33,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
             if(Reserva.Qtd_Hospede <= Dao_Reserva.Verif_QtdHospede(Reserva))
             {
                 resp = true;
-                Console.WriteLine("qtd perimitida");
             }
             else
             {
-                Console.WriteLine("qtd nao perimitida");
                 resp = false;
             }
             return resp;

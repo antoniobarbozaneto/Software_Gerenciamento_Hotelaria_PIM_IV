@@ -88,6 +88,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                     {
                         //Gravar no banco
                         Ctr_Reserva.Incluir(Reserva);
+                        Ctr_Reserva.AlterarStatus(Reserva);
                         LimparCampos();
                     }
                     else
