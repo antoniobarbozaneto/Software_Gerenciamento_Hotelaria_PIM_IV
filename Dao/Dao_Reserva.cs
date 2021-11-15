@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 {
@@ -23,6 +24,31 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
         public void Create(Reserva Reserva)
         {
+
+            string comandoSql = "INSERT INTO tbl_Reserva (Dt_Checkin, Dt_Checkout, Quarto_Numero, Id_Hospede) VALUES (@DT_CHECKIN, @DT_CHECKOUT, @NUM_QUARTO, @ID_HOSPEDE)";
+
+            NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
+
+            comando.Parameters.AddWithValue("@DT_CHECKIN", Reserva.Dt_Checkin);
+            comando.Parameters.AddWithValue("@DT_CHECKOUT", Reserva.Dt_Checkout);
+            comando.Parameters.AddWithValue("@NUM_QUARTO", Reserva.Numero);
+            comando.Parameters.AddWithValue("@ID_HOSPEDE", Reserva.Id_Hospede);
+
+            try
+            {
+                conexao.Open();
+                comando.ExecuteNonQuery();
+                MessageBox.Show("Reserva Efetuada com sucesso!!!", "Reserva", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (NpgsqlException ex)
+            {
+                // Handle the SQL Exception as you wish
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conexao.Close();
+            }
         }
 
         public int Verif_QtdHospede(Reserva Reserva)

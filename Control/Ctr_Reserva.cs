@@ -16,6 +16,11 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
         {
             Dao_Reserva = new Dao_Reserva();
         }
+        public void Incluir(Reserva Reserva)
+        {
+            Dao_Reserva.Create(Reserva);
+        }
+        //
         public bool Verifica_QtdHospede(Reserva Reserva)
         {
             bool resp = false ;

@@ -74,6 +74,8 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 Reserva.Dt_Checkout = DateTime.Parse(maskedtxb_dtCheckout.Text);
                 Reserva.Qtd_Hospede = Convert.ToInt32(txb_QtdHospede.Text);
                 Reserva.Tipo = txb_TipoQuarto.Text;
+                Reserva.Id_Hospede = Convert.ToInt32(txb_IdHospede.Text);
+                Reserva.Numero = txb_NumQuarto.Text;
                 //
                 if (Ctr_Reserva.Verifica_QtdHospede(Reserva) == false)
                 {
@@ -82,10 +84,10 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 else
                 {
                     txb_ValorTotal.Text = Convert.ToString(Ctr_Reserva.Calc_Valor_Reserva(Reserva));
-                    if (MessageBox.Show("Valor total da reserva ficou : "+txb_ValorTotal.Text+" \n Deseja confirmar a reserva?", "Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    if (MessageBox.Show("Valor total: R$"+txb_ValorTotal.Text+" \n Deseja confirmar a reserva?", "Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                     {
                         //Gravar no banco
-                        MessageBox.Show("Reserva efetuada com sucesso!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Ctr_Reserva.Incluir(Reserva);
                         LimparCampos();
                     }
                     else
