@@ -98,8 +98,9 @@
             // consultaToolStripMenuItem2
             // 
             this.consultaToolStripMenuItem2.Name = "consultaToolStripMenuItem2";
-            this.consultaToolStripMenuItem2.Size = new System.Drawing.Size(138, 22);
+            this.consultaToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.consultaToolStripMenuItem2.Text = "Consulta";
+            this.consultaToolStripMenuItem2.Click += new System.EventHandler(this.consultaToolStripMenuItem2_Click);
             // 
             // quartosToolStripMenuItem
             // 

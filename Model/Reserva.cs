@@ -12,9 +12,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Model
         public DateTime Dt_Checkin { get; set; }
         public DateTime Dt_Checkout { get; set; }
         public int Qtd_Hospede { get; set; }
-        public double Qtd_Dias { get; set; }
-        public double Res { get; set; }
-        public double Res_Final { get; set; }
+        public double ValorTotal { get; set; }
 
         public Reserva()
         {

@@ -25,7 +25,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
         public void Create(Reserva Reserva)
         {
 
-            string comandoSql = "INSERT INTO tbl_Reserva (Dt_Checkin, Dt_Checkout, Quarto_Numero, Id_Hospede) VALUES (@DT_CHECKIN, @DT_CHECKOUT, @NUM_QUARTO, @ID_HOSPEDE)";
+            string comandoSql = "INSERT INTO tbl_Reserva (Dt_Checkin, Dt_Checkout, Quarto_Numero, Id_Hospede, ValorTotal) VALUES (@DT_CHECKIN, @DT_CHECKOUT, @NUM_QUARTO, @ID_HOSPEDE, @VALOR_TOTAL)";
 
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
@@ -33,6 +33,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             comando.Parameters.AddWithValue("@DT_CHECKOUT", Reserva.Dt_Checkout);
             comando.Parameters.AddWithValue("@NUM_QUARTO", Reserva.Numero);
             comando.Parameters.AddWithValue("@ID_HOSPEDE", Reserva.Id_Hospede);
+            comando.Parameters.AddWithValue("@VALOR_TOTAL", Reserva.ValorTotal);
 
             try
             {
@@ -133,6 +134,100 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                 conexao.Close();
             }
             return Valor_Diaria;
+        }
+
+        public List<Reserva> CarregarLista_Reserva()
+        {
+            string comandoSql = "SELECT * FROM tbl_reserva";
+            NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
+
+            List<Reserva> ListaReserva = new List<Reserva>();
+
+            try
+            {
+                conexao.Open();
+                NpgsqlDataReader rd = comando.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    ListaReserva.Add(new Reserva()
+                    {
+                        Num_Reserva = Convert.ToInt32(rd["NUM_RESERVA"]),
+                        Dt_Checkin = Convert.ToDateTime(rd["DT_CHECKIN"]),
+                        Dt_Checkout = Convert.ToDateTime(rd["DT_CHECKOUT"]),
+                        Numero = Convert.ToString(rd["QUARTO_NUMERO"]),
+                        Id_Hospede = Convert.ToInt32(rd["ID_HOSPEDE"]),
+                        ValorTotal = Convert.ToDouble(rd["VALORTOTAL"])
+                    }); ;
+
+                }
+                if (ListaReserva.Count() > 0)
+                {
+                    return ListaReserva;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (NpgsqlException ex)
+            {
+                // Handle the SQL Exception as you wish
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public List<Reserva> BuscarLista_Reserva(string ParamWhere, string ParamBusca)
+        {
+            string comandoSql = "SELECT * FROM tbl_Reserva WHERE " + ParamBusca + " = " + ParamWhere + "";
+            NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
+            Console.WriteLine(comandoSql);
+            List<Reserva> ListaReserva = new List<Reserva>();
+
+            try
+            {
+                conexao.Open();
+                NpgsqlDataReader rd = comando.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    ListaReserva.Add(new Reserva()
+                    {
+                        Num_Reserva = Convert.ToInt32(rd["NUM_RESERVA"]),
+                        Dt_Checkin = Convert.ToDateTime(rd["DT_CHECKIN"]),
+                        Dt_Checkout = Convert.ToDateTime(rd["DT_CHECKOUT"]),
+                        Numero = Convert.ToString(rd["QUARTO_NUMERO"]),
+                        Id_Hospede = Convert.ToInt32(rd["ID_HOSPEDE"]),
+                        ValorTotal = Convert.ToDouble(rd["VALORTOTAL"])
+                    }); ;
+
+                }
+                if (ListaReserva.Count() > 0)
+                {
+                    return ListaReserva;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (NpgsqlException ex)
+            {
+                // Handle the SQL Exception as you wish
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                conexao.Close();
+            }
         }
     }
 }

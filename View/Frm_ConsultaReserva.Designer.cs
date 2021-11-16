@@ -32,11 +32,12 @@
             this.groupBox30 = new System.Windows.Forms.GroupBox();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.dataGridView_Reservas = new System.Windows.Forms.DataGridView();
-            this.cbx_FiltroUsuario = new System.Windows.Forms.ComboBox();
+            this.cbx_FiltroReserva = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txb_Consulta = new System.Windows.Forms.TextBox();
             this.btn_DarBaixa = new System.Windows.Forms.Button();
+            this.btn_Atualizar = new System.Windows.Forms.Button();
             this.groupBox30.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Reservas)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +56,7 @@
             // 
             this.groupBox30.Controls.Add(this.btn_Buscar);
             this.groupBox30.Controls.Add(this.dataGridView_Reservas);
-            this.groupBox30.Controls.Add(this.cbx_FiltroUsuario);
+            this.groupBox30.Controls.Add(this.cbx_FiltroReserva);
             this.groupBox30.Controls.Add(this.label1);
             this.groupBox30.Controls.Add(this.label3);
             this.groupBox30.Controls.Add(this.txb_Consulta);
@@ -74,6 +75,7 @@
             this.btn_Buscar.TabIndex = 27;
             this.btn_Buscar.Text = "BUSCAR";
             this.btn_Buscar.UseVisualStyleBackColor = true;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // dataGridView_Reservas
             // 
@@ -84,16 +86,18 @@
             this.dataGridView_Reservas.Size = new System.Drawing.Size(663, 323);
             this.dataGridView_Reservas.TabIndex = 17;
             // 
-            // cbx_FiltroUsuario
+            // cbx_FiltroReserva
             // 
-            this.cbx_FiltroUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_FiltroUsuario.FormattingEnabled = true;
-            this.cbx_FiltroUsuario.Items.AddRange(new object[] {
-            "Usuario"});
-            this.cbx_FiltroUsuario.Location = new System.Drawing.Point(19, 42);
-            this.cbx_FiltroUsuario.Name = "cbx_FiltroUsuario";
-            this.cbx_FiltroUsuario.Size = new System.Drawing.Size(121, 21);
-            this.cbx_FiltroUsuario.TabIndex = 24;
+            this.cbx_FiltroReserva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_FiltroReserva.FormattingEnabled = true;
+            this.cbx_FiltroReserva.Items.AddRange(new object[] {
+            "Num_Reserva",
+            "Id_Hospede",
+            "Quarto_Numero"});
+            this.cbx_FiltroReserva.Location = new System.Drawing.Point(19, 42);
+            this.cbx_FiltroReserva.Name = "cbx_FiltroReserva";
+            this.cbx_FiltroReserva.Size = new System.Drawing.Size(121, 21);
+            this.cbx_FiltroReserva.TabIndex = 24;
             // 
             // label1
             // 
@@ -126,18 +130,31 @@
             // 
             this.btn_DarBaixa.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_DarBaixa.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btn_DarBaixa.Location = new System.Drawing.Point(329, 473);
+            this.btn_DarBaixa.Location = new System.Drawing.Point(358, 470);
             this.btn_DarBaixa.Name = "btn_DarBaixa";
             this.btn_DarBaixa.Size = new System.Drawing.Size(87, 30);
             this.btn_DarBaixa.TabIndex = 51;
             this.btn_DarBaixa.Text = "DAR BAIXA";
             this.btn_DarBaixa.UseVisualStyleBackColor = true;
+            this.btn_DarBaixa.Click += new System.EventHandler(this.btn_DarBaixa_Click);
+            // 
+            // btn_Atualizar
+            // 
+            this.btn_Atualizar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btn_Atualizar.Location = new System.Drawing.Point(265, 470);
+            this.btn_Atualizar.Name = "btn_Atualizar";
+            this.btn_Atualizar.Size = new System.Drawing.Size(87, 30);
+            this.btn_Atualizar.TabIndex = 54;
+            this.btn_Atualizar.Text = "ATUALIZAR";
+            this.btn_Atualizar.UseVisualStyleBackColor = true;
+            this.btn_Atualizar.Click += new System.EventHandler(this.btn_Atualizar_Click);
             // 
             // Frm_ConsultaReserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 512);
+            this.Controls.Add(this.btn_Atualizar);
             this.Controls.Add(this.label50);
             this.Controls.Add(this.groupBox30);
             this.Controls.Add(this.btn_DarBaixa);
@@ -145,6 +162,7 @@
             this.Name = "Frm_ConsultaReserva";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_ConsultaReserva";
+            this.Load += new System.EventHandler(this.Frm_ConsultaReserva_Load);
             this.groupBox30.ResumeLayout(false);
             this.groupBox30.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Reservas)).EndInit();
@@ -159,10 +177,11 @@
         private System.Windows.Forms.GroupBox groupBox30;
         private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.DataGridView dataGridView_Reservas;
-        private System.Windows.Forms.ComboBox cbx_FiltroUsuario;
+        private System.Windows.Forms.ComboBox cbx_FiltroReserva;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txb_Consulta;
         public System.Windows.Forms.Button btn_DarBaixa;
+        public System.Windows.Forms.Button btn_Atualizar;
     }
 }

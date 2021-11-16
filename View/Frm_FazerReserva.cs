@@ -83,9 +83,11 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 }
                 else
                 {
-                    txb_ValorTotal.Text = Convert.ToString(Ctr_Reserva.Calc_Valor_Reserva(Reserva));
-                    if (MessageBox.Show("Valor total: R$"+txb_ValorTotal.Text+" \n Deseja confirmar a reserva?", "Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    Reserva.ValorTotal = Ctr_Reserva.Calc_Valor_Reserva(Reserva);
+                    txb_ValorTotal.Text = Convert.ToString(Reserva.ValorTotal);
+                    if (MessageBox.Show("Valor total: R$" +Reserva.ValorTotal+ " \n Deseja confirmar a reserva?", "Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                     {
+                        
                         //Gravar no banco
                         Ctr_Reserva.Incluir(Reserva);
                         Ctr_Reserva.AlterarStatus(Reserva);

@@ -195,7 +195,6 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                 conexao.Close();
             }
         }
-
         public List<Quarto> Buscar_ListaTipoQuarto()
         {
             string comandoSql = "SELECT TIPO FROM tbl_TipoQuarto order by TIPO desc";

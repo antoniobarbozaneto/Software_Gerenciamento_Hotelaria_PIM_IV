@@ -67,6 +67,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             if(ParamWhere != "")
             {
                 dataGridView_Hospedes.DataSource = Ctr_Hospede.Busca_Hospede(ParamBusca, ParamWhere);
+                EsconderColunas();
             }
             else
             {
@@ -88,8 +89,20 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             {
                 btn_Editar.Enabled = true;
                 btn_Excluir.Enabled = true;
+                EsconderColunas();
             }
         }
+        public void EsconderColunas()
+        {
+            dataGridView_Hospedes.Columns["Numero"].Visible = false;
+            dataGridView_Hospedes.Columns["Andar"].Visible = false;
+            dataGridView_Hospedes.Columns["Status"].Visible = false;
+            dataGridView_Hospedes.Columns["Tipo"].Visible = false;
+            dataGridView_Hospedes.Columns["Qtd_Max"].Visible = false;
+            dataGridView_Hospedes.Columns["Valor_Diaria"].Visible = false;
+            dataGridView_Hospedes.Columns["Refeicao"].Visible = false;
+        }
+
         public void SetaDadosGridParaForms()
         {
             Frm_CadastroHospede.txb_Codigo.Text = dataGridView_Hospedes.CurrentRow.Cells[0].Value.ToString();

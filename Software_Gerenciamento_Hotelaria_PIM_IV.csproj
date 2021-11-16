@@ -106,12 +106,14 @@
     <Compile Include="Control\Ctr_Reserva.cs" />
     <Compile Include="Control\Ctr_TipoQuarto.cs" />
     <Compile Include="Control\Ctr_Usuario.cs" />
+    <Compile Include="Control\Ctr_Pagamento.cs" />
     <Compile Include="Dao\Dao_Hospede.cs" />
     <Compile Include="Dao\Dao_Quarto.cs" />
     <Compile Include="Dao\Dao_Reserva.cs" />
     <Compile Include="Dao\Dao_TipoQuarto.cs" />
     <Compile Include="Dao\Dao_Usuario.cs" />
     <Compile Include="Model\Hospede.cs" />
+    <Compile Include="Model\Pagamento.cs" />
     <Compile Include="Model\Quarto.cs" />
     <Compile Include="Model\Reserva.cs" />
     <Compile Include="Model\TipoQuarto.cs" />
@@ -176,6 +178,12 @@
     <Compile Include="View\Frm_Login.Designer.cs">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Frm_Pagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Frm_Pagamento.Designer.cs">
+      <DependentUpon>Frm_Pagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Frm_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +228,9 @@
     <EmbeddedResource Include="View\Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Frm_Pagamento.resx">
+      <DependentUpon>Frm_Pagamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Frm_Principal.resx">
       <DependentUpon>Frm_Principal.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,6 +266,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\TESTE 3.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />

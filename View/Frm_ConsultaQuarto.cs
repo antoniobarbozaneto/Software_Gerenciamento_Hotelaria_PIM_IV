@@ -67,6 +67,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             if (ParamWhere != "")
             {
                 dataGridView_Quartos.DataSource = Ctr_Quarto.Buscar_Quarto(ParamBusca, ParamWhere);
+                EscondeColunas();
             }
             else
             {
@@ -86,7 +87,6 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             }
             else
             {
-                dataGridView_Quartos.Columns[3].Width = 320;
                 btn_Editar.Enabled = true;
                 btn_Excluir.Enabled = true;
             }
@@ -107,6 +107,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 dataGridView_Quartos.Columns["Qtd_Max"].Visible = false;
                 dataGridView_Quartos.Columns["Valor_Diaria"].Visible = false;
                 dataGridView_Quartos.Columns["Refeicao"].Visible = false;
+                dataGridView_Quartos.Columns[3].Width = 320;
             }
         }
 
