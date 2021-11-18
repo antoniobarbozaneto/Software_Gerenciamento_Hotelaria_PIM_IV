@@ -27,9 +27,10 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         {
             if (cbx_FormaPag.Text == "Dinheiro")
             {
-                MessageBox.Show("Forma de pagamento escolhida: Dinheiro");
+                MessageBox.Show("Forma pagamento escolhida: Dinheiro", "Forma Pagamento", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txb_ValorPago.Enabled = true;
                 cbx_Parcelas.Enabled = false;
+                txb_ValorPago.Text = "";
             }
             else
             {
@@ -37,8 +38,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 {
                     cbx_Parcelas.SelectedIndex = 0;
                     txb_Troco.Text = "0";
-                    MessageBox.Show("Forma de pagamento escolhida: Cartão Débito");
-                    cbx_Parcelas.Enabled = false;
+                    MessageBox.Show("Forma pagamento escolhida: Cartão Débito", "Forma Pagamento", MessageBoxButtons.OK, MessageBoxIcon.Information); cbx_Parcelas.Enabled = false;
                     txb_ValorPago.Enabled = false;
                     txb_ValorPago.Text = txb_ValorTotal.Text;
                 }
@@ -46,10 +46,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 {
                     if (cbx_FormaPag.Text == "Cartão Crédito")
                     {
-                        cbx_Parcelas.SelectedIndex = 1;
+                        cbx_Parcelas.SelectedIndex = 0;
                         txb_Troco.Text = "0";
-                        MessageBox.Show("Forma de pagamento escolhida: Cartão Crédito");
-                        cbx_Parcelas.Enabled = true;
+                        MessageBox.Show("Forma pagamento escolhida: Cartão Crédito", "Forma Pagamento", MessageBoxButtons.OK, MessageBoxIcon.Information); cbx_Parcelas.Enabled = true;
                         txb_ValorPago.Enabled = false;
                         txb_ValorPago.Text = txb_ValorTotal.Text;
                     }
@@ -61,6 +60,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         {
             if (VerificaCampos() == true)
             {
+                Pagamento.Numero = txb_NumReserva.Text;
                 Pagamento.Dt_Pagamento = DateTime.Now;
                 if (cbx_FormaPag.Text == "Cartão Débito")
                 {
@@ -68,6 +68,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                     Pagamento.Num_Reserva = Convert.ToInt32(txb_NumReserva.Text);
                     Pagamento.ValorTotal = Convert.ToDouble(txb_ValorTotal.Text);
                     txb_ValorPago.Text = Convert.ToString(Ctr_Pagamento.Realizar_Pagamento(Pagamento));
+                    this.Close();
                 }
                 else
                 {
@@ -78,7 +79,8 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                         Pagamento.ValorTotal = Convert.ToDouble(txb_ValorTotal.Text);
                         Pagamento.NumParcela = Convert.ToInt32(cbx_Parcelas.Text);
                         Pagamento.ValorPago = Convert.ToDouble(txb_ValorPago.Text);
-                        txb_ValorParcela.Text = Convert.ToString(Ctr_Pagamento.Realizar_Pagamento(Pagamento));                        
+                        txb_ValorParcela.Text = Convert.ToString(Ctr_Pagamento.Realizar_Pagamento(Pagamento));
+                        this.Close();
                     }
                     else
                     {
@@ -88,12 +90,19 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                             Pagamento.Num_Reserva = Convert.ToInt32(txb_NumReserva.Text);
                             Pagamento.ValorTotal = Convert.ToDouble(txb_ValorTotal.Text);
                             Pagamento.ValorPago = Convert.ToDouble(txb_ValorPago.Text);
-                            txb_Troco.Text = Convert.ToString(Ctr_Pagamento.Realizar_Pagamento(Pagamento));
+
+                            if (Ctr_Pagamento.Realizar_Pagamento(Pagamento) == -1)
+                            {
+                                MessageBox.Show("Valor insuficiente, informe um novo valor!", "Valor Inválido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                txb_Troco.Text = Convert.ToString(Ctr_Pagamento.Realizar_Pagamento(Pagamento));
+                                this.Close();
+                            }
                         }
                     }
                 }
-                Ctr_Pagamento.AlterarStatusReserva(Pagamento);
-                LimparCampos();
             }
         }
 
@@ -104,7 +113,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         }
         private void cbx_Parcelas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbx_Parcelas.Text == "0")
+            if (cbx_Parcelas.Text.Equals("0"))
             {
                 txb_ValorParcela.Text = Convert.ToString(0);
             }

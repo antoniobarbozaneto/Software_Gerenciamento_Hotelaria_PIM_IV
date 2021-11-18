@@ -17,7 +17,6 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         Hospede Hospede;
         Ctr_Hospede Ctr_Hospede;
         Frm_CadastroHospede Frm_CadastroHospede;
-        Frm_FazerReserva Frm_FazerReserva;
         public Frm_ConsultaHospede()
         {
             Hospede = new Hospede();

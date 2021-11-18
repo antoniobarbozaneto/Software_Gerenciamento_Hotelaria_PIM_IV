@@ -47,6 +47,8 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         private void btn_DarBaixa_Click(object sender, EventArgs e)
         {
             SetaDadosGridParaForms();
+            CarregaListReserva();
+
         }
         private void Frm_ConsultaReserva_Load(object sender, EventArgs e)
         {
@@ -102,7 +104,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 dataGridView_Reservas.Columns["Valor_Diaria"].Visible = false;
                 //
                 dataGridView_Reservas.Columns[0].Width = 120;
-                dataGridView_Reservas.Columns[21].HeaderText = "Número Quarto";
+                dataGridView_Reservas.Columns[22].HeaderText = "Número Quarto";
             }
         }
         public void SetaDadosGridParaForms()

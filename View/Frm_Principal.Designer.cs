@@ -183,8 +183,9 @@
             // consultaToolStripMenuItem4
             // 
             this.consultaToolStripMenuItem4.Name = "consultaToolStripMenuItem4";
-            this.consultaToolStripMenuItem4.Size = new System.Drawing.Size(138, 22);
+            this.consultaToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
             this.consultaToolStripMenuItem4.Text = "Consulta";
+            this.consultaToolStripMenuItem4.Click += new System.EventHandler(this.consultaToolStripMenuItem4_Click);
             // 
             // uSUÁRIOToolStripMenuItem
             // 

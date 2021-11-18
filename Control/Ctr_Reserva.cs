@@ -62,15 +62,15 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
 
         public List<Reserva> BuscarReserva(string ParamBusca, string ParamWhere)
         {
-            if (ParamWhere == "Quarto_Numero")
-            {
-                ParamBusca = "'" + ParamBusca + "'";
+           // if (ParamWhere == "Quarto_Numero")
+           // {
+           //    ParamBusca = "'" + ParamBusca + "'";
+           //     Lista_Reserva = Dao_Reserva.BuscarLista_Reserva(ParamBusca, ParamWhere);
+           // }
+           // else
+           // {
                 Lista_Reserva = Dao_Reserva.BuscarLista_Reserva(ParamBusca, ParamWhere);
-            }
-            else
-            {
-                Lista_Reserva = Dao_Reserva.BuscarLista_Reserva(ParamBusca, ParamWhere);
-            }
+           // }
             return Lista_Reserva;
         }
     }

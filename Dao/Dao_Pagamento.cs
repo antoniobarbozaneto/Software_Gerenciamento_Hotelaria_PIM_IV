@@ -23,13 +23,13 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
         public void Create(Pagamento Pagamento)
         {
-            string comandoSql = "INSERT INTO tbl_Pagamento (Num_Reserva, Forma_Pagamento, Num_Parcelas, Valor_Total, Valor_Pago, Valor_Parcela, Troco, Dt_Pagamento) VALUES(@NUM_RESERVA, @FORMA_PAGAMENTO, @NUM_PARCELAS, @VALOR_TOTAL, @VALOR_PAGO, @VALOR_PARCELA, @TROCO, @DT_PAGAMENTO)";
+            string comandoSql = "INSERT INTO tbl_Pagamento (Num_Reserva, Forma_Pagamento, Num_Parcela, Valor_Total, Valor_Pago, Valor_Parcela, Troco, Dt_Pagamento) VALUES(@NUM_RESERVA, @FORMA_PAGAMENTO, @NUM_PARCELA, @VALOR_TOTAL, @VALOR_PAGO, @VALOR_PARCELA, @TROCO, @DT_PAGAMENTO)";
 
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
             comando.Parameters.AddWithValue("@NUM_RESERVA", Pagamento.Num_Reserva);
             comando.Parameters.AddWithValue("@FORMA_PAGAMENTO", Pagamento.FormPagamento);
-            comando.Parameters.AddWithValue("@NUM_PARCELAS", Pagamento.NumParcela);
+            comando.Parameters.AddWithValue("@NUM_PARCELA", Pagamento.NumParcela);
             comando.Parameters.AddWithValue("@VALOR_TOTAL", Pagamento.ValorTotal);
             comando.Parameters.AddWithValue("@VALOR_PAGO", Pagamento.ValorPago);
             comando.Parameters.AddWithValue("@VALOR_PARCELA", Pagamento.ValorParcela);
@@ -76,7 +76,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
         }
         public void UpdateStatusReserva(Pagamento Pagamento)
         {
-            string comandoSql = "UPDATE tbl_reserva SET Status = 'RECEBIDA' WHERE Num_Reserva = @NUM_RESERVA";
+            string comandoSql = "UPDATE tbl_reserva SET Status_Reserva = 'RECEBIDA' WHERE Num_Reserva = @NUM_RESERVA";
 
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 

@@ -113,8 +113,15 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         private void btn_Confirmar_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK; // para indicar ao Form chamador que o usuário adicionou um cliente
-            this.Close();
+            if (dataGridView_Quartos.CurrentRow.Cells[2].Value.ToString() == "OCUPADO")
+            {
+                MessageBox.Show("Quato indisponível, por favor escolha outro!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                this.DialogResult = DialogResult.OK; // para indicar ao Form chamador que o usuário adicionou um cliente
+                this.Close();
+            }                
         }
     }
 }

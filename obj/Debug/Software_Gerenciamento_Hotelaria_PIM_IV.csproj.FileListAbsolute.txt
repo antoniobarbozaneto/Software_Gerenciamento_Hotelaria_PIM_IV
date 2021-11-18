@@ -153,3 +153,4 @@ C:\Users\6110166\OneDrive - Thomson Reuters Incorporated\Documents\GitHub\Softwa
 C:\Users\6110166\OneDrive - Thomson Reuters Incorporated\Documents\GitHub\Software_Gerenciamento_Hotelaria_PIM_IV\obj\Debug\Software_Gerenciamento_Hotelaria_PIM_IV.View.Frm_Login.resources
 C:\Users\neto_\Documents\GitHub\Software_Gerenciamento_Hotelaria_PIM_IV\obj\Debug\Software_Gerenciamento_Hotelaria_PIM_IV.View.Frm_ConsultaReserva.resources
 C:\Users\neto_\Documents\GitHub\Software_Gerenciamento_Hotelaria_PIM_IV\obj\Debug\Software_Gerenciamento_Hotelaria_PIM_IV.View.Frm_Pagamento.resources
+C:\Users\neto_\Documents\GitHub\Software_Gerenciamento_Hotelaria_PIM_IV\obj\Debug\Software_Gerenciamento_Hotelaria_PIM_IV.View.Frm_ConsultaPagamento.resources

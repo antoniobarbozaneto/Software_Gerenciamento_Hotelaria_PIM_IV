@@ -23,6 +23,8 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
             {
                 Pagamento.ValorPago = Pagamento.ValorTotal;
                 Dao_Pagamento.Create(Pagamento);
+                AlterarStatusQuarto(Pagamento);
+                AlterarStatusReserva(Pagamento);
                 return Pagamento.ValorPago;
             }
             else
@@ -32,12 +34,24 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
                     if (Pagamento.ValorPago == Pagamento.ValorTotal)
                     {
                         Pagamento.ValorTroco = 0;
+                        Dao_Pagamento.Create(Pagamento);
+                        AlterarStatusQuarto(Pagamento);
+                        AlterarStatusReserva(Pagamento);
                     }
                     else
                     {
-                        Pagamento.ValorTroco = Pagamento.ValorPago - Pagamento.ValorTotal;
+                        if (Pagamento.ValorPago > Pagamento.ValorTotal)
+                        {
+                            Pagamento.ValorTroco = Pagamento.ValorPago - Pagamento.ValorTotal;
+                            Dao_Pagamento.Create(Pagamento);
+                            AlterarStatusQuarto(Pagamento);
+                            AlterarStatusReserva(Pagamento);
+                        }
+                        else
+                        {
+                            return -1;
+                        }
                     }
-                    Dao_Pagamento.Create(Pagamento);
                     return Pagamento.ValorTroco;
                 }
                 else
@@ -47,12 +61,14 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
                         Pagamento.ValorParcela = Pagamento.ValorTotal / Pagamento.NumParcela;
                         Console.WriteLine(Pagamento.ValorParcela);
                         Dao_Pagamento.Create(Pagamento);
+                        AlterarStatusQuarto(Pagamento);
+                        AlterarStatusReserva(Pagamento);
                     }
                     return Pagamento.ValorParcela;
                 }
             }
         }
-        public void AlterarStatus(Pagamento Pagamento)
+        public void AlterarStatusQuarto(Pagamento Pagamento)
         {
             Dao_Pagamento.UpdateStatusDisponivel(Pagamento);
         }

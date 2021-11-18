@@ -148,6 +148,12 @@
     <Compile Include="View\Frm_ConsultaHospede.Designer.cs">
       <DependentUpon>Frm_ConsultaHospede.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Frm_ConsultaPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Frm_ConsultaPagamento.Designer.cs">
+      <DependentUpon>Frm_ConsultaPagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Frm_ConsultaQuarto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Frm_ConsultaHospede.resx">
       <DependentUpon>Frm_ConsultaHospede.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Frm_ConsultaPagamento.resx">
+      <DependentUpon>Frm_ConsultaPagamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Frm_ConsultaQuarto.resx">
       <DependentUpon>Frm_ConsultaQuarto.cs</DependentUpon>

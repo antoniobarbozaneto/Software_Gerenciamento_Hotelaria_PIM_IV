@@ -25,7 +25,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
         public void Create(Reserva Reserva)
         {
 
-            string comandoSql = "INSERT INTO tbl_Reserva (Dt_Checkin, Dt_Checkout, Quarto_Numero, Id_Hospede, ValorTotal, Status) VALUES (@DT_CHECKIN, @DT_CHECKOUT, @NUM_QUARTO, @ID_HOSPEDE, @VALOR_TOTAL, @STATUS)";
+            string comandoSql = "INSERT INTO tbl_Reserva (Dt_Checkin, Dt_Checkout, Quarto_Numero, Id_Hospede, ValorTotal, Status_Reserva) VALUES (@DT_CHECKIN, @DT_CHECKOUT, @NUM_QUARTO, @ID_HOSPEDE, @VALOR_TOTAL, @STATUS_RESERVA)";
 
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
@@ -34,7 +34,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             comando.Parameters.AddWithValue("@NUM_QUARTO", Reserva.Numero);
             comando.Parameters.AddWithValue("@ID_HOSPEDE", Reserva.Id_Hospede);
             comando.Parameters.AddWithValue("@VALOR_TOTAL", Reserva.ValorTotal);
-            comando.Parameters.AddWithValue("@STATUS", Reserva.Status);
+            comando.Parameters.AddWithValue("@STATUS_RESERVA", Reserva.Status_Reserva);
 
             try
             {
@@ -139,7 +139,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
         public List<Reserva> CarregarLista_Reserva()
         {
-            string comandoSql = "SELECT * FROM tbl_reserva WHERE STATUS LIKE '%A RECEBER%'";
+            string comandoSql = "SELECT * FROM tbl_reserva WHERE Status_Reserva LIKE '%A RECEBER%'";
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
             List<Reserva> ListaReserva = new List<Reserva>();
@@ -158,7 +158,8 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                         Dt_Checkout = Convert.ToDateTime(rd["DT_CHECKOUT"]),
                         Numero = Convert.ToString(rd["QUARTO_NUMERO"]),
                         Id_Hospede = Convert.ToInt32(rd["ID_HOSPEDE"]),
-                        ValorTotal = Convert.ToDouble(rd["VALORTOTAL"])
+                        ValorTotal = Convert.ToDouble(rd["VALORTOTAL"]),
+                        Status_Reserva = Convert.ToString(rd["STATUS_RESERVA"])
                     }); ;
 
                 }
@@ -186,7 +187,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
         public List<Reserva> BuscarLista_Reserva(string ParamWhere, string ParamBusca)
         {
-            string comandoSql = "SELECT * FROM tbl_Reserva WHERE " + ParamBusca + " = " + ParamWhere + "";
+            string comandoSql = "SELECT * FROM tbl_Reserva WHERE " + ParamBusca + " LIKE '%" + ParamWhere + "%'";
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
             Console.WriteLine(comandoSql);
             List<Reserva> ListaReserva = new List<Reserva>();
@@ -205,7 +206,8 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                         Dt_Checkout = Convert.ToDateTime(rd["DT_CHECKOUT"]),
                         Numero = Convert.ToString(rd["QUARTO_NUMERO"]),
                         Id_Hospede = Convert.ToInt32(rd["ID_HOSPEDE"]),
-                        ValorTotal = Convert.ToDouble(rd["VALORTOTAL"])
+                        ValorTotal = Convert.ToDouble(rd["VALORTOTAL"]),
+                        Status_Reserva = Convert.ToString(rd["STATUS_RESERVA"])
                     }); ;
 
                 }
