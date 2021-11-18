@@ -63,9 +63,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Background {
+        internal static System.Drawing.Bitmap Bkg {
             get {
-                object obj = ResourceManager.GetObject("Background", resourceCulture);
+                object obj = ResourceManager.GetObject("Bkg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap HOtech {
+        internal static System.Drawing.Bitmap HOtech_Log {
             get {
-                object obj = ResourceManager.GetObject("HOtech", resourceCulture);
+                object obj = ResourceManager.GetObject("HOtech_Log", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap TESTE_3 {
+        internal static System.Drawing.Bitmap HOtech_prin {
             get {
-                object obj = ResourceManager.GetObject("TESTE 3", resourceCulture);
+                object obj = ResourceManager.GetObject("HOtech_prin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

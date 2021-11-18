@@ -164,7 +164,7 @@
             this.cbx_Parcelas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_Parcelas.FormattingEnabled = true;
             this.cbx_Parcelas.Items.AddRange(new object[] {
-            "",
+            "0",
             "1",
             "2",
             "3",
@@ -175,6 +175,7 @@
             this.cbx_Parcelas.Name = "cbx_Parcelas";
             this.cbx_Parcelas.Size = new System.Drawing.Size(53, 21);
             this.cbx_Parcelas.TabIndex = 8;
+            this.cbx_Parcelas.SelectedIndexChanged += new System.EventHandler(this.cbx_Parcelas_SelectedIndexChanged);
             // 
             // txb_ValorPago
             // 

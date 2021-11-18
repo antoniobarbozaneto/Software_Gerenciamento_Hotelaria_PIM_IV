@@ -25,7 +25,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
         public void Create(Reserva Reserva)
         {
 
-            string comandoSql = "INSERT INTO tbl_Reserva (Dt_Checkin, Dt_Checkout, Quarto_Numero, Id_Hospede, ValorTotal) VALUES (@DT_CHECKIN, @DT_CHECKOUT, @NUM_QUARTO, @ID_HOSPEDE, @VALOR_TOTAL)";
+            string comandoSql = "INSERT INTO tbl_Reserva (Dt_Checkin, Dt_Checkout, Quarto_Numero, Id_Hospede, ValorTotal, Status) VALUES (@DT_CHECKIN, @DT_CHECKOUT, @NUM_QUARTO, @ID_HOSPEDE, @VALOR_TOTAL, @STATUS)";
 
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
@@ -34,6 +34,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             comando.Parameters.AddWithValue("@NUM_QUARTO", Reserva.Numero);
             comando.Parameters.AddWithValue("@ID_HOSPEDE", Reserva.Id_Hospede);
             comando.Parameters.AddWithValue("@VALOR_TOTAL", Reserva.ValorTotal);
+            comando.Parameters.AddWithValue("@STATUS", Reserva.Status);
 
             try
             {
@@ -52,7 +53,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             }
         }
         //
-        public void UpdateStatus(Reserva Reserva)
+        public void UpdateStatusOcupado(Reserva Reserva)
         {
             string comandoSql = "UPDATE tbl_quarto SET Status = 'OCUPADO' WHERE Numero = @NUM_QUARTO";
 
@@ -138,7 +139,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
         public List<Reserva> CarregarLista_Reserva()
         {
-            string comandoSql = "SELECT * FROM tbl_reserva";
+            string comandoSql = "SELECT * FROM tbl_reserva WHERE STATUS LIKE '%A RECEBER%'";
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
             List<Reserva> ListaReserva = new List<Reserva>();

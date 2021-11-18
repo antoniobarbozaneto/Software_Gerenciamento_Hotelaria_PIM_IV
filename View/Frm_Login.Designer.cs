@@ -117,20 +117,20 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Software_Gerenciamento_Hotelaria_PIM_IV.Properties.Resources.TESTE_3;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Image = global::Software_Gerenciamento_Hotelaria_PIM_IV.Properties.Resources.HOtech_Log;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 33);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(487, 125);
+            this.pictureBox1.Size = new System.Drawing.Size(487, 101);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
             // Frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.BackgroundImage = global::Software_Gerenciamento_Hotelaria_PIM_IV.Properties.Resources.Background;
+            this.BackColor = System.Drawing.Color.DarkCyan;
+            this.BackgroundImage = global::Software_Gerenciamento_Hotelaria_PIM_IV.Properties.Resources.Bkg;
             this.ClientSize = new System.Drawing.Size(511, 291);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);

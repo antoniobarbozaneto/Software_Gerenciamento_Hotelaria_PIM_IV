@@ -93,7 +93,8 @@
             this.cbx_FiltroReserva.Items.AddRange(new object[] {
             "Num_Reserva",
             "Id_Hospede",
-            "Quarto_Numero"});
+            "Quarto_Numero",
+            "Status"});
             this.cbx_FiltroReserva.Location = new System.Drawing.Point(19, 42);
             this.cbx_FiltroReserva.Name = "cbx_FiltroReserva";
             this.cbx_FiltroReserva.Size = new System.Drawing.Size(121, 21);

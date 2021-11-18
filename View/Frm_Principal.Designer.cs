@@ -98,7 +98,7 @@
             // consultaToolStripMenuItem2
             // 
             this.consultaToolStripMenuItem2.Name = "consultaToolStripMenuItem2";
-            this.consultaToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.consultaToolStripMenuItem2.Size = new System.Drawing.Size(138, 22);
             this.consultaToolStripMenuItem2.Text = "Consulta";
             this.consultaToolStripMenuItem2.Click += new System.EventHandler(this.consultaToolStripMenuItem2_Click);
             // 
@@ -242,13 +242,12 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Software_Gerenciamento_Hotelaria_PIM_IV.Properties.Resources.HOtech;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 27);
+            this.pictureBox1.Image = global::Software_Gerenciamento_Hotelaria_PIM_IV.Properties.Resources.HOtech_prin;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 39);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(704, 424);
+            this.pictureBox1.Size = new System.Drawing.Size(680, 372);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
             // Frm_Principal
@@ -256,7 +255,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.BackgroundImage = global::Software_Gerenciamento_Hotelaria_PIM_IV.Properties.Resources.Background;
+            this.BackgroundImage = global::Software_Gerenciamento_Hotelaria_PIM_IV.Properties.Resources.Bkg;
             this.ClientSize = new System.Drawing.Size(704, 450);
             this.Controls.Add(this.lbl_DateTime);
             this.Controls.Add(this.lbl_usuario);

@@ -76,6 +76,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 Reserva.Tipo = txb_TipoQuarto.Text;
                 Reserva.Id_Hospede = Convert.ToInt32(txb_IdHospede.Text);
                 Reserva.Numero = txb_NumQuarto.Text;
+                Reserva.Status = "A RECEBER";
                 //
                 if (Ctr_Reserva.Verifica_QtdHospede(Reserva) == false)
                 {

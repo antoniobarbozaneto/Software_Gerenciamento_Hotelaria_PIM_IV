@@ -108,6 +108,7 @@
     <Compile Include="Control\Ctr_Usuario.cs" />
     <Compile Include="Control\Ctr_Pagamento.cs" />
     <Compile Include="Dao\Dao_Hospede.cs" />
+    <Compile Include="Dao\Dao_Pagamento.cs" />
     <Compile Include="Dao\Dao_Quarto.cs" />
     <Compile Include="Dao\Dao_Reserva.cs" />
     <Compile Include="Dao\Dao_TipoQuarto.cs" />
@@ -118,6 +119,11 @@
     <Compile Include="Model\Reserva.cs" />
     <Compile Include="Model\TipoQuarto.cs" />
     <Compile Include="Model\Usuario.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="View\Frm_CadastroQuarto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,14 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="View\Frm_CadastroHospede.resx">
       <DependentUpon>Frm_CadastroHospede.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,13 +263,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\HOtech.png" />
+    <None Include="Resources\HOtech_Log.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Background.png" />
+    <None Include="Resources\Bkg.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\TESTE 3.PNG" />
+    <None Include="Resources\HOtech_prin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />

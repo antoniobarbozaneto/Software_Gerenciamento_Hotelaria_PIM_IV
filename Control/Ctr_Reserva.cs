@@ -23,7 +23,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
         
         public void AlterarStatus(Reserva Reserva)
         {
-            Dao_Reserva.UpdateStatus(Reserva);
+            Dao_Reserva.UpdateStatusOcupado(Reserva);
         }
         
         public bool Verifica_QtdHospede(Reserva Reserva)
@@ -65,7 +65,6 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
             if (ParamWhere == "Quarto_Numero")
             {
                 ParamBusca = "'" + ParamBusca + "'";
-                Console.WriteLine("TESTE" + ParamBusca);
                 Lista_Reserva = Dao_Reserva.BuscarLista_Reserva(ParamBusca, ParamWhere);
             }
             else
