@@ -38,7 +38,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             {
                 conexao.Open();
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Tipo Quarto Cadastrado com sucesso!!!", "Tipo de Quarto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Tipo de Quarto: "+ TipoQuarto.Tipo+" Cadastrado com sucesso!!!", "Tipo de Quarto", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (NpgsqlException ex)
             {
@@ -88,7 +88,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             {
                 conexao.Open();
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Tipo Quarto deletado com sucesso!!!");
+                MessageBox.Show("Tipo de Quarto: " + TipoQuarto.Tipo + " deletado com sucesso!!!", "Tipo de Quarto", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (NpgsqlException ex)
             {
@@ -189,6 +189,35 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             {
                 conexao.Close();
             }
+        }
+        public int Verif_TipoQuartoUsado(TipoQuarto TipoQuarto)
+        {
+            int Qtd_QuartoUsado = 0;
+            string comandoSql = "SELECT COUNT(*) FROM TBL_QUARTO WHERE TIPO_QUARTO = @TIPO_QUARTO";
+            NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
+
+            comando.Parameters.AddWithValue("@TIPO_QUARTO", TipoQuarto.Tipo);
+
+            try
+            {
+                conexao.Open();
+                NpgsqlDataReader rd = comando.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    Qtd_QuartoUsado = rd.GetInt32(0);                
+                }
+            }
+            catch (NpgsqlException ex)
+            {
+                // Handle the SQL Exception as you wish
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return Qtd_QuartoUsado;
         }
     }
 }

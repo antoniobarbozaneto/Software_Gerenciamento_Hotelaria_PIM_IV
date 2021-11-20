@@ -25,6 +25,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         private void cbx_FormaPag_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txb_ValorPago.ReadOnly = false;
             if (cbx_FormaPag.Text == "Dinheiro")
             {
                 MessageBox.Show("Forma pagamento escolhida: Dinheiro", "Forma Pagamento", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -60,13 +61,17 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         {
             if (VerificaCampos() == true)
             {
-                Pagamento.Numero = txb_NumReserva.Text;
+                Pagamento.Numero = txb_NumQuarto.Text;
                 Pagamento.Dt_Pagamento = DateTime.Now;
+                Pagamento.FormPagamento = cbx_FormaPag.Text;
+                Pagamento.Num_Reserva = Convert.ToInt32(txb_NumReserva.Text);
+                Pagamento.ValorTotal = Convert.ToDouble(txb_ValorTotal.Text);
+
                 if (cbx_FormaPag.Text == "Cartão Débito")
                 {
-                    Pagamento.FormPagamento = cbx_FormaPag.Text;
-                    Pagamento.Num_Reserva = Convert.ToInt32(txb_NumReserva.Text);
-                    Pagamento.ValorTotal = Convert.ToDouble(txb_ValorTotal.Text);
+                    //Pagamento.FormPagamento = cbx_FormaPag.Text;
+                    //Pagamento.Num_Reserva = Convert.ToInt32(txb_NumReserva.Text);
+                    //Pagamento.ValorTotal = Convert.ToDouble(txb_ValorTotal.Text);
                     txb_ValorPago.Text = Convert.ToString(Ctr_Pagamento.Realizar_Pagamento(Pagamento));
                     this.Close();
                 }
@@ -74,9 +79,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 {
                     if (cbx_FormaPag.Text == "Cartão Crédito")
                     {
-                        Pagamento.FormPagamento = cbx_FormaPag.Text;
-                        Pagamento.Num_Reserva = Convert.ToInt32(txb_NumReserva.Text);
-                        Pagamento.ValorTotal = Convert.ToDouble(txb_ValorTotal.Text);
+                        //Pagamento.FormPagamento = cbx_FormaPag.Text;
+                        //Pagamento.Num_Reserva = Convert.ToInt32(txb_NumReserva.Text);
+                        //Pagamento.ValorTotal = Convert.ToDouble(txb_ValorTotal.Text);
                         Pagamento.NumParcela = Convert.ToInt32(cbx_Parcelas.Text);
                         Pagamento.ValorPago = Convert.ToDouble(txb_ValorPago.Text);
                         txb_ValorParcela.Text = Convert.ToString(Ctr_Pagamento.Realizar_Pagamento(Pagamento));
@@ -86,19 +91,34 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                     {
                         if (cbx_FormaPag.Text == "Dinheiro")
                         {
-                            Pagamento.FormPagamento = cbx_FormaPag.Text;
-                            Pagamento.Num_Reserva = Convert.ToInt32(txb_NumReserva.Text);
-                            Pagamento.ValorTotal = Convert.ToDouble(txb_ValorTotal.Text);
+                            //Pagamento.FormPagamento = cbx_FormaPag.Text;
+                            //Pagamento.Num_Reserva = Convert.ToInt32(txb_NumReserva.Text);
+                            //Pagamento.ValorTotal = Convert.ToDouble(txb_ValorTotal.Text);
                             Pagamento.ValorPago = Convert.ToDouble(txb_ValorPago.Text);
 
-                            if (Ctr_Pagamento.Realizar_Pagamento(Pagamento) == -1)
+                            if (Ctr_Pagamento.VerificaValorPago(Pagamento) == false)
                             {
                                 MessageBox.Show("Valor insuficiente, informe um novo valor!", "Valor Inválido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
                             {
-                                txb_Troco.Text = Convert.ToString(Ctr_Pagamento.Realizar_Pagamento(Pagamento));
-                                this.Close();
+                                txb_Troco.Text = Convert.ToString(Pagamento.ValorPago - Pagamento.ValorTotal);
+    
+                                var ResultResp = MessageBox.Show(
+                                    " Valor total da Reserva: R$" + txb_ValorTotal.Text +
+                                    "\n Valor Pago: R$" + txb_ValorPago.Text +
+                                    "\n Valor Troco: R$" + txb_Troco.Text+
+                                    "\n \n Deseja Confirmar o Pagamento?", "Pagamento", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                                if (ResultResp == System.Windows.Forms.DialogResult.Yes)
+                                {
+                                    Convert.ToString(Ctr_Pagamento.Realizar_Pagamento(Pagamento));
+                                    this.Close();
+                                }
+                                else
+                                {
+                                    this.Close();
+                                }
                             }
                         }
                     }
@@ -113,7 +133,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         }
         private void cbx_Parcelas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbx_Parcelas.Text.Equals("0"))
+            if (cbx_Parcelas.Text.Equals("0") || cbx_Parcelas.Text.Equals(""))
             {
                 txb_ValorParcela.Text = Convert.ToString(0);
             }
@@ -126,22 +146,25 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 txb_ValorParcela.Text = Convert.ToString(Pagamento.ValorTotal / Pagamento.NumParcela);
             }
         }
-
+        private void Frm_Pagamento_Load(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
         //mtd uteis
         public void LimparCampos()
         {
-            txb_NumReserva.Text = "";
-            cbx_FormaPag.Text = "";
-            cbx_Parcelas.Text = "";
+            cbx_FormaPag.SelectedIndex = -1;
+            cbx_Parcelas.SelectedIndex = -1;
             txb_ValorParcela.Text = "";
             txb_ValorPago.Text = "";
-            txb_ValorTotal.Text = "";
+            txb_Troco.Text = "";
+            txb_ValorPago.ReadOnly = true;
         }
 
         public bool VerificaCampos()
         {
             bool res;
-            if (txb_NumReserva.Text != "" && cbx_FormaPag.Text != "" && txb_ValorTotal.Text != "" && txb_ValorPago.Text !="")
+            if (txb_NumReserva.Text != "" && cbx_FormaPag.Text != "" && txb_ValorTotal.Text != "" && txb_ValorPago.Text != "")
             {
                 res = true; //Está tudo preenchido!
             }

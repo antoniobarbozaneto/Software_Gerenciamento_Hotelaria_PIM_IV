@@ -45,6 +45,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_Confirmar = new System.Windows.Forms.Button();
+            this.txb_NumQuarto = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +54,7 @@
             // 
             this.btn_Cancelar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Cancelar.ForeColor = System.Drawing.Color.Red;
-            this.btn_Cancelar.Location = new System.Drawing.Point(192, 252);
+            this.btn_Cancelar.Location = new System.Drawing.Point(192, 279);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(100, 29);
             this.btn_Cancelar.TabIndex = 15;
@@ -62,6 +64,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txb_NumQuarto);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txb_ValorParcela);
             this.groupBox1.Controls.Add(this.txb_NumReserva);
@@ -77,7 +81,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 58);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(344, 188);
+            this.groupBox1.Size = new System.Drawing.Size(344, 215);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             // 
@@ -85,7 +89,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(39, 81);
+            this.label7.Location = new System.Drawing.Point(39, 107);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(123, 16);
             this.label7.TabIndex = 57;
@@ -93,7 +97,7 @@
             // 
             // txb_ValorParcela
             // 
-            this.txb_ValorParcela.Location = new System.Drawing.Point(168, 80);
+            this.txb_ValorParcela.Location = new System.Drawing.Point(168, 106);
             this.txb_ValorParcela.Name = "txb_ValorParcela";
             this.txb_ValorParcela.ReadOnly = true;
             this.txb_ValorParcela.Size = new System.Drawing.Size(100, 20);
@@ -121,7 +125,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(80, 133);
+            this.label5.Location = new System.Drawing.Point(80, 159);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(82, 16);
             this.label5.TabIndex = 11;
@@ -135,7 +139,7 @@
             "Cartão Crédito",
             "Cartão Débito",
             "Dinheiro"});
-            this.cbx_FormaPag.Location = new System.Drawing.Point(168, 53);
+            this.cbx_FormaPag.Location = new System.Drawing.Point(168, 79);
             this.cbx_FormaPag.Name = "cbx_FormaPag";
             this.cbx_FormaPag.Size = new System.Drawing.Size(100, 21);
             this.cbx_FormaPag.TabIndex = 0;
@@ -143,7 +147,7 @@
             // 
             // txb_ValorTotal
             // 
-            this.txb_ValorTotal.Location = new System.Drawing.Point(168, 106);
+            this.txb_ValorTotal.Location = new System.Drawing.Point(168, 132);
             this.txb_ValorTotal.Name = "txb_ValorTotal";
             this.txb_ValorTotal.ReadOnly = true;
             this.txb_ValorTotal.Size = new System.Drawing.Size(100, 20);
@@ -153,7 +157,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(82, 107);
+            this.label1.Location = new System.Drawing.Point(82, 133);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 16);
             this.label1.TabIndex = 2;
@@ -171,7 +175,7 @@
             "4",
             "5",
             "6"});
-            this.cbx_Parcelas.Location = new System.Drawing.Point(274, 53);
+            this.cbx_Parcelas.Location = new System.Drawing.Point(274, 79);
             this.cbx_Parcelas.Name = "cbx_Parcelas";
             this.cbx_Parcelas.Size = new System.Drawing.Size(53, 21);
             this.cbx_Parcelas.TabIndex = 8;
@@ -179,7 +183,7 @@
             // 
             // txb_ValorPago
             // 
-            this.txb_ValorPago.Location = new System.Drawing.Point(168, 132);
+            this.txb_ValorPago.Location = new System.Drawing.Point(168, 158);
             this.txb_ValorPago.Name = "txb_ValorPago";
             this.txb_ValorPago.Size = new System.Drawing.Size(100, 20);
             this.txb_ValorPago.TabIndex = 3;
@@ -188,7 +192,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(12, 54);
+            this.label3.Location = new System.Drawing.Point(12, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(150, 16);
             this.label3.TabIndex = 7;
@@ -196,7 +200,7 @@
             // 
             // txb_Troco
             // 
-            this.txb_Troco.Location = new System.Drawing.Point(168, 158);
+            this.txb_Troco.Location = new System.Drawing.Point(168, 184);
             this.txb_Troco.Name = "txb_Troco";
             this.txb_Troco.ReadOnly = true;
             this.txb_Troco.Size = new System.Drawing.Size(100, 20);
@@ -206,7 +210,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(115, 159);
+            this.label2.Location = new System.Drawing.Point(115, 185);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 16);
             this.label2.TabIndex = 5;
@@ -226,7 +230,7 @@
             // 
             this.btn_Confirmar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Confirmar.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btn_Confirmar.Location = new System.Drawing.Point(86, 252);
+            this.btn_Confirmar.Location = new System.Drawing.Point(86, 279);
             this.btn_Confirmar.Name = "btn_Confirmar";
             this.btn_Confirmar.Size = new System.Drawing.Size(100, 29);
             this.btn_Confirmar.TabIndex = 13;
@@ -234,11 +238,29 @@
             this.btn_Confirmar.UseVisualStyleBackColor = true;
             this.btn_Confirmar.Click += new System.EventHandler(this.btn_Confirmar_Click);
             // 
+            // txb_NumQuarto
+            // 
+            this.txb_NumQuarto.Location = new System.Drawing.Point(168, 53);
+            this.txb_NumQuarto.Name = "txb_NumQuarto";
+            this.txb_NumQuarto.ReadOnly = true;
+            this.txb_NumQuarto.Size = new System.Drawing.Size(53, 20);
+            this.txb_NumQuarto.TabIndex = 58;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(53, 54);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(109, 16);
+            this.label8.TabIndex = 59;
+            this.label8.Text = "Número Quarto:";
+            // 
             // Frm_Pagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 290);
+            this.ClientSize = new System.Drawing.Size(368, 318);
             this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
@@ -247,6 +269,7 @@
             this.Name = "Frm_Pagamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pagamento";
+            this.Load += new System.EventHandler(this.Frm_Pagamento_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -273,5 +296,7 @@
         public System.Windows.Forms.ComboBox cbx_Parcelas;
         public System.Windows.Forms.TextBox txb_ValorPago;
         public System.Windows.Forms.TextBox txb_Troco;
+        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.TextBox txb_NumQuarto;
     }
 }

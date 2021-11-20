@@ -50,16 +50,17 @@
             this.btn_Atualizar.TabIndex = 58;
             this.btn_Atualizar.Text = "ATUALIZAR";
             this.btn_Atualizar.UseVisualStyleBackColor = true;
+            this.btn_Atualizar.Click += new System.EventHandler(this.btn_Atualizar_Click);
             // 
             // label50
             // 
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label50.Location = new System.Drawing.Point(268, 34);
+            this.label50.Location = new System.Drawing.Point(222, 33);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(201, 19);
+            this.label50.Size = new System.Drawing.Size(229, 19);
             this.label50.TabIndex = 55;
-            this.label50.Text = "Consulta de Pagamentos";
+            this.label50.Text = "Consulta de Reservas Pagas";
             // 
             // groupBox30
             // 
@@ -84,6 +85,7 @@
             this.btn_Buscar.TabIndex = 27;
             this.btn_Buscar.Text = "BUSCAR";
             this.btn_Buscar.UseVisualStyleBackColor = true;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
             // 
             // dataGridView_Pagamentos
             // 
@@ -142,6 +144,7 @@
             this.Name = "Frm_ConsultaPagamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Pagamentos";
+            this.Load += new System.EventHandler(this.Frm_ConsultaPagamento_Load);
             this.groupBox30.ResumeLayout(false);
             this.groupBox30.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Pagamentos)).EndInit();

@@ -103,7 +103,10 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 }
             }
         }
-
+        private void Frm_FazerReserva_Load(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
         //mtd uteis
         public void LimparCampos()
         {
@@ -121,7 +124,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         public bool VerificaCampos()
         {
             bool res;
-            if (txb_IdHospede.Text != "" && txb_Nome.Text != "" && txb_NumQuarto.Text != "" && txb_TipoQuarto.Text != "" && maskedtxb_dtCheckin.MaskCompleted && maskedtxb_dtCheckout.MaskCompleted && txb_QtdHospede.Text != "" &&  (maskedtxb_Cpf.MaskCompleted || maskedtxb_Passaporte.MaskCompleted))
+            if (txb_IdHospede.Text != "" && txb_Nome.Text != "" && txb_NumQuarto.Text != "" && txb_TipoQuarto.Text != "" && maskedtxb_dtCheckin.MaskCompleted && maskedtxb_dtCheckout.MaskCompleted && txb_QtdHospede.Text != "" && (maskedtxb_Cpf.MaskCompleted || maskedtxb_Passaporte.MaskCompleted))
             {
                 res = true; //Está tudo preenchido!
             }

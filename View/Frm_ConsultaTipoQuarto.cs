@@ -30,12 +30,19 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         {
             TipoQuarto.Tipo = dataGridView_TipoQuarto.CurrentRow.Cells[0].Value.ToString();
 
-            var ResultResp = MessageBox.Show("Deseja realmente excluir o Tipo Quarto selecionado?", "Exclusão Tipo Quarto", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (ResultResp == System.Windows.Forms.DialogResult.Yes)
+            if (Ctr_TipoQuarto.Verifica_TipoQtdUso(TipoQuarto) == true)
             {
-                Ctr_TipoQuarto.Excluir(TipoQuarto);
-                CarregaListaTipoQuarto();
+                MessageBox.Show("Tipo Quarto está em uso no momento não é permitido a exclusão.", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                var ResultResp = MessageBox.Show("Deseja realmente excluir o Tipo Quarto selecionado?", "Exclusão Tipo Quarto", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (ResultResp == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Ctr_TipoQuarto.Excluir(TipoQuarto);
+                    CarregaListaTipoQuarto();
+                }
             }
         }
 

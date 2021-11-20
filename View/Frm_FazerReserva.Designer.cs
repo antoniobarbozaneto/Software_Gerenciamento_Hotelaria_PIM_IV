@@ -31,6 +31,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txb_IdHospede = new System.Windows.Forms.TextBox();
             this.btn_BuscarHospede = new System.Windows.Forms.Button();
             this.txb_Nome = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -57,8 +59,6 @@
             this.btn_Confirmar = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
-            this.txb_IdHospede = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -109,6 +109,25 @@
             this.groupBox2.TabIndex = 53;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dados Hóspede";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(139, 65);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(29, 16);
+            this.label9.TabIndex = 58;
+            this.label9.Text = "*Id:";
+            // 
+            // txb_IdHospede
+            // 
+            this.txb_IdHospede.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txb_IdHospede.Location = new System.Drawing.Point(174, 64);
+            this.txb_IdHospede.Name = "txb_IdHospede";
+            this.txb_IdHospede.ReadOnly = true;
+            this.txb_IdHospede.Size = new System.Drawing.Size(51, 20);
+            this.txb_IdHospede.TabIndex = 57;
             // 
             // btn_BuscarHospede
             // 
@@ -388,25 +407,6 @@
             this.label19.TabIndex = 62;
             this.label19.Text = "(* Campos obrigatórios)";
             // 
-            // txb_IdHospede
-            // 
-            this.txb_IdHospede.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txb_IdHospede.Location = new System.Drawing.Point(174, 64);
-            this.txb_IdHospede.Name = "txb_IdHospede";
-            this.txb_IdHospede.ReadOnly = true;
-            this.txb_IdHospede.Size = new System.Drawing.Size(51, 20);
-            this.txb_IdHospede.TabIndex = 57;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(139, 65);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(29, 16);
-            this.label9.TabIndex = 58;
-            this.label9.Text = "*Id:";
-            // 
             // Frm_FazerReserva
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -419,6 +419,7 @@
             this.Name = "Frm_FazerReserva";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fazer Reserva";
+            this.Load += new System.EventHandler(this.Frm_FazerReserva_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

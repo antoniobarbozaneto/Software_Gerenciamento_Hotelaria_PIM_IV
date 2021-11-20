@@ -11,7 +11,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
     class Ctr_Pagamento
     {
         Dao_Pagamento Dao_Pagamento;
-
+        List<Pagamento> Lista_Pagamento;
         public Ctr_Pagamento()
         {
             Dao_Pagamento = new Dao_Pagamento();
@@ -47,10 +47,6 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
                             AlterarStatusQuarto(Pagamento);
                             AlterarStatusReserva(Pagamento);
                         }
-                        else
-                        {
-                            return -1;
-                        }
                     }
                     return Pagamento.ValorTroco;
                 }
@@ -72,10 +68,28 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
         {
             Dao_Pagamento.UpdateStatusDisponivel(Pagamento);
         }
-
         public void AlterarStatusReserva(Pagamento Pagamento)
         {
             Dao_Pagamento.UpdateStatusReserva(Pagamento);
+        }
+        public bool VerificaValorPago(Pagamento Pagamento)
+        {
+            bool res;
+
+            if(Pagamento.ValorPago > Pagamento.ValorTotal)
+            {
+                res = true;
+            }
+            else
+            {
+                res = false;
+            }
+            return res;
+        }
+        public List<Pagamento> Carrega_Pagamento()
+        {
+            Lista_Pagamento = Dao_Pagamento.CarregarLista_Pagamento();
+            return Lista_Pagamento;
         }
     }
 }

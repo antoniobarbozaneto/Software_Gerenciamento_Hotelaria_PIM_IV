@@ -34,14 +34,20 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         }
         private void btn_Excluir_Click(object sender, EventArgs e)
         {
-            Quarto.Numero = dataGridView_Quartos.CurrentRow.Cells[0].Value.ToString();
-
-            var ResultResp = MessageBox.Show("Deseja realmente excluir o Quarto selecionado?", "Exclusão Quarto", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (ResultResp == System.Windows.Forms.DialogResult.Yes)
+            if (dataGridView_Quartos.CurrentRow.Cells[2].Value.ToString() == "OCUPADO")
             {
-                Ctr_Quarto.Excluir(Quarto);
-                CarregaListaQuarto();
+                MessageBox.Show("Quarto está reservado no momento não é permitido a exclusão.", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                Quarto.Numero = dataGridView_Quartos.CurrentRow.Cells[0].Value.ToString();
+                var ResultResp = MessageBox.Show("Deseja realmente excluir o quarto número: "+Quarto.Numero+" selecionado?", "Exclusão Quarto", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (ResultResp == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Ctr_Quarto.Excluir(Quarto);
+                    CarregaListaQuarto();
+                }
             }
         }        
 
@@ -104,10 +110,10 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         {
             if (dataGridView_Quartos.Columns.Count > 3)
             {
-                dataGridView_Quartos.Columns["Qtd_Max"].Visible = false;
-                dataGridView_Quartos.Columns["Valor_Diaria"].Visible = false;
-                dataGridView_Quartos.Columns["Refeicao"].Visible = false;
-                dataGridView_Quartos.Columns[3].Width = 320;
+               dataGridView_Quartos.Columns["Qtd_Max"].Visible = false;
+               dataGridView_Quartos.Columns["Valor_Diaria"].Visible = false;
+               dataGridView_Quartos.Columns["Refeicao"].Visible = false;
+               dataGridView_Quartos.Columns[3].Width = 320;
             }
         }
 

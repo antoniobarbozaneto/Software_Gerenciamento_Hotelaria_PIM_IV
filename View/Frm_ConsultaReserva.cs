@@ -46,9 +46,15 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         private void btn_DarBaixa_Click(object sender, EventArgs e)
         {
-            SetaDadosGridParaForms();
-            CarregaListReserva();
-
+            if (dataGridView_Reservas.CurrentRow.Cells[5].Value.ToString() == "RECEBIDA")
+            {
+                MessageBox.Show("Essa Reserva já foi paga, por favor escolha outra!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                SetaDadosGridParaForms();
+                CarregaListReserva();
+            }
         }
         private void Frm_ConsultaReserva_Load(object sender, EventArgs e)
         {
@@ -104,12 +110,13 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 dataGridView_Reservas.Columns["Valor_Diaria"].Visible = false;
                 //
                 dataGridView_Reservas.Columns[0].Width = 120;
-                dataGridView_Reservas.Columns[22].HeaderText = "Número Quarto";
+                dataGridView_Reservas.Columns[22].HeaderText = "Número Quarto";                
             }
         }
         public void SetaDadosGridParaForms()
         {
             Frm_Pagamento.txb_NumReserva.Text = dataGridView_Reservas.CurrentRow.Cells[0].Value.ToString();
+            Frm_Pagamento.txb_NumQuarto.Text = dataGridView_Reservas.CurrentRow.Cells[22].Value.ToString();
             Frm_Pagamento.txb_ValorTotal.Text = dataGridView_Reservas.CurrentRow.Cells[4].Value.ToString();
             Frm_Pagamento.ShowDialog();
         }

@@ -120,6 +120,53 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                 conexao.Close();
             }
         }
+        public List<Pagamento> CarregarLista_Pagamento()
+        {
+            string comandoSql = "SELECT * FROM tbl_Pagamento";
+            NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
+            List<Pagamento> ListaPagamento = new List<Pagamento>();
+
+            try
+            {
+                conexao.Open();
+                NpgsqlDataReader rd = comando.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    ListaPagamento.Add(new Pagamento()
+                    {
+                        Nfe = Convert.ToString(rd["NFE"]),
+                        Num_Reserva = Convert.ToInt32(rd["NUM_RESERVA"]),
+                        FormPagamento = Convert.ToString(rd["FORMA_PAGAMENTO"]),
+                        NumParcela = Convert.ToInt32(rd["NUM_PARCELA"]),
+                        ValorTotal = Convert.ToDouble(rd["VALOR_TOTAL"]),
+                        ValorParcela = Convert.ToDouble(rd["VALOR_PARCELA"]),
+                        ValorTroco = Convert.ToDouble(rd["TROCO"]),
+                        Dt_Pagamento = Convert.ToDateTime(rd["DT_PAGAMENTO"]),
+                    }); ;
+
+                }
+                if (ListaPagamento.Count() > 0)
+                {
+                    return ListaPagamento;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (NpgsqlException ex)
+            {
+                // Handle the SQL Exception as you wish
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
     }
 }
