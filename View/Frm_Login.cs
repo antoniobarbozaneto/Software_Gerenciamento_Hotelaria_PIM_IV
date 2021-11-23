@@ -17,9 +17,11 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         Frm_Principal Frm_Principal;
         Ctr_Usuario Ctr_Usuario;
         Usuario Usuario;
+        Frm_ConsultaUsuario Frm_ConsultaUsuario;
         public Frm_Login()
         {
             Frm_Principal = new Frm_Principal();
+            Frm_ConsultaUsuario = new Frm_ConsultaUsuario();
             Usuario = new Usuario();
             Ctr_Usuario = new Ctr_Usuario();
             InitializeComponent();
@@ -71,6 +73,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 {
                     this.Hide();
                     Frm_Principal.lbl_usuario.Text = "Usuário: " + Usuario.User;
+                    Frm_ConsultaUsuario.lblUser = Usuario.User;
                     Frm_Principal.ShowDialog();
                 }
                 else

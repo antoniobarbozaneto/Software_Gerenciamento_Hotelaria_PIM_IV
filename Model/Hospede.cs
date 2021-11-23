@@ -24,7 +24,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Model
         public string Celular_Dois { get; set; }
         public string Email { get; set; }
         public string Obs { get; set; }
-
+        public string Situacao_h { get; set; }
         public Hospede()
         {
 

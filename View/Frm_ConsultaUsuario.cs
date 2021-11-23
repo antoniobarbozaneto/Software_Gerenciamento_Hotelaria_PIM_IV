@@ -17,16 +17,19 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         Usuario Usuario;
         Ctr_Usuario Ctr_Usuario;
         Frm_CadastroUsuario Frm_CadastroUsuario;
+        public static string lblUser;
         public Frm_ConsultaUsuario()
         {
             Usuario = new Usuario();
             Ctr_Usuario = new Ctr_Usuario();
             Frm_CadastroUsuario = new Frm_CadastroUsuario();
+            //Frm_Principal = new Frm_Principal();
             InitializeComponent();
         }
 
         private void Frm_ConsultaUsuario_Load(object sender, EventArgs e)
         {
+            LimparCampos();
             CarregaListaUsuario();
         }
 
@@ -43,14 +46,22 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         private void btn_Excluir_Click(object sender, EventArgs e)
         {
-            Usuario.Id = Convert.ToInt32(dataGridView_Usuarios.CurrentRow.Cells[0].Value.ToString());
+            Usuario.Id = Convert.ToInt32(dataGridView_Usuarios.CurrentRow.Cells[0].Value.ToString());                       
 
-            var ResultResp = MessageBox.Show("Deseja realmente excluir o usuário selecionado?", "Exclusão Usuário", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (ResultResp == System.Windows.Forms.DialogResult.Yes)
+            if (lblUser == Convert.ToString(dataGridView_Usuarios.CurrentRow.Cells[1].Value.ToString()))
             {
-                Ctr_Usuario.Excluir(Usuario);
-                CarregaListaUsuario();
+                MessageBox.Show("Usuário está em uso no momento, não é possivel excluir!", "Exclusão Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                var ResultResp = MessageBox.Show("Deseja realmente excluir o usuário selecionado?", "Exclusão Usuário", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (ResultResp == System.Windows.Forms.DialogResult.Yes)
+                {
+
+                    Ctr_Usuario.Excluir(Usuario);
+                    CarregaListaUsuario();
+                }
             }
         }
 
@@ -73,6 +84,11 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         }
         //mtds uteis
+        public void LimparCampos()
+        {
+            cbx_FiltroUsuario.SelectedIndex = -1;
+            txb_Consulta.Text = "";
+        }
         public void CarregaListaUsuario()
         {
             dataGridView_Usuarios.DataSource = Ctr_Usuario.Carrega_Usuario();

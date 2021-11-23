@@ -27,6 +27,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         private void Frm_ConsultaHospede_Load(object sender, EventArgs e)
         {
+            LimparCampos();
             CarregaListaHospede();           
 
         }
@@ -46,12 +47,19 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         {
             Hospede.Id_Hospede = Convert.ToInt32(dataGridView_Hospedes.CurrentRow.Cells[0].Value.ToString());
 
-            var ResultResp = MessageBox.Show("Deseja realmente excluir o cliente selecionado?", "Exclusão Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (ResultResp == System.Windows.Forms.DialogResult.Yes)
+            if (Ctr_Hospede.Verifica_SituacaoHospede(Hospede) == true)
             {
-               Ctr_Hospede.Excluir(Hospede);
-               CarregaListaHospede();
+                MessageBox.Show("Este hóspede não pode ser excluido, é permitido apenas alterá-lo.", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                var ResultResp = MessageBox.Show("Deseja realmente excluir o cliente selecionado?", "Exclusão Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (ResultResp == System.Windows.Forms.DialogResult.Yes)
+                {
+                    Ctr_Hospede.Excluir(Hospede);
+                    CarregaListaHospede();
+                }
             }
         }
 
@@ -75,6 +83,11 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         }
 
         //mtds uteis
+        public void LimparCampos()
+        {
+            txb_Consulta.Text = "";
+            cbx_FiltroHospede.SelectedIndex = -1;
+        }
         public void CarregaListaHospede()
         {
             dataGridView_Hospedes.DataSource = Ctr_Hospede.Carrega_Hospede();
@@ -100,6 +113,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             dataGridView_Hospedes.Columns["Qtd_Max"].Visible = false;
             dataGridView_Hospedes.Columns["Valor_Diaria"].Visible = false;
             dataGridView_Hospedes.Columns["Refeicao"].Visible = false;
+            dataGridView_Hospedes.Columns["Situacao"].Visible = false;
         }
 
         public void SetaDadosGridParaForms()
@@ -120,6 +134,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             Frm_CadastroHospede.maskedtxb_CelularDois.Text = dataGridView_Hospedes.CurrentRow.Cells[13].Value.ToString();
             Frm_CadastroHospede.txb_Email.Text = dataGridView_Hospedes.CurrentRow.Cells[14].Value.ToString();
             Frm_CadastroHospede.txb_Obs.Text = dataGridView_Hospedes.CurrentRow.Cells[15].Value.ToString();
+            Frm_CadastroHospede.cbx_Situacao.Text = dataGridView_Hospedes.CurrentRow.Cells[16].Value.ToString();
             Frm_CadastroHospede.ShowDialog();
         }
 

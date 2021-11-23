@@ -30,6 +30,8 @@
         {
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbx_Situacao = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cbx_Tipo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,7 +53,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.label19.Location = new System.Drawing.Point(294, 274);
+            this.label19.Location = new System.Drawing.Point(294, 300);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(142, 15);
             this.label19.TabIndex = 50;
@@ -59,6 +61,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.cbx_Situacao);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.cbx_Tipo);
             this.groupBox2.Controls.Add(this.label1);
@@ -74,15 +78,37 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(16, 58);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(420, 213);
+            this.groupBox2.Size = new System.Drawing.Size(420, 239);
             this.groupBox2.TabIndex = 49;
             this.groupBox2.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(142, 98);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 16);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "*Situação:";
+            // 
+            // cbx_Situacao
+            // 
+            this.cbx_Situacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_Situacao.FormattingEnabled = true;
+            this.cbx_Situacao.Items.AddRange(new object[] {
+            "ATIVO",
+            "INATIVO"});
+            this.cbx_Situacao.Location = new System.Drawing.Point(221, 97);
+            this.cbx_Situacao.Name = "cbx_Situacao";
+            this.cbx_Situacao.Size = new System.Drawing.Size(100, 21);
+            this.cbx_Situacao.TabIndex = 18;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(26, 77);
+            this.label6.Location = new System.Drawing.Point(25, 71);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(190, 16);
             this.label6.TabIndex = 17;
@@ -90,8 +116,9 @@
             // 
             // cbx_Tipo
             // 
+            this.cbx_Tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_Tipo.FormattingEnabled = true;
-            this.cbx_Tipo.Location = new System.Drawing.Point(222, 76);
+            this.cbx_Tipo.Location = new System.Drawing.Point(221, 70);
             this.cbx_Tipo.Name = "cbx_Tipo";
             this.cbx_Tipo.Size = new System.Drawing.Size(100, 21);
             this.cbx_Tipo.TabIndex = 3;
@@ -101,7 +128,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(149, 24);
+            this.label1.Location = new System.Drawing.Point(148, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 16);
             this.label1.TabIndex = 9;
@@ -109,7 +136,7 @@
             // 
             // txb_Andar
             // 
-            this.txb_Andar.Location = new System.Drawing.Point(222, 50);
+            this.txb_Andar.Location = new System.Drawing.Point(221, 44);
             this.txb_Andar.Name = "txb_Andar";
             this.txb_Andar.Size = new System.Drawing.Size(100, 20);
             this.txb_Andar.TabIndex = 2;
@@ -118,7 +145,7 @@
             // 
             this.btn_Sair.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Sair.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btn_Sair.Location = new System.Drawing.Point(164, 166);
+            this.btn_Sair.Location = new System.Drawing.Point(163, 187);
             this.btn_Sair.Name = "btn_Sair";
             this.btn_Sair.Size = new System.Drawing.Size(89, 33);
             this.btn_Sair.TabIndex = 7;
@@ -128,7 +155,7 @@
             // 
             // txb_QtdHospede
             // 
-            this.txb_QtdHospede.Location = new System.Drawing.Point(222, 103);
+            this.txb_QtdHospede.Location = new System.Drawing.Point(221, 124);
             this.txb_QtdHospede.Name = "txb_QtdHospede";
             this.txb_QtdHospede.ReadOnly = true;
             this.txb_QtdHospede.Size = new System.Drawing.Size(100, 20);
@@ -138,7 +165,7 @@
             // 
             this.btn_Limpar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Limpar.ForeColor = System.Drawing.Color.Red;
-            this.btn_Limpar.Location = new System.Drawing.Point(259, 166);
+            this.btn_Limpar.Location = new System.Drawing.Point(258, 187);
             this.btn_Limpar.Name = "btn_Limpar";
             this.btn_Limpar.Size = new System.Drawing.Size(89, 33);
             this.btn_Limpar.TabIndex = 8;
@@ -150,7 +177,7 @@
             // 
             this.btn_Gravar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Gravar.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btn_Gravar.Location = new System.Drawing.Point(69, 166);
+            this.btn_Gravar.Location = new System.Drawing.Point(68, 187);
             this.btn_Gravar.Name = "btn_Gravar";
             this.btn_Gravar.Size = new System.Drawing.Size(89, 33);
             this.btn_Gravar.TabIndex = 6;
@@ -160,7 +187,7 @@
             // 
             // txb_ValorDiaria
             // 
-            this.txb_ValorDiaria.Location = new System.Drawing.Point(222, 130);
+            this.txb_ValorDiaria.Location = new System.Drawing.Point(221, 151);
             this.txb_ValorDiaria.Name = "txb_ValorDiaria";
             this.txb_ValorDiaria.ReadOnly = true;
             this.txb_ValorDiaria.Size = new System.Drawing.Size(100, 20);
@@ -170,7 +197,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(35, 131);
+            this.label5.Location = new System.Drawing.Point(34, 152);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(181, 16);
             this.label5.TabIndex = 15;
@@ -178,7 +205,7 @@
             // 
             // txb_NumQuarto
             // 
-            this.txb_NumQuarto.Location = new System.Drawing.Point(222, 23);
+            this.txb_NumQuarto.Location = new System.Drawing.Point(221, 18);
             this.txb_NumQuarto.Name = "txb_NumQuarto";
             this.txb_NumQuarto.Size = new System.Drawing.Size(51, 20);
             this.txb_NumQuarto.TabIndex = 1;
@@ -187,7 +214,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(10, 104);
+            this.label2.Location = new System.Drawing.Point(9, 125);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(206, 16);
             this.label2.TabIndex = 11;
@@ -197,7 +224,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(161, 51);
+            this.label4.Location = new System.Drawing.Point(160, 45);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 16);
             this.label4.TabIndex = 13;
@@ -217,7 +244,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 297);
+            this.ClientSize = new System.Drawing.Size(456, 324);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label17);
@@ -251,5 +278,7 @@
         public System.Windows.Forms.ComboBox cbx_Tipo;
         public System.Windows.Forms.TextBox txb_Andar;
         public System.Windows.Forms.TextBox txb_NumQuarto;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.ComboBox cbx_Situacao;
     }
 }

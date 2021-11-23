@@ -29,24 +29,33 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         private void Frm_ConsultaQuarto_Load(object sender, EventArgs e)
         {
+            LimparCampos();
             EscondeColunas();
             CarregaListaQuarto();            
         }
         private void btn_Excluir_Click(object sender, EventArgs e)
         {
+            Quarto.Numero = dataGridView_Quartos.CurrentRow.Cells[0].Value.ToString();
+
             if (dataGridView_Quartos.CurrentRow.Cells[2].Value.ToString() == "OCUPADO")
             {
                 MessageBox.Show("Quarto está reservado no momento não é permitido a exclusão.", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                Quarto.Numero = dataGridView_Quartos.CurrentRow.Cells[0].Value.ToString();
-                var ResultResp = MessageBox.Show("Deseja realmente excluir o quarto número: "+Quarto.Numero+" selecionado?", "Exclusão Quarto", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (ResultResp == System.Windows.Forms.DialogResult.Yes)
+                if (Ctr_Quarto.Verifica_Situacao(Quarto) == true)
                 {
-                    Ctr_Quarto.Excluir(Quarto);
-                    CarregaListaQuarto();
+                    MessageBox.Show("Este quarto não pode ser excluido, é permitido apenas alterá-lo.", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    var ResultResp = MessageBox.Show("Deseja realmente excluir o quarto número: " + Quarto.Numero + " selecionado?", "Exclusão Quarto", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (ResultResp == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        Ctr_Quarto.Excluir(Quarto);
+                        CarregaListaQuarto();
+                    }
                 }
             }
         }        
@@ -82,6 +91,11 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         }
 
         //mtds uteis
+        public void LimparCampos()
+        {
+            cbx_FiltroTipoQuarto.SelectedIndex = -1;
+            txb_Consulta.Text = "";
+        }
         public void CarregaListaQuarto()
         {
             dataGridView_Quartos.DataSource = Ctr_Quarto.Carregar_Quarto();
@@ -102,7 +116,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         {
             Frm_CadastroQuarto.txb_NumQuarto.Text = dataGridView_Quartos.CurrentRow.Cells[0].Value.ToString();
             Frm_CadastroQuarto.txb_Andar.Text = dataGridView_Quartos.CurrentRow.Cells[1].Value.ToString();
-            Frm_CadastroQuarto.cbx_Tipo.Text = dataGridView_Quartos.CurrentRow.Cells[3].Value.ToString();
+            Frm_CadastroQuarto.cbx_Situacao.Text = dataGridView_Quartos.CurrentRow.Cells[3].Value.ToString();
+            Frm_CadastroQuarto.cbx_Tipo.Text = dataGridView_Quartos.CurrentRow.Cells[4].Value.ToString();
+            
             Frm_CadastroQuarto.ShowDialog();
         }
 
@@ -110,10 +126,11 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         {
             if (dataGridView_Quartos.Columns.Count > 3)
             {
+              
                dataGridView_Quartos.Columns["Qtd_Max"].Visible = false;
                dataGridView_Quartos.Columns["Valor_Diaria"].Visible = false;
                dataGridView_Quartos.Columns["Refeicao"].Visible = false;
-               dataGridView_Quartos.Columns[3].Width = 320;
+               dataGridView_Quartos.Columns[4].Width = 220;
             }
         }
 
@@ -125,8 +142,15 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             }
             else
             {
-                this.DialogResult = DialogResult.OK; // para indicar ao Form chamador que o usuário adicionou um cliente
-                this.Close();
+                if ((dataGridView_Quartos.CurrentRow.Cells[3].Value.ToString() == "INATIVO"))
+                {
+                    MessageBox.Show("Quato Inativo, por favor escolha outro!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.OK; // para indicar ao Form chamador que o usuário adicionou um cliente
+                    this.Close();
+                }
             }                
         }
     }

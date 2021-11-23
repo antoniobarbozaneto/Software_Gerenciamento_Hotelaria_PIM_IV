@@ -141,6 +141,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                         FormPagamento = Convert.ToString(rd["FORMA_PAGAMENTO"]),
                         NumParcela = Convert.ToInt32(rd["NUM_PARCELA"]),
                         ValorTotal = Convert.ToDouble(rd["VALOR_TOTAL"]),
+                        ValorPago = Convert.ToDouble(rd["VALOR_PAGO"]),
                         ValorParcela = Convert.ToDouble(rd["VALOR_PARCELA"]),
                         ValorTroco = Convert.ToDouble(rd["TROCO"]),
                         Dt_Pagamento = Convert.ToDateTime(rd["DT_PAGAMENTO"]),

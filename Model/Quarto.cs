@@ -11,7 +11,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Model
         public string Numero { get; set; }
         public string Andar { get; set; }
         public string Status { get; set; }
-
+        public string Situacao { get; set; }
         public Quarto()
         {
 

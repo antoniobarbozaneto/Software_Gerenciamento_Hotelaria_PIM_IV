@@ -25,14 +25,15 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
         public void Create(Quarto Quarto)
         {
-            string comandoSql = "INSERT INTO tbl_Quarto (Numero, Andar, Status, Tipo_Quarto) VALUES (@NUMERO, @ANDAR, @STATUS, @TIPO_QUARTO)";
+            string comandoSql = "INSERT INTO tbl_Quarto (Numero, Andar, Status, Tipo_Quarto, Situacao) VALUES (@NUMERO, @ANDAR, @STATUS, @TIPO_QUARTO, @SITUACAO)";
 
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
             comando.Parameters.AddWithValue("@NUMERO", Quarto.Numero);
             comando.Parameters.AddWithValue("@ANDAR", Quarto.Andar);
-            comando.Parameters.AddWithValue("STATUS", Quarto.Status);
-            comando.Parameters.AddWithValue("TIPO_QUARTO", Quarto.Tipo);
+            comando.Parameters.AddWithValue("@STATUS", Quarto.Status);
+            comando.Parameters.AddWithValue("@TIPO_QUARTO", Quarto.Tipo);
+            comando.Parameters.AddWithValue("@SITUACAO", Quarto.Situacao);
 
             try
             {
@@ -53,7 +54,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
         public void Update(Quarto Quarto)
         {
-            string comandoSql = "UPDATE tbl_Quarto SET Numero = @NUMERO, Andar = @ANDAR, Status = @STATUS, Tipo_Quarto = @TIPO_QUARTO WHERE Numero = @NUMERO";
+            string comandoSql = "UPDATE tbl_Quarto SET Numero = @NUMERO, Andar = @ANDAR, Status = @STATUS, Situacao = @SITUACAO, Tipo_Quarto = @TIPO_QUARTO WHERE Numero = @NUMERO";
 
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
@@ -61,6 +62,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             comando.Parameters.AddWithValue("@ANDAR", Quarto.Andar);
             comando.Parameters.AddWithValue("STATUS", Quarto.Status);
             comando.Parameters.AddWithValue("TIPO_QUARTO", Quarto.Tipo);
+            comando.Parameters.AddWithValue("@SITUACAO", Quarto.Situacao);
 
             try
             {
@@ -125,6 +127,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                         Andar = Convert.ToString(rd["ANDAR"]),
                         Status = Convert.ToString(rd["STATUS"]),
                         Tipo = Convert.ToString(rd["TIPO_QUARTO"]),
+                        Situacao = Convert.ToString(rd["SITUACAO"])
                     }); ;
 
                 }
@@ -171,6 +174,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                         Andar = Convert.ToString(rd["ANDAR"]),
                         Status = Convert.ToString(rd["STATUS"]),
                         Tipo = Convert.ToString(rd["TIPO_QUARTO"]),
+                        Situacao = Convert.ToString(rd["SITUACAO"])
                     }); ;
 
                 }
@@ -278,6 +282,36 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             {
                 conexao.Close();
             }
+        }
+
+        public int Verif_SituacaoQuarto(Quarto Quarto)
+        {
+            int aux = 0;
+            string comandoSql = "SELECT COUNT(*) FROM TBL_RESERVA WHERE Quarto_Numero = @NUM_QUARTO";
+            NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
+
+            comando.Parameters.AddWithValue("@NUM_QUARTO", Quarto.Numero);
+
+            try
+            {
+                conexao.Open();
+                NpgsqlDataReader rd = comando.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    aux = rd.GetInt32(0);
+                }
+            }
+            catch (NpgsqlException ex)
+            {
+                // Handle the SQL Exception as you wish
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return aux;
         }
     }
 }

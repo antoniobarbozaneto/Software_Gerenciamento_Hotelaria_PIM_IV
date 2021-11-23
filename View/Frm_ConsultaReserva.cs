@@ -58,6 +58,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         }
         private void Frm_ConsultaReserva_Load(object sender, EventArgs e)
         {
+            LimparCampos();
             CarregaListReserva();            
         }
         private void btn_Atualizar_Click(object sender, EventArgs e)
@@ -66,6 +67,11 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         }
 
         //mtds uteis
+        public void LimparCampos()
+        {
+            cbx_FiltroReserva.SelectedIndex = -1;
+            txb_Consulta.Text = "";
+        }
         public void CarregaListReserva()
         {
             dataGridView_Reservas.DataSource = Ctr_Reserva.Carrega_Reserva();
@@ -108,15 +114,17 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 dataGridView_Reservas.Columns["Tipo"].Visible = false;
                 dataGridView_Reservas.Columns["Refeicao"].Visible = false;
                 dataGridView_Reservas.Columns["Valor_Diaria"].Visible = false;
+                dataGridView_Reservas.Columns["Situacao"].Visible = false;
+                dataGridView_Reservas.Columns["Situacao_h"].Visible = false;
                 //
                 dataGridView_Reservas.Columns[0].Width = 120;
-                dataGridView_Reservas.Columns[22].HeaderText = "Número Quarto";                
+                dataGridView_Reservas.Columns[23].HeaderText = "Número Quarto";                
             }
         }
         public void SetaDadosGridParaForms()
         {
             Frm_Pagamento.txb_NumReserva.Text = dataGridView_Reservas.CurrentRow.Cells[0].Value.ToString();
-            Frm_Pagamento.txb_NumQuarto.Text = dataGridView_Reservas.CurrentRow.Cells[22].Value.ToString();
+            Frm_Pagamento.txb_NumQuarto.Text = dataGridView_Reservas.CurrentRow.Cells[23].Value.ToString();
             Frm_Pagamento.txb_ValorTotal.Text = dataGridView_Reservas.CurrentRow.Cells[4].Value.ToString();
             Frm_Pagamento.ShowDialog();
         }

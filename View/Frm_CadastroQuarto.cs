@@ -18,6 +18,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         Ctr_Quarto Ctr_Quarto;
         bool ver_resp;
         string tipo_q;
+        string situa_q;
         public Frm_CadastroQuarto()
         {
             Quarto = new Quarto();
@@ -26,10 +27,11 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         }
 
         private void Frm_CadastroQuarto_Load(object sender, EventArgs e)
-        {
+        {            
             ver_resp = Verifica_CreateOrUpdate();
 
             tipo_q = cbx_Tipo.Text;
+            situa_q = cbx_Situacao.Text;
 
             if (cbx_Tipo.Text == "")
             {
@@ -42,16 +44,26 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 cbx_Tipo.ValueMember = "Tipo"; //Seleciona os Tipos da Lista
                 cbx_Tipo.Text = tipo_q;
             }
+            //
+            if (situa_q == "ATIVO" || situa_q == "" )
+            {
+                cbx_Situacao.SelectedIndex = 0;
+            }
+            else
+            {
+                cbx_Situacao.SelectedIndex = 1;
+            }
         }
 
         private void btn_Gravar_Click(object sender, EventArgs e)
-        {
+        {            
             if (VerificaCampos() == true)
             {
                 Quarto.Numero = txb_NumQuarto.Text;
                 Quarto.Andar = txb_Andar.Text;
                 Quarto.Status = "DISPONÍVEL";
                 Quarto.Tipo = cbx_Tipo.Text;
+                Quarto.Situacao = cbx_Situacao.Text;
 
                 if (ver_resp == true)
                 {

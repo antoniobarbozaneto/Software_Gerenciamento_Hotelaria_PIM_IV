@@ -33,7 +33,7 @@
             this.groupBox30 = new System.Windows.Forms.GroupBox();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.dataGridView_Pagamentos = new System.Windows.Forms.DataGridView();
-            this.cbx_FiltroReserva = new System.Windows.Forms.ComboBox();
+            this.cbx_FiltroPagamento = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txb_Consulta = new System.Windows.Forms.TextBox();
@@ -56,7 +56,7 @@
             // 
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label50.Location = new System.Drawing.Point(222, 33);
+            this.label50.Location = new System.Drawing.Point(247, 32);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(229, 19);
             this.label50.TabIndex = 55;
@@ -66,7 +66,7 @@
             // 
             this.groupBox30.Controls.Add(this.btn_Buscar);
             this.groupBox30.Controls.Add(this.dataGridView_Pagamentos);
-            this.groupBox30.Controls.Add(this.cbx_FiltroReserva);
+            this.groupBox30.Controls.Add(this.cbx_FiltroPagamento);
             this.groupBox30.Controls.Add(this.label1);
             this.groupBox30.Controls.Add(this.label3);
             this.groupBox30.Controls.Add(this.txb_Consulta);
@@ -96,14 +96,14 @@
             this.dataGridView_Pagamentos.Size = new System.Drawing.Size(663, 323);
             this.dataGridView_Pagamentos.TabIndex = 17;
             // 
-            // cbx_FiltroReserva
+            // cbx_FiltroPagamento
             // 
-            this.cbx_FiltroReserva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_FiltroReserva.FormattingEnabled = true;
-            this.cbx_FiltroReserva.Location = new System.Drawing.Point(19, 42);
-            this.cbx_FiltroReserva.Name = "cbx_FiltroReserva";
-            this.cbx_FiltroReserva.Size = new System.Drawing.Size(121, 21);
-            this.cbx_FiltroReserva.TabIndex = 24;
+            this.cbx_FiltroPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_FiltroPagamento.FormattingEnabled = true;
+            this.cbx_FiltroPagamento.Location = new System.Drawing.Point(19, 42);
+            this.cbx_FiltroPagamento.Name = "cbx_FiltroPagamento";
+            this.cbx_FiltroPagamento.Size = new System.Drawing.Size(121, 21);
+            this.cbx_FiltroPagamento.TabIndex = 24;
             // 
             // label1
             // 
@@ -160,7 +160,7 @@
         private System.Windows.Forms.GroupBox groupBox30;
         private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.DataGridView dataGridView_Pagamentos;
-        private System.Windows.Forms.ComboBox cbx_FiltroReserva;
+        private System.Windows.Forms.ComboBox cbx_FiltroPagamento;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txb_Consulta;

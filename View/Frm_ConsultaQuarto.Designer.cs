@@ -95,7 +95,8 @@
             this.cbx_FiltroTipoQuarto.Items.AddRange(new object[] {
             "Numero",
             "Andar",
-            "Status"});
+            "Status",
+            "Situacao"});
             this.cbx_FiltroTipoQuarto.Location = new System.Drawing.Point(19, 42);
             this.cbx_FiltroTipoQuarto.Name = "cbx_FiltroTipoQuarto";
             this.cbx_FiltroTipoQuarto.Size = new System.Drawing.Size(121, 21);

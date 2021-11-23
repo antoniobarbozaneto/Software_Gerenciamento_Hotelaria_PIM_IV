@@ -26,7 +26,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
         public void Create(Hospede Hospede)
         {
-            string comandoSql = "INSERT INTO tbl_Hospede (Nome,Dt_Nascimento,Rg,Cpf,Passaporte,Rua,Numero,Bairro,Cidade,Cep,Telefone,Celular_Um,Celular_Dois,Email,Observacao) Values (@NOME, @DT_NASCIMENTO, @RG, @CPF, @PASSAPORTE, @RUA, @NUMERO, @BAIRRO, @CIDADE, @CEP, @TELEFONE, @CELULAR_UM, @CELULAR_DOIS, @EMAIL, @OBS)";
+            string comandoSql = "INSERT INTO tbl_Hospede (Nome, Dt_Nascimento, Rg, Cpf, Passaporte, Rua, Numero, Bairro, Cidade, Cep, Telefone, Celular_Um, Celular_Dois, Email, Observacao, Situacao) Values (@NOME, @DT_NASCIMENTO, @RG, @CPF, @PASSAPORTE, @RUA, @NUMERO, @BAIRRO, @CIDADE, @CEP, @TELEFONE, @CELULAR_UM, @CELULAR_DOIS, @EMAIL, @OBS, @SITUACAO)";
 
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
@@ -46,6 +46,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             comando.Parameters.AddWithValue("@CELULAR_DOIS", Hospede.Celular_Dois);
             comando.Parameters.AddWithValue("@EMAIL", Hospede.Email);
             comando.Parameters.AddWithValue("@OBS", Hospede.Obs);
+            comando.Parameters.AddWithValue("@SITUACAO", Hospede.Situacao_h);
             try
             {
                 conexao.Open();
@@ -65,7 +66,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
         
         public void Update(Hospede Hospede)
         {
-            string comandoSql = "UPDATE tbl_Hospede SET Nome = @NOME, Dt_Nascimento = @DT_NASCIMENTO,Rg = @RG, Cpf = @CPF, Passaporte = @PASSAPORTE, Rua = @RUA, Numero = @NUMERO, Bairro = @BAIRRO, Cidade = @CIDADE, Cep = @CEP, Telefone = @TELEFONE, Celular_Um = @CELULAR_UM, Celular_Dois = @CELULAR_DOIS, Email = @EMAIL, Observacao = @OBS WHERE ID_HOSPEDE = @ID_HOSPEDE";
+            string comandoSql = "UPDATE tbl_Hospede SET Nome = @NOME, Dt_Nascimento = @DT_NASCIMENTO,Rg = @RG, Cpf = @CPF, Passaporte = @PASSAPORTE, Rua = @RUA, Numero = @NUMERO, Bairro = @BAIRRO, Cidade = @CIDADE, Cep = @CEP, Telefone = @TELEFONE, Celular_Um = @CELULAR_UM, Celular_Dois = @CELULAR_DOIS, Email = @EMAIL, Observacao = @OBS, Situacao = @SITUACAO WHERE ID_HOSPEDE = @ID_HOSPEDE";
 
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
@@ -85,6 +86,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             comando.Parameters.AddWithValue("@CELULAR_DOIS", Hospede.Celular_Dois);
             comando.Parameters.AddWithValue("@EMAIL", Hospede.Email);
             comando.Parameters.AddWithValue("@OBS", Hospede.Obs);
+            comando.Parameters.AddWithValue("@SITUACAO", Hospede.Situacao_h);
 
             try
             {
@@ -159,7 +161,8 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                         Celular_Um = Convert.ToString(rd["CELULAR_UM"]),
                         Celular_Dois = Convert.ToString(rd["CELULAR_DOIS"]),
                         Email = Convert.ToString(rd["EMAIL"]),
-                        Obs = Convert.ToString(rd["OBSERVACAO"])
+                        Obs = Convert.ToString(rd["OBSERVACAO"]),
+                        Situacao_h = Convert.ToString(rd["SITUACAO"])
                     }); ;
 
                 }
@@ -215,7 +218,8 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                         Celular_Um = Convert.ToString(rd["CELULAR_UM"]),
                         Celular_Dois = Convert.ToString(rd["CELULAR_DOIS"]),
                         Email = Convert.ToString(rd["EMAIL"]),
-                        Obs = Convert.ToString(rd["OBSERVACAO"])
+                        Obs = Convert.ToString(rd["OBSERVACAO"]),
+                        Situacao_h = Convert.ToString(rd["SITUACAO"])
                     }); ;
 
                 }
@@ -239,6 +243,35 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             {
                 conexao.Close();
             }
+        }
+        public int Verif_SituacaoHospede(Hospede Hospede)
+        {
+            int aux = 0;
+            string comandoSql = "SELECT COUNT(*) FROM TBL_RESERVA WHERE Id_Hospede = @ID_HOSPEDE";
+            NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
+
+            comando.Parameters.AddWithValue("@ID_HOSPEDE", Hospede.Id_Hospede);
+
+            try
+            {
+                conexao.Open();
+                NpgsqlDataReader rd = comando.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    aux = rd.GetInt32(0);
+                }
+            }
+            catch (NpgsqlException ex)
+            {
+                // Handle the SQL Exception as you wish
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return aux;
         }
     }
 }

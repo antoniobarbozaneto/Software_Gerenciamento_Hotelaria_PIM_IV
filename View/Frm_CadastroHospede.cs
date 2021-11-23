@@ -16,6 +16,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
     {
         Hospede Hospede;
         Ctr_Hospede Ctr_Hospede;
+        string Situa_h;
         public Frm_CadastroHospede()
         {
             Hospede = new Hospede();
@@ -42,6 +43,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 Hospede.Celular_Dois = maskedtxb_CelularDois.Text;
                 Hospede.Email = txb_Email.Text;
                 Hospede.Obs = txb_Obs.Text;
+                Hospede.Situacao_h = cbx_Situacao.Text;
                 //
                 if (txb_Codigo.Text == "")
                 {
@@ -59,8 +61,17 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         }
 
         private void Frm_CadastroHospede_Load(object sender, EventArgs e)
-        {
-
+        {           
+            //
+            Situa_h = cbx_Situacao.Text;
+            if (Situa_h == "ATIVO" || Situa_h == "")
+            {
+                cbx_Situacao.SelectedIndex = 0;
+            }
+            else
+            {
+                cbx_Situacao.SelectedIndex = 1;
+            }
         }
 
         private void btn_Sair_Click(object sender, EventArgs e)

@@ -83,7 +83,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             {
                 conexao.Open();
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Usuário deletado com sucesso!!!");
+                MessageBox.Show("Usuário deletado com sucesso!!!", "Exclusão de Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (NpgsqlException ex)
             {

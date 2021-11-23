@@ -59,5 +59,19 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
             Lista_QtdHospede_ValorDiaria = Dao_Quarto.Obter_QtdHospede_ValorDiaria(ParamBusca);
             return Lista_QtdHospede_ValorDiaria;
         }
+        public bool Verifica_Situacao(Quarto Quarto)
+        {
+            bool resp = false;
+
+            if (Dao_Quarto.Verif_SituacaoQuarto(Quarto) >= 1)
+            {
+                resp = true; //quarto ja foi reservado alguma vez
+            }
+            else
+            {
+                resp = false; //quarto nunca reservado
+            }
+            return resp;
+        }
     }
 }

@@ -81,6 +81,11 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         }
         //mtds uteis
+        public void LimparCampos()
+        {
+            cbx_FiltroTipoQuarto.SelectedIndex = -1;
+            txb_Consulta.Text = "";
+        }
         public void CarregaListaTipoQuarto()
         {
             dataGridView_TipoQuarto.DataSource = Ctr_TipoQuarto.Carrega_TipoQuarto();

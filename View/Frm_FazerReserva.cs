@@ -53,7 +53,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             if (Frm_ConsultaQuarto.ShowDialog() == DialogResult.OK)
             {
                 txb_NumQuarto.Text = Frm_ConsultaQuarto.dataGridView_Quartos.CurrentRow.Cells[0].Value.ToString();
-                txb_TipoQuarto.Text = Frm_ConsultaQuarto.dataGridView_Quartos.CurrentRow.Cells[3].Value.ToString();
+                txb_TipoQuarto.Text = Frm_ConsultaQuarto.dataGridView_Quartos.CurrentRow.Cells[4].Value.ToString();
             }
         }
 

@@ -43,5 +43,19 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
                 Lista_Hospede = Dao_Hospede.BuscarLista_Hospede(ParamBusca, ParamWhere);
                 return Lista_Hospede;
         }
+        public bool Verifica_SituacaoHospede(Hospede Hospede)
+        {
+            bool resp = false;
+
+            if (Dao_Hospede.Verif_SituacaoHospede(Hospede) >= 1)
+            {
+                resp = true; //quarto ja foi reservado alguma vez
+            }
+            else
+            {
+                resp = false; //quarto nunca reservado
+            }
+            return resp;
+        }
     }
 }
