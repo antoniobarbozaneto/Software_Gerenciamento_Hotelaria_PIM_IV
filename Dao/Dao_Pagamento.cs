@@ -169,5 +169,55 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                 conexao.Close();
             }
         }
+
+        public List<Pagamento> BuscarLista_Pagamento(string ParamWhere, string ParamBusca)
+        {
+            string comandoSql = "SELECT * FROM tbl_Pagamento WHERE " + ParamBusca + " LIKE '%" + ParamWhere + "%'";
+            NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
+            Console.WriteLine(comandoSql);
+            List<Pagamento> ListaQuarto = new List<Pagamento>();
+
+            try
+            {
+                conexao.Open();
+                NpgsqlDataReader rd = comando.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    ListaQuarto.Add(new Pagamento()
+                    {
+                        Nfe = Convert.ToString(rd["NFE"]),
+                        Num_Reserva = Convert.ToInt32(rd["NUM_RESERVA"]),
+                        FormPagamento = Convert.ToString(rd["FORMA_PAGAMENTO"]),
+                        NumParcela = Convert.ToInt32(rd["NUM_PARCELA"]),
+                        ValorTotal = Convert.ToDouble(rd["VALOR_TOTAL"]),
+                        ValorPago = Convert.ToDouble(rd["VALOR_PAGO"]),
+                        ValorParcela = Convert.ToDouble(rd["VALOR_PARCELA"]),
+                        ValorTroco = Convert.ToDouble(rd["TROCO"]),
+                        Dt_Pagamento = Convert.ToDateTime(rd["DT_PAGAMENTO"]),
+                    }); ;
+
+                }
+                if (ListaQuarto.Count() > 0)
+                {
+                    return ListaQuarto;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (NpgsqlException ex)
+            {
+                // Handle the SQL Exception as you wish
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
     }
 }

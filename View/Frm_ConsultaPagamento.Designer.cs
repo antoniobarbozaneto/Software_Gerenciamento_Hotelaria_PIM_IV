@@ -100,6 +100,11 @@
             // 
             this.cbx_FiltroPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_FiltroPagamento.FormattingEnabled = true;
+            this.cbx_FiltroPagamento.Items.AddRange(new object[] {
+            "nfe",
+            "num_reserva",
+            "forma_pagamento",
+            "dt_pagamento"});
             this.cbx_FiltroPagamento.Location = new System.Drawing.Point(19, 42);
             this.cbx_FiltroPagamento.Name = "cbx_FiltroPagamento";
             this.cbx_FiltroPagamento.Size = new System.Drawing.Size(121, 21);
