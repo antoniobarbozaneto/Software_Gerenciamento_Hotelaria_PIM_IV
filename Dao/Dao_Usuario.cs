@@ -140,9 +140,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             }
         }
         //
-        public List<Usuario> BuscarLista_Usuario(string ParamWhere, string ParamBusca)
+        public List<Usuario> BuscarLista_Usuario(Usuario Usuario)
         {
-            string comandoSql = "SELECT * FROM tbl_Usuario WHERE " + ParamBusca + " LIKE '%" + ParamWhere + "%'";
+            string comandoSql = "SELECT * FROM tbl_Usuario WHERE  Id_Usuario = " + Usuario.Id + " OR Usuario LIKE '%" + Usuario.User + "%'";
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
             Console.WriteLine(comandoSql);
             List<Usuario> ListaUsuario = new List<Usuario>();

@@ -73,15 +73,39 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         private void btn_Buscar_Click_1(object sender, EventArgs e)
         {
-            string ParamWhere;
-            string ParamBusca;
-
-            ParamBusca = txb_Consulta.Text;
-            ParamWhere = cbx_FiltroTipoQuarto.Text;
-
-            if (ParamWhere != "")
+            if (cbx_FiltroQuarto.SelectedIndex != -1)
             {
-                dataGridView_Quartos.DataSource = Ctr_Quarto.Buscar_Quarto(ParamBusca, ParamWhere);
+                Quarto.Numero = "null";
+                Quarto.Andar = "null";
+                Quarto.Status = "null";
+                Quarto.Situacao = "null";
+
+                if(cbx_FiltroQuarto.Text == "Numero")
+                {
+                    Quarto.Numero = txb_Consulta.Text;
+                }
+                else
+                {
+                    if(cbx_FiltroQuarto.Text == "Andar")
+                    {
+                        Quarto.Andar = txb_Consulta.Text;
+                    }
+                    else
+                    {
+                        if (cbx_FiltroQuarto.Text == "Status")
+                        {
+                            Quarto.Status = txb_Consulta.Text;
+                        }
+                        else
+                        {
+                            if(cbx_FiltroQuarto.Text == "Situacao")
+                            {
+                                Quarto.Situacao = txb_Consulta.Text;
+                            }
+                        }
+                    }
+                }
+                dataGridView_Quartos.DataSource = Ctr_Quarto.Buscar_Quarto(Quarto);
                 EscondeColunas();
             }
             else
@@ -93,7 +117,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         //mtds uteis
         public void LimparCampos()
         {
-            cbx_FiltroTipoQuarto.SelectedIndex = -1;
+            cbx_FiltroQuarto.SelectedIndex = -1;
             txb_Consulta.Text = "";
         }
         public void CarregaListaQuarto()

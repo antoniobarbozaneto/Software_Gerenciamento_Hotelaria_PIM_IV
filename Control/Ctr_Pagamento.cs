@@ -91,9 +91,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
             Lista_Pagamento = Dao_Pagamento.CarregarLista_Pagamento();
             return Lista_Pagamento;
         }
-        public List<Pagamento> Busca_Pagamento(string ParamBusca, string ParamWhere)
+        public List<Pagamento> Busca_Pagamento(Pagamento Pagamento)
         {
-            Lista_Pagamento = Dao_Pagamento.BuscarLista_Pagamento(ParamBusca, ParamWhere);
+            Lista_Pagamento = Dao_Pagamento.BuscarLista_Pagamento(Pagamento);
             return Lista_Pagamento;
         }
     }

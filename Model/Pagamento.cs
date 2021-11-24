@@ -8,7 +8,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Model
 {
     class Pagamento : Reserva
     {
-        public string Nfe { get; set; }
+        public int Nfe { get; set; }
         public double ValorTroco { get; set; }
         public double ValorPago { get; set; }
         public double ValorParcela { get; set; }

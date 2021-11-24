@@ -37,9 +37,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
             Lista_TipoQuarto = Dao_TipoQuarto.CarregarLista_TipoQuarto();
             return Lista_TipoQuarto;
         }
-        public List<TipoQuarto> Busca_TipoQuarto(string ParamBusca, string ParamWhere)
+        public List<TipoQuarto> Busca_TipoQuarto(TipoQuarto TipoQuarto)
         {
-            Lista_TipoQuarto = Dao_TipoQuarto.BuscarLista_TipoQuarto(ParamBusca, ParamWhere);
+            Lista_TipoQuarto = Dao_TipoQuarto.BuscarLista_TipoQuarto(TipoQuarto);
             return Lista_TipoQuarto;
         }
         public bool Verifica_TipoQtdUso(TipoQuarto TipoQuarto)

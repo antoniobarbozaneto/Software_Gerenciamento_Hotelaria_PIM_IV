@@ -146,9 +146,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             }
         }
         //
-        public List<TipoQuarto> BuscarLista_TipoQuarto(string ParamWhere, string ParamBusca)
+        public List<TipoQuarto> BuscarLista_TipoQuarto(TipoQuarto TipoQuarto)
         {
-            string comandoSql = "SELECT * FROM tbl_TipoQuarto WHERE " + ParamBusca + " LIKE '%" + ParamWhere + "%'";
+            string comandoSql = "SELECT * FROM tbl_TipoQuarto WHERE Tipo LIKE '%" + TipoQuarto.Tipo + "%'";
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
             Console.WriteLine(comandoSql);
             List<TipoQuarto> ListaTipoQuarto = new List<TipoQuarto>();

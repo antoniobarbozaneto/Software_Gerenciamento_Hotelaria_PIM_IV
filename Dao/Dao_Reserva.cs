@@ -185,9 +185,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             }
         }
 
-        public List<Reserva> BuscarLista_Reserva(string ParamWhere, string ParamBusca)
+        public List<Reserva> BuscarLista_Reserva(Reserva Reserva)
         {
-            string comandoSql = "SELECT * FROM tbl_Reserva WHERE " + ParamBusca + " LIKE '%" + ParamWhere + "%'";
+            string comandoSql = "SELECT * FROM tbl_Reserva WHERE Num_Reserva = " + Reserva.Num_Reserva + " OR Quarto_Numero LIKE '%" + Reserva.Numero + "%' OR Status_Reserva LIKE '%"+Reserva.Status_Reserva+"%' OR Id_Hospede = "+Reserva.Id_Hospede;
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
             Console.WriteLine(comandoSql);
             List<Reserva> ListaReserva = new List<Reserva>();

@@ -136,7 +136,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                 {
                     ListaPagamento.Add(new Pagamento()
                     {
-                        Nfe = Convert.ToString(rd["NFE"]),
+                        Nfe = Convert.ToInt32(rd["NFE"]),
                         Num_Reserva = Convert.ToInt32(rd["NUM_RESERVA"]),
                         FormPagamento = Convert.ToString(rd["FORMA_PAGAMENTO"]),
                         NumParcela = Convert.ToInt32(rd["NUM_PARCELA"]),
@@ -170,9 +170,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             }
         }
 
-        public List<Pagamento> BuscarLista_Pagamento(string ParamWhere, string ParamBusca)
+        public List<Pagamento> BuscarLista_Pagamento(Pagamento Pagamento)
         {
-            string comandoSql = "SELECT * FROM tbl_Pagamento WHERE " + ParamBusca + " LIKE '%" + ParamWhere + "%'";
+            string comandoSql = "SELECT * FROM tbl_Pagamento WHERE Nfe = " + Pagamento.Nfe + " OR Num_Reserva = "+Pagamento.Num_Reserva+" OR Forma_Pagamento LIKE '%" + Pagamento.FormPagamento + "%'";
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
             Console.WriteLine(comandoSql);
             List<Pagamento> ListaQuarto = new List<Pagamento>();
@@ -186,7 +186,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                 {
                     ListaQuarto.Add(new Pagamento()
                     {
-                        Nfe = Convert.ToString(rd["NFE"]),
+                        Nfe = Convert.ToInt32(rd["NFE"]),
                         Num_Reserva = Convert.ToInt32(rd["NUM_RESERVA"]),
                         FormPagamento = Convert.ToString(rd["FORMA_PAGAMENTO"]),
                         NumParcela = Convert.ToInt32(rd["NUM_PARCELA"]),

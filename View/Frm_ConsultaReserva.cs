@@ -27,15 +27,39 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
-            string ParamWhere;
-            string ParamBusca;
-
-            ParamBusca = txb_Consulta.Text;
-            ParamWhere = cbx_FiltroReserva.Text;
-
-            if (ParamWhere != "")
+            if (cbx_FiltroReserva.SelectedIndex != -1)
             {
-                dataGridView_Reservas.DataSource = Ctr_Reserva.BuscarReserva(ParamBusca, ParamWhere);
+                Reserva.Num_Reserva = 0;
+                Reserva.Numero = "null";
+                Reserva.Status_Reserva = "null";
+                Reserva.Id_Hospede = 0;
+
+                if(cbx_FiltroReserva.Text == "Numero Reserva")
+                {
+                    Reserva.Num_Reserva = Convert.ToInt32(txb_Consulta.Text);
+                }
+                else
+                {
+                    if(cbx_FiltroReserva.Text == "Numero Quarto")
+                    {
+                        Reserva.Numero = txb_Consulta.Text;
+                    }
+                    else
+                    {
+                        if(cbx_FiltroReserva.Text == "Status Reserva")
+                        {
+                            Reserva.Status_Reserva = txb_Consulta.Text;
+                        }
+                        else
+                        {
+                            if(cbx_FiltroReserva.Text == "Id Hospede")
+                            {
+                                Reserva.Id_Hospede = Convert.ToInt32(txb_Consulta.Text);
+                            }
+                        }
+                    }
+                }
+                dataGridView_Reservas.DataSource = Ctr_Reserva.BuscarReserva(Reserva);
                 EscondeColunas();
             }
             else

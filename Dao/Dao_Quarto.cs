@@ -154,9 +154,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
         }
 
-        public List<Quarto> BuscarLista_Quarto(string ParamWhere, string ParamBusca)
+        public List<Quarto> BuscarLista_Quarto(Quarto Quarto)
         {
-            string comandoSql = "SELECT * FROM tbl_Quarto WHERE " + ParamBusca + " LIKE '%" + ParamWhere + "%'";
+            string comandoSql = "SELECT * FROM tbl_Quarto WHERE Numero LIKE '%" + Quarto.Numero + "%' OR Andar LIKE '%" + Quarto.Andar + "%' OR Status LIKE '%" + Quarto.Status + "%' OR Situacao LIKE '%" + Quarto.Situacao + "%'";
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
             Console.WriteLine(comandoSql);
             List<Quarto> ListaQuarto = new List<Quarto>();
@@ -241,9 +241,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             }
         }
         //
-        public List<Quarto> Obter_QtdHospede_ValorDiaria(string ParamBusca)
+        public List<Quarto> Obter_QtdHospede_ValorDiaria(Quarto Quarto)
         {
-            string comandoSql = "SELECT QTD_HOSPEDE, VALOR_DIARIA FROM tbl_TipoQuarto WHERE TIPO LIKE '%" + ParamBusca + "%'";
+            string comandoSql = "SELECT QTD_HOSPEDE, VALOR_DIARIA FROM tbl_TipoQuarto WHERE TIPO LIKE '%" + Quarto.Tipo + "%'";
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
             List<Quarto> ListaTipoQuarto = new List<Quarto>();

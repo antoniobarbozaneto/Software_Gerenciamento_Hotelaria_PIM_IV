@@ -22,7 +22,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
         {
             Dao_Quarto.Create(Quarto);
         }
-        
+
         public void Alterar(Quarto Quarto)
         {
             Dao_Quarto.Update(Quarto);
@@ -36,16 +36,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
             Lista_Quarto = Dao_Quarto.CarregarLista_Quarto();
             return Lista_Quarto;
         }
-        public List<Quarto> Buscar_Quarto(string ParamBusca, string ParamWhere)
+        public List<Quarto> Buscar_Quarto(Quarto Quarto)
         {
-            if(ParamBusca == "Status")
-            {
-
-            }
-            else
-            {
-                Lista_Quarto = Dao_Quarto.BuscarLista_Quarto(ParamBusca, ParamWhere);
-            }
+            Lista_Quarto = Dao_Quarto.BuscarLista_Quarto(Quarto);
             return Lista_Quarto;
         }
 
@@ -54,9 +47,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
             Lista_TipoQuarto = Dao_Quarto.Buscar_ListaTipoQuarto();
             return Lista_TipoQuarto;
         }
-        public List<Quarto> Buscar_QtdHospedeMax_ValorDiaria(string ParamBusca)
+        public List<Quarto> Buscar_QtdHospedeMax_ValorDiaria(Quarto Quarto)
         {
-            Lista_QtdHospede_ValorDiaria = Dao_Quarto.Obter_QtdHospede_ValorDiaria(ParamBusca);
+            Lista_QtdHospede_ValorDiaria = Dao_Quarto.Obter_QtdHospede_ValorDiaria(Quarto);
             return Lista_QtdHospede_ValorDiaria;
         }
         public bool Verifica_Situacao(Quarto Quarto)

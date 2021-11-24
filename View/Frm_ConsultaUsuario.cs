@@ -67,15 +67,24 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
-            string ParamWhere;
-            string ParamBusca;
 
-            ParamBusca = txb_Consulta.Text;
-            ParamWhere = cbx_FiltroUsuario.Text;
-
-            if (ParamWhere != "")
+            if (cbx_FiltroUsuario.SelectedIndex != -1)
             {
-                dataGridView_Usuarios.DataSource = Ctr_Usuario.Busca_Hospede(ParamBusca, ParamWhere);
+                Usuario.Id = 0;
+                Usuario.User = "NULL";
+
+                if(cbx_FiltroUsuario.Text == "Id")
+                {
+                    Usuario.Id = Convert.ToInt32(txb_Consulta.Text);
+                }
+                else
+                {
+                    if(cbx_FiltroUsuario.Text == "Usuario")
+                    {
+                        Usuario.User = txb_Consulta.Text;
+                    }
+                }
+                dataGridView_Usuarios.DataSource = Ctr_Usuario.Busca_Hospede(Usuario);
             }
             else
             {

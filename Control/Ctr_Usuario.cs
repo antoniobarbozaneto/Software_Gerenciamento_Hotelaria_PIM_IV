@@ -36,9 +36,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
             return Lista_Usuario;
         }
 
-        public List<Usuario> Busca_Hospede(string ParamBusca, string ParamWhere)
+        public List<Usuario> Busca_Hospede(Usuario Usuario)
         {
-            Lista_Usuario = Dao_Usuario.BuscarLista_Usuario(ParamBusca, ParamWhere);
+            Lista_Usuario = Dao_Usuario.BuscarLista_Usuario(Usuario);
             return Lista_Usuario;
         }
         public bool FazerLogin(Usuario Usuario)

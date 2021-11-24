@@ -134,8 +134,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
             txb_QtdHospede.DataBindings.Clear();
             txb_ValorDiaria.DataBindings.Clear();
+            Quarto.Tipo = cbx_Tipo.Text;
 
-            Lista_QtdH_ValorD = Ctr_Quarto.Buscar_QtdHospedeMax_ValorDiaria(cbx_Tipo.Text);
+            Lista_QtdH_ValorD = Ctr_Quarto.Buscar_QtdHospedeMax_ValorDiaria(Quarto);
 
             if (Lista_QtdH_ValorD != null)
             {

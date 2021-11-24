@@ -63,7 +63,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                 conexao.Close();
             }
         }
-        
+
         public void Update(Hospede Hospede)
         {
             string comandoSql = "UPDATE tbl_Hospede SET Nome = @NOME, Dt_Nascimento = @DT_NASCIMENTO,Rg = @RG, Cpf = @CPF, Passaporte = @PASSAPORTE, Rua = @RUA, Numero = @NUMERO, Bairro = @BAIRRO, Cidade = @CIDADE, Cep = @CEP, Telefone = @TELEFONE, Celular_Um = @CELULAR_UM, Celular_Dois = @CELULAR_DOIS, Email = @EMAIL, Observacao = @OBS, Situacao = @SITUACAO WHERE ID_HOSPEDE = @ID_HOSPEDE";
@@ -92,7 +92,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             {
                 conexao.Open();
                 comando.ExecuteNonQuery();
-                MessageBox.Show("Dados alterados com sucesso!!!","Alteração de Dados",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Dados alterados com sucesso!!!", "Alteração de Dados", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (NpgsqlException ex)
             {
@@ -188,11 +188,13 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             }
         }
         //
-        public List<Hospede> BuscarLista_Hospede(string ParamWhere, string ParamBusca)
+        public List<Hospede> BuscarLista_Hospede(Hospede Hospede)
         {
-            string comandoSql = "SELECT * FROM tbl_Hospede WHERE " + ParamBusca + " LIKE '%" + ParamWhere + "%'";
+            string comandoSql = "SELECT * FROM tbl_Hospede WHERE Nome LIKE '%" + Hospede.Nome + "%' OR Cpf LIKE '%" + Hospede.Cpf + "%' OR Rg LIKE '%" + Hospede.RG + "%' OR Passaporte LIKE '%" + Hospede.Passaporte + "%'";
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
+
             Console.WriteLine(comandoSql);
+
             List<Hospede> ListaHospede = new List<Hospede>();
             try
             {

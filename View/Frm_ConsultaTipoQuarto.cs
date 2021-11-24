@@ -64,15 +64,10 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
-            string ParamWhere;
-            string ParamBusca;
-
-            ParamBusca = txb_Consulta.Text;
-            ParamWhere = cbx_FiltroTipoQuarto.Text;
-
-            if (ParamWhere != "")
+            if (cbx_FiltroTipoQuarto.SelectedIndex != -1)
             {
-                dataGridView_TipoQuarto.DataSource = Ctr_TipoQuarto.Busca_TipoQuarto(ParamBusca, ParamWhere);
+                TipoQuarto.Tipo = txb_Consulta.Text;
+                dataGridView_TipoQuarto.DataSource = Ctr_TipoQuarto.Busca_TipoQuarto(TipoQuarto);
             }
             else
             {

@@ -17,7 +17,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Login());
+            Application.Run(new Frm_Principal());
         }
     }
 }

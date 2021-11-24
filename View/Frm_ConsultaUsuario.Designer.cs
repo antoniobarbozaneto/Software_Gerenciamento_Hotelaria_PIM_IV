@@ -104,6 +104,7 @@
             this.cbx_FiltroUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_FiltroUsuario.FormattingEnabled = true;
             this.cbx_FiltroUsuario.Items.AddRange(new object[] {
+            "Id",
             "Usuario"});
             this.cbx_FiltroUsuario.Location = new System.Drawing.Point(19, 42);
             this.cbx_FiltroUsuario.Name = "cbx_FiltroUsuario";

@@ -31,15 +31,31 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
-            string ParamWhere;
-            string ParamBusca;
-
-            ParamBusca = txb_Consulta.Text;
-            ParamWhere = cbx_FiltroPagamento.Text;
-
-            if (ParamWhere != "")
+            if (cbx_FiltroPagamento.SelectedIndex != -1)
             {
-                dataGridView_Pagamentos.DataSource = Ctr_Pagamento.Busca_Pagamento(ParamBusca, ParamWhere);
+                Pagamento.Nfe = 0;
+                Pagamento.FormPagamento = "null";
+                Pagamento.Dt_Pagamento = default;
+
+                if(cbx_FiltroPagamento.Text == "NFE")
+                {
+                    Pagamento.Nfe = Convert.ToInt32(txb_Consulta.Text);
+                }
+                else
+                {
+                    if (cbx_FiltroPagamento.Text == "Numero Reserva")
+                    {
+                        Pagamento.Num_Reserva = Convert.ToInt32(txb_Consulta.Text);
+                    }
+                    else
+                    {
+                        if (cbx_FiltroPagamento.Text == "Forma Pagamento")
+                        {
+                            Pagamento.FormPagamento = txb_Consulta.Text;
+                        }                        
+                    }
+                }
+                dataGridView_Pagamentos.DataSource = Ctr_Pagamento.Busca_Pagamento(Pagamento);
                 EsconderColunas();
             }
             else
@@ -47,9 +63,10 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 MessageBox.Show("Escolha uma opção no filtro", "Busca Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         private void btn_Atualizar_Click(object sender, EventArgs e)
         {
+            LimparCampos();
+            CarregaListaTipoQuarto();
 
         }
         //mtds uteis

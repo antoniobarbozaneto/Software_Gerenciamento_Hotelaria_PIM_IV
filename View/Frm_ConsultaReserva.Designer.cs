@@ -91,9 +91,10 @@
             this.cbx_FiltroReserva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_FiltroReserva.FormattingEnabled = true;
             this.cbx_FiltroReserva.Items.AddRange(new object[] {
-            "Num_Reserva",
-            "Quarto_Numero",
-            "Status_Reserva"});
+            "Numero Reserva",
+            "Numero Quarto",
+            "Status Reserva",
+            "Id Hospede"});
             this.cbx_FiltroReserva.Location = new System.Drawing.Point(19, 42);
             this.cbx_FiltroReserva.Name = "cbx_FiltroReserva";
             this.cbx_FiltroReserva.Size = new System.Drawing.Size(121, 21);

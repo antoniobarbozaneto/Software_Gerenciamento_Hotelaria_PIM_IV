@@ -32,7 +32,7 @@
             this.groupBox30 = new System.Windows.Forms.GroupBox();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.dataGridView_Quartos = new System.Windows.Forms.DataGridView();
-            this.cbx_FiltroTipoQuarto = new System.Windows.Forms.ComboBox();
+            this.cbx_FiltroQuarto = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txb_Consulta = new System.Windows.Forms.TextBox();
@@ -58,7 +58,7 @@
             // 
             this.groupBox30.Controls.Add(this.btn_Buscar);
             this.groupBox30.Controls.Add(this.dataGridView_Quartos);
-            this.groupBox30.Controls.Add(this.cbx_FiltroTipoQuarto);
+            this.groupBox30.Controls.Add(this.cbx_FiltroQuarto);
             this.groupBox30.Controls.Add(this.label1);
             this.groupBox30.Controls.Add(this.label3);
             this.groupBox30.Controls.Add(this.txb_Consulta);
@@ -88,19 +88,20 @@
             this.dataGridView_Quartos.Size = new System.Drawing.Size(663, 323);
             this.dataGridView_Quartos.TabIndex = 17;
             // 
-            // cbx_FiltroTipoQuarto
+            // cbx_FiltroQuarto
             // 
-            this.cbx_FiltroTipoQuarto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_FiltroTipoQuarto.FormattingEnabled = true;
-            this.cbx_FiltroTipoQuarto.Items.AddRange(new object[] {
+            this.cbx_FiltroQuarto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_FiltroQuarto.FormattingEnabled = true;
+            this.cbx_FiltroQuarto.Items.AddRange(new object[] {
             "Numero",
             "Andar",
             "Status",
-            "Situacao"});
-            this.cbx_FiltroTipoQuarto.Location = new System.Drawing.Point(19, 42);
-            this.cbx_FiltroTipoQuarto.Name = "cbx_FiltroTipoQuarto";
-            this.cbx_FiltroTipoQuarto.Size = new System.Drawing.Size(121, 21);
-            this.cbx_FiltroTipoQuarto.TabIndex = 24;
+            "Situacao",
+            "Tipo"});
+            this.cbx_FiltroQuarto.Location = new System.Drawing.Point(19, 42);
+            this.cbx_FiltroQuarto.Name = "cbx_FiltroQuarto";
+            this.cbx_FiltroQuarto.Size = new System.Drawing.Size(121, 21);
+            this.cbx_FiltroQuarto.TabIndex = 24;
             // 
             // label1
             // 
@@ -206,7 +207,7 @@
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.GroupBox groupBox30;
         private System.Windows.Forms.Button btn_Buscar;
-        private System.Windows.Forms.ComboBox cbx_FiltroTipoQuarto;
+        private System.Windows.Forms.ComboBox cbx_FiltroQuarto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txb_Consulta;

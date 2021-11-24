@@ -65,21 +65,44 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
-            string ParamWhere;
-            string ParamBusca;
-
-            ParamBusca = txb_Consulta.Text;
-            ParamWhere = cbx_FiltroHospede.Text;
-            
-            if(ParamWhere != "")
+            if (cbx_FiltroHospede.SelectedIndex != -1)
             {
-                dataGridView_Hospedes.DataSource = Ctr_Hospede.Busca_Hospede(ParamBusca, ParamWhere);
-                EsconderColunas();
+                Hospede.Nome = "null";
+                Hospede.Cpf = "null";
+                Hospede.RG = "null";
+                Hospede.Passaporte = "null";
+                if (cbx_FiltroHospede.Text == "Nome")
+                {
+                    Hospede.Nome = txb_Consulta.Text;
+                }
+                else
+                {
+                    if (cbx_FiltroHospede.Text == "Cpf")
+                    {
+                        Hospede.Cpf = txb_Consulta.Text;
+                    }
+                    else
+                    {
+                        if (cbx_FiltroHospede.Text == "Rg")
+                        {
+                            Hospede.RG = txb_Consulta.Text;
+                        }
+                        else
+                        {
+                            if (cbx_FiltroHospede.Text == "Passaporte")
+                            {
+                                Hospede.Passaporte = txb_Consulta.Text;
+                            }
+                        }
+                    }
+                }
+                dataGridView_Hospedes.DataSource = Ctr_Hospede.Busca_Hospede(Hospede);
+                //EsconderColunas();
             }
             else
             {
                 MessageBox.Show("Escolha uma opção no filtro", "Busca Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }            
+            }     
         }
 
         //mtds uteis
