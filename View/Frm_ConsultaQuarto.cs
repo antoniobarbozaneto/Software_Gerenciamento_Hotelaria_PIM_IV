@@ -67,6 +67,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         private void btn_Editar_Click_1(object sender, EventArgs e)
         {
+            Frm_CadastroQuarto.txb_NumQuarto.Enabled = false;
             SetaSetaDadosGridParaForms();
             CarregaListaQuarto();
         }
