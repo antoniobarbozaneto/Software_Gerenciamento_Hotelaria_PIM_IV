@@ -127,7 +127,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             Frm_CadastroUsuario.txb_Codigo.Text = dataGridView_Usuarios.CurrentRow.Cells[0].Value.ToString();
             Frm_CadastroUsuario.txb_Usuario.Text = dataGridView_Usuarios.CurrentRow.Cells[1].Value.ToString();
             Frm_CadastroUsuario.txb_Senha.Text = dataGridView_Usuarios.CurrentRow.Cells[2].Value.ToString();
-            
+            Frm_CadastroUsuario.cbx_Situacao.Text = dataGridView_Usuarios.CurrentRow.Cells[3].Value.ToString();
             Frm_CadastroUsuario.ShowDialog();
         }
         public void EscondeColunas()

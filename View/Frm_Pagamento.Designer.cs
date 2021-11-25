@@ -30,6 +30,8 @@
         {
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txb_NumQuarto = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txb_ValorParcela = new System.Windows.Forms.TextBox();
             this.txb_NumReserva = new System.Windows.Forms.TextBox();
@@ -45,8 +47,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_Confirmar = new System.Windows.Forms.Button();
-            this.txb_NumQuarto = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +84,24 @@
             this.groupBox1.Size = new System.Drawing.Size(344, 215);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(53, 54);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(109, 16);
+            this.label8.TabIndex = 59;
+            this.label8.Text = "Número Quarto:";
+            // 
+            // txb_NumQuarto
+            // 
+            this.txb_NumQuarto.Location = new System.Drawing.Point(168, 53);
+            this.txb_NumQuarto.Name = "txb_NumQuarto";
+            this.txb_NumQuarto.ReadOnly = true;
+            this.txb_NumQuarto.Size = new System.Drawing.Size(53, 20);
+            this.txb_NumQuarto.TabIndex = 58;
             // 
             // label7
             // 
@@ -238,24 +256,6 @@
             this.btn_Confirmar.UseVisualStyleBackColor = true;
             this.btn_Confirmar.Click += new System.EventHandler(this.btn_Confirmar_Click);
             // 
-            // txb_NumQuarto
-            // 
-            this.txb_NumQuarto.Location = new System.Drawing.Point(168, 53);
-            this.txb_NumQuarto.Name = "txb_NumQuarto";
-            this.txb_NumQuarto.ReadOnly = true;
-            this.txb_NumQuarto.Size = new System.Drawing.Size(53, 20);
-            this.txb_NumQuarto.TabIndex = 58;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(53, 54);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(109, 16);
-            this.label8.TabIndex = 59;
-            this.label8.Text = "Número Quarto:";
-            // 
             // Frm_Pagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,6 +266,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_Confirmar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Frm_Pagamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pagamento";

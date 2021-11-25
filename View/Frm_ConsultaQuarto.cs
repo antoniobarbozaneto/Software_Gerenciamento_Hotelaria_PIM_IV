@@ -158,7 +158,8 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                dataGridView_Quartos.Columns["Qtd_Max"].Visible = false;
                dataGridView_Quartos.Columns["Valor_Diaria"].Visible = false;
                dataGridView_Quartos.Columns["Refeicao"].Visible = false;
-               dataGridView_Quartos.Columns[4].Width = 220;
+                dataGridView_Quartos.Columns["Situacao_U"].Visible = false;
+                dataGridView_Quartos.Columns[4].Width = 220;
             }
         }
 

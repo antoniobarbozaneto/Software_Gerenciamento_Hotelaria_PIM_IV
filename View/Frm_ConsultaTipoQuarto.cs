@@ -143,6 +143,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 dataGridView_TipoQuarto.Columns["Senha"].Visible = false;
                 dataGridView_TipoQuarto.Columns["User"].Visible = false;
                 dataGridView_TipoQuarto.Columns["Id_UserLogado"].Visible = false;
+                dataGridView_TipoQuarto.Columns["Situacao_U"].Visible = false;
             }
         }
     }

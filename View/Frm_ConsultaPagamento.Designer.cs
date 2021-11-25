@@ -145,6 +145,7 @@
             this.Controls.Add(this.label50);
             this.Controls.Add(this.groupBox30);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Frm_ConsultaPagamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Pagamentos";

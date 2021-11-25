@@ -172,6 +172,7 @@
             this.Controls.Add(this.btn_Atualizar);
             this.Controls.Add(this.btn_Editar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Frm_ConsultaUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Usuário";

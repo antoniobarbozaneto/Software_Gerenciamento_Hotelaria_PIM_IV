@@ -71,13 +71,22 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 Usuario.Id_UserLogado = Ctr_Usuario.Obter_IdUser(Usuario);
                 if (Ctr_Usuario.FazerLogin(Usuario) == true)
                 {
-                    this.Hide();
-                    Frm_Principal.lbl_User.Text = Usuario.User;
-                    Frm_Principal.ShowDialog();
+                    if(Ctr_Usuario.Verifica_Ativo_Inativo(Usuario) == true)
+                    {
+                        this.Hide();
+                        Frm_Principal.lbl_User.Text = Usuario.User;
+                        Frm_Principal.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Este usuário está inativo, tente outro!", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txb_Usuario.Text = "";
+                        txb_Senha.Text = "";
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Usuário não cadastrado, verifique login ou senha!", "ERRO!!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Usuário não cadastrado, verifique login ou senha!", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txb_Usuario.Text = "";
                     txb_Senha.Text = "";
                 }

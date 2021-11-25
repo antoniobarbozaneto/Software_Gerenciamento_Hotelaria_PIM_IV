@@ -144,6 +144,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 dataGridView_Reservas.Columns["Senha"].Visible = false;
                 dataGridView_Reservas.Columns["User"].Visible = false;
                 dataGridView_Reservas.Columns["Id_UserLogado"].Visible = false;
+                dataGridView_Reservas.Columns["Situacao_U"].Visible = false;
                 //
                 dataGridView_Reservas.Columns[0].Width = 120;
                 dataGridView_Reservas.Columns[23].HeaderText = "Número Quarto";                

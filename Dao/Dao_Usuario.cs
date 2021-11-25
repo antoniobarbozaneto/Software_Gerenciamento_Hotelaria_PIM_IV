@@ -342,5 +342,47 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             }
             return res;
         }
+
+        public bool Verif_Ativo_Inativo(Usuario Usuario)
+        {
+            bool resp;
+            string Situacao = "";
+
+            string comandoSql = "SELECT Situacao FROM tbl_Usuario WHERE Usuario = @USUARIO";
+
+            NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
+
+            comando.Parameters.AddWithValue("@USUARIO", Usuario.User);
+
+            try
+            {
+                conexao.Open();
+                NpgsqlDataReader rd = comando.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    Situacao = rd.GetString(0);
+                }
+                if(Situacao == "ATIVO")
+                {
+                    resp = true;
+                }
+                else
+                {
+                    resp = false;
+                }
+                return resp;
+            }
+            catch (NpgsqlException ex)
+            {
+                // Handle the SQL Exception as you wish
+                Console.WriteLine(ex.ToString());
+                return resp = false;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
     }
 }

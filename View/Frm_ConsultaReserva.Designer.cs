@@ -160,6 +160,7 @@
             this.Controls.Add(this.groupBox30);
             this.Controls.Add(this.btn_DarBaixa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Frm_ConsultaReserva";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Reserva";

@@ -66,5 +66,19 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
             }
             return resp;
         }
+        public bool Verifica_Ativo_Inativo(Usuario Usuario)
+        {
+            bool resp = false;
+
+            if (Dao_Usuario.Verif_Ativo_Inativo(Usuario))
+            {
+                resp = true; //Ativo
+            }
+            else
+            {
+                resp = false; //Inativo
+            }
+            return resp;
+        }
     }
 }

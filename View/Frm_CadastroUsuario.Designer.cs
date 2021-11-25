@@ -31,6 +31,8 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbx_Situacao = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txb_Codigo = new System.Windows.Forms.TextBox();
             this.txb_Senha = new System.Windows.Forms.TextBox();
@@ -40,8 +42,6 @@
             this.btn_Sair = new System.Windows.Forms.Button();
             this.btn_Gravar = new System.Windows.Forms.Button();
             this.btn_Limpar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cbx_Situacao = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,6 +83,28 @@
             this.groupBox1.Size = new System.Drawing.Size(310, 172);
             this.groupBox1.TabIndex = 60;
             this.groupBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(17, 104);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 16);
+            this.label3.TabIndex = 58;
+            this.label3.Text = "*Situação:";
+            // 
+            // cbx_Situacao
+            // 
+            this.cbx_Situacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_Situacao.FormattingEnabled = true;
+            this.cbx_Situacao.Items.AddRange(new object[] {
+            "ATIVO",
+            "INATIVO"});
+            this.cbx_Situacao.Location = new System.Drawing.Point(96, 103);
+            this.cbx_Situacao.Name = "cbx_Situacao";
+            this.cbx_Situacao.Size = new System.Drawing.Size(100, 21);
+            this.cbx_Situacao.TabIndex = 57;
             // 
             // label11
             // 
@@ -172,28 +194,6 @@
             this.btn_Limpar.UseVisualStyleBackColor = true;
             this.btn_Limpar.Click += new System.EventHandler(this.btn_Limpar_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(17, 104);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 16);
-            this.label3.TabIndex = 58;
-            this.label3.Text = "*Situação:";
-            // 
-            // cbx_Situacao
-            // 
-            this.cbx_Situacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_Situacao.FormattingEnabled = true;
-            this.cbx_Situacao.Items.AddRange(new object[] {
-            "ATIVO",
-            "INATIVO"});
-            this.cbx_Situacao.Location = new System.Drawing.Point(96, 103);
-            this.cbx_Situacao.Name = "cbx_Situacao";
-            this.cbx_Situacao.Size = new System.Drawing.Size(100, 21);
-            this.cbx_Situacao.TabIndex = 57;
-            // 
             // Frm_CadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,6 +203,8 @@
             this.Controls.Add(this.label17);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Frm_CadastroUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Usuário";

@@ -117,6 +117,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 dataGridView_Pagamentos.Columns["Senha"].Visible = false;
                 dataGridView_Pagamentos.Columns["User"].Visible = false;
                 dataGridView_Pagamentos.Columns["Id_UserLogado"].Visible = false;
+                dataGridView_Pagamentos.Columns["Situacao_U"].Visible = false;                
             }
         }
     }

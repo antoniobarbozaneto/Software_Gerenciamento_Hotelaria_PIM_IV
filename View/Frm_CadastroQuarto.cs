@@ -94,9 +94,6 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         {
             txb_NumQuarto.Text = "";
             txb_Andar.Text = "";
-            cbx_Tipo.Text = "";
-            txb_QtdHospede.Text = "";
-            txb_ValorDiaria.Text = "";
         }
         //
         public bool VerificaCampos()

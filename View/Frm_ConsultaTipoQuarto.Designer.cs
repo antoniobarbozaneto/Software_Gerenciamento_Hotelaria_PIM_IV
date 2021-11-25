@@ -171,6 +171,7 @@
             this.Controls.Add(this.btn_Atualizar);
             this.Controls.Add(this.btn_Editar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Frm_ConsultaTipoQuarto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Tipo de Quarto";

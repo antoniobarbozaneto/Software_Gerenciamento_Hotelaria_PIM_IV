@@ -501,6 +501,7 @@
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label17);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Frm_CadastroHospede";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Hóspede";
