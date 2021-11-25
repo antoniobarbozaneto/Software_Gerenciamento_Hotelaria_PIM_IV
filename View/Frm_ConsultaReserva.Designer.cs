@@ -162,7 +162,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Frm_ConsultaReserva";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm_ConsultaReserva";
+            this.Text = "Consulta Reserva";
             this.Load += new System.EventHandler(this.Frm_ConsultaReserva_Load);
             this.groupBox30.ResumeLayout(false);
             this.groupBox30.PerformLayout();

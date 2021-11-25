@@ -55,13 +55,20 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             }
             else
             {
-                var ResultResp = MessageBox.Show("Deseja realmente excluir o usuário selecionado?", "Exclusão Usuário", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (ResultResp == System.Windows.Forms.DialogResult.Yes)
+                if (Ctr_Usuario.Verifica_SituacaoHospede(Usuario) == true)
                 {
+                    MessageBox.Show("Este Usuário não pode ser excluido, é permitido apenas alterá-lo.", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    var ResultResp = MessageBox.Show("Deseja realmente excluir o usuário selecionado?", "Exclusão Usuário", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                    Ctr_Usuario.Excluir(Usuario);
-                    CarregaListaUsuario();
+                    if (ResultResp == System.Windows.Forms.DialogResult.Yes)
+                    {
+
+                        Ctr_Usuario.Excluir(Usuario);
+                        CarregaListaUsuario();
+                    }
                 }
             }
         }

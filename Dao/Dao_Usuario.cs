@@ -23,12 +23,13 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
         public void Create(Usuario Usuario)
         {
-            string comandoSql = "INSERT INTO tbl_Usuario (Usuario, Senha) VALUES (@USUARIO, @SENHA)";
+            string comandoSql = "INSERT INTO tbl_Usuario (Usuario, Senha, Situacao) VALUES (@USUARIO, @SENHA, @SITUACAO)";
 
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
             comando.Parameters.AddWithValue("@USUARIO", Usuario.User);
             comando.Parameters.AddWithValue("@SENHA", Usuario.Senha);
+            comando.Parameters.AddWithValue("@SITUACAO", Usuario.Situacao_U);
             try
             {
                 conexao.Open();
@@ -48,13 +49,14 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
         public void Update(Usuario Usuario)
         {
-            string comandoSql = "UPDATE tbl_Usuario SET Usuario = @USUARIO, Senha = @SENHA WHERE Id_Usuario = @ID_USUARIO";
+            string comandoSql = "UPDATE tbl_Usuario SET Usuario = @USUARIO, Senha = @SENHA, Situacao = @SITUACAO WHERE Id_Usuario = @ID_USUARIO";
 
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
             comando.Parameters.AddWithValue("@ID_USUARIO", Usuario.Id);
             comando.Parameters.AddWithValue("@USUARIO", Usuario.User);
             comando.Parameters.AddWithValue("@SENHA", Usuario.Senha);
+            comando.Parameters.AddWithValue("@SITUACAO", Usuario.Situacao_U);
             try
             {
                 conexao.Open();
@@ -115,6 +117,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                         Id = Convert.ToInt32(rd["ID_Usuario"]),
                         User = Convert.ToString(rd["USUARIO"]),
                         Senha = Convert.ToString(rd["SENHA"]),
+                        Situacao_U = Convert.ToString(rd["SITUACAO"])
                     }); ;
 
                 }
@@ -158,6 +161,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                         Id = Convert.ToInt32(rd["ID_USUARIO"]),
                         User = Convert.ToString(rd["USUARIO"]),
                         Senha = Convert.ToString(rd["SENHA"]),
+                        Situacao_U = Convert.ToString(rd["SITUACAO"])
                     }); ;
 
                 }
@@ -247,6 +251,96 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                 conexao.Close();
             }
             return Id_Usuario;
+        }
+        public int Verif_SituacaoUsuario(Usuario Usuario)
+        {
+            int res = 0;
+            int aux_tbl_H = 0;
+            int aux_tbl_TQ = 0;
+            int aux_Tbl_Q = 0;
+            int aux_Tbl_R = 0;
+            int aux_Tbl_P = 0;
+            //
+            string comandoSql = "SELECT COUNT(*) FROM tbl_hospede WHERE Autor = @ID_USUARIO";
+            NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
+
+            comando.Parameters.AddWithValue("@ID_USUARIO", Usuario.Id);
+
+            try
+            {
+                conexao.Open();
+
+                NpgsqlDataReader rd = comando.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    aux_tbl_H = rd.GetInt32(0);
+                }
+                conexao.Close();
+                //
+                conexao.Open();
+                comandoSql = "SELECT COUNT(*) FROM tbl_tipoquarto WHERE Autor = @ID_USUARIO";
+                comando = new NpgsqlCommand(comandoSql, conexao);
+                comando.Parameters.AddWithValue("@ID_USUARIO", Usuario.Id);
+
+                rd = comando.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    aux_tbl_TQ = rd.GetInt32(0);
+                }
+                conexao.Close();
+                //
+                conexao.Open();
+                comandoSql = "SELECT COUNT(*) FROM tbl_quarto WHERE Autor = @ID_USUARIO";
+                comando = new NpgsqlCommand(comandoSql, conexao);
+                comando.Parameters.AddWithValue("@ID_USUARIO", Usuario.Id);
+
+                rd = comando.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    aux_Tbl_Q = rd.GetInt32(0);
+                }
+                conexao.Close();
+                //
+                conexao.Open();
+                comandoSql = "SELECT COUNT(*) FROM TBL_RESERVA WHERE Autor = @ID_USUARIO";
+                comando = new NpgsqlCommand(comandoSql, conexao);
+                comando.Parameters.AddWithValue("@ID_USUARIO", Usuario.Id);
+
+                rd = comando.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    aux_Tbl_R = rd.GetInt32(0);
+                }
+                conexao.Close();
+                //
+                conexao.Open();
+                comandoSql = "SELECT COUNT(*) FROM tbl_pagamento WHERE Autor = @ID_USUARIO";
+                comando = new NpgsqlCommand(comandoSql, conexao);
+                comando.Parameters.AddWithValue("@ID_USUARIO", Usuario.Id);
+
+                rd = comando.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    aux_Tbl_P = rd.GetInt32(0);
+                }
+                //
+                res = (aux_tbl_H + aux_tbl_TQ + aux_Tbl_Q + aux_Tbl_R + aux_Tbl_P);
+            }
+            catch (NpgsqlException ex)
+            {
+                // Handle the SQL Exception as you wish
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return res;
         }
     }
 }

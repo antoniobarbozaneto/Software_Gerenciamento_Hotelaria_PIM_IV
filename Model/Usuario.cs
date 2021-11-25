@@ -11,8 +11,10 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Model
         public int Id { get; set; }
         public string User { get; set; }
         public string Senha { get; set; }
+        public string Situacao_U { get; set; } 
 
         private static int id_userLogado;
+
         public Usuario()
         {
 

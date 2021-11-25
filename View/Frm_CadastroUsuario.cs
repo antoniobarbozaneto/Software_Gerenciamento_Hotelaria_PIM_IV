@@ -16,6 +16,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
     {
         Usuario Usuario;
         Ctr_Usuario Ctr_Usuario;
+        string Situa_u;
         public Frm_CadastroUsuario()
         {
             Ctr_Usuario = new Ctr_Usuario();
@@ -25,13 +26,23 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
         private void Frm_CadastroUsuario_Load(object sender, EventArgs e)
         {
-
+            //
+            Situa_u = cbx_Situacao.Text;
+            if (Situa_u == "ATIVO" || Situa_u == "")
+            {
+                cbx_Situacao.SelectedIndex = 0;
+            }
+            else
+            {
+                cbx_Situacao.SelectedIndex = 1;
+            }
         }
 
         private void btn_Gravar_Click(object sender, EventArgs e)
         {
             Usuario.User = txb_Usuario.Text;
             Usuario.Senha = txb_Senha.Text;
+            Usuario.Situacao_U = cbx_Situacao.Text;
 
             if (VerificaCampos() == true)
             {

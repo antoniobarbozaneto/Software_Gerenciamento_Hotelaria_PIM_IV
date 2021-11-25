@@ -52,5 +52,19 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
             int Id_User = Dao_Usuario.Buscar_Id_User(Usuario);
             return Id_User;
         }
+        public bool Verifica_SituacaoHospede(Usuario Usuario)
+        {
+            bool resp = false;
+
+            if (Dao_Usuario.Verif_SituacaoUsuario(Usuario) >= 1)
+            {
+                resp = true;
+            }
+            else
+            {
+                resp = false;
+            }
+            return resp;
+        }
     }
 }
