@@ -51,7 +51,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV
         }
 
         private void cadastroNovoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        {           
             Frm_CadastroTipoQuarto.ShowDialog();
         }
 
@@ -96,6 +96,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV
         private void Frm_Principal_Load(object sender, EventArgs e)
         {
             lbl_DateTime.Text = (DateTime.Now.ToString("dd/MMM/yyyy"));
+            
         }
 
         private void consultaToolStripMenuItem2_Click(object sender, EventArgs e)

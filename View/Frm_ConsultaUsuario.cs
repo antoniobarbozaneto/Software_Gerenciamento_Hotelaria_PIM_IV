@@ -31,6 +31,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         {
             LimparCampos();
             CarregaListaUsuario();
+            EscondeColunas();
         }
 
         private void btn_Atualizar_Click(object sender, EventArgs e)
@@ -121,6 +122,13 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             Frm_CadastroUsuario.txb_Senha.Text = dataGridView_Usuarios.CurrentRow.Cells[2].Value.ToString();
             
             Frm_CadastroUsuario.ShowDialog();
+        }
+        public void EscondeColunas()
+        {
+            if (dataGridView_Usuarios.Columns.Count > 0)
+            {
+                dataGridView_Usuarios.Columns["Id_UserLogado"].Visible = false;
+            }
         }
     }
 }

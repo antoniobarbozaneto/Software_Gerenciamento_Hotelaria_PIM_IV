@@ -23,7 +23,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
         public void Create(Pagamento Pagamento)
         {
-            string comandoSql = "INSERT INTO tbl_Pagamento (Num_Reserva, Forma_Pagamento, Num_Parcela, Valor_Total, Valor_Pago, Valor_Parcela, Troco, Dt_Pagamento) VALUES(@NUM_RESERVA, @FORMA_PAGAMENTO, @NUM_PARCELA, @VALOR_TOTAL, @VALOR_PAGO, @VALOR_PARCELA, @TROCO, @DT_PAGAMENTO)";
+            string comandoSql = "INSERT INTO tbl_Pagamento (Num_Reserva, Forma_Pagamento, Num_Parcela, Valor_Total, Valor_Pago, Valor_Parcela, Troco, Dt_Pagamento, Autor) VALUES(@NUM_RESERVA, @FORMA_PAGAMENTO, @NUM_PARCELA, @VALOR_TOTAL, @VALOR_PAGO, @VALOR_PARCELA, @TROCO, @DT_PAGAMENTO, @AUTOR)";
 
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
@@ -35,6 +35,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             comando.Parameters.AddWithValue("@VALOR_PARCELA", Pagamento.ValorParcela);
             comando.Parameters.AddWithValue("@TROCO", Pagamento.ValorTroco);
             comando.Parameters.AddWithValue("@DT_PAGAMENTO", Pagamento.Dt_Pagamento);
+            comando.Parameters.AddWithValue("@AUTOR", Pagamento.Id_UserLogado);
             try
             {
                 conexao.Open();

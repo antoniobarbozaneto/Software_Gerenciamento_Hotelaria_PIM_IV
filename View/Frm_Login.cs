@@ -63,17 +63,16 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             return res;
         }
         public void Login()
-        {
-            Usuario.User = txb_Usuario.Text;
-            Usuario.Senha = txb_Senha.Text;
-
+        {            
             if (VerificaCampos() == true)
             {
+                Usuario.User = txb_Usuario.Text;
+                Usuario.Senha = txb_Senha.Text;
+                Usuario.Id_UserLogado = Ctr_Usuario.Obter_IdUser(Usuario);
                 if (Ctr_Usuario.FazerLogin(Usuario) == true)
                 {
                     this.Hide();
-                    Frm_Principal.lbl_usuario.Text = "Usuário: " + Usuario.User;
-                    Frm_ConsultaUsuario.lblUser = Usuario.User;
+                    Frm_Principal.lbl_User.Text = Usuario.User;
                     Frm_Principal.ShowDialog();
                 }
                 else

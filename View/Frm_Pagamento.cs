@@ -20,7 +20,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         {
             Pagamento = new Pagamento();
             Ctr_Pagamento = new Ctr_Pagamento();
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void cbx_FormaPag_SelectedIndexChanged(object sender, EventArgs e)

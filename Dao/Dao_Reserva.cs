@@ -25,7 +25,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
         public void Create(Reserva Reserva)
         {
 
-            string comandoSql = "INSERT INTO tbl_Reserva (Dt_Checkin, Dt_Checkout, Quarto_Numero, Id_Hospede, ValorTotal, Status_Reserva) VALUES (@DT_CHECKIN, @DT_CHECKOUT, @NUM_QUARTO, @ID_HOSPEDE, @VALOR_TOTAL, @STATUS_RESERVA)";
+            string comandoSql = "INSERT INTO tbl_Reserva (Dt_Checkin, Dt_Checkout, Quarto_Numero, Id_Hospede, ValorTotal, Status_Reserva, Autor) VALUES (@DT_CHECKIN, @DT_CHECKOUT, @NUM_QUARTO, @ID_HOSPEDE, @VALOR_TOTAL, @STATUS_RESERVA, @AUTOR)";
 
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
@@ -35,7 +35,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             comando.Parameters.AddWithValue("@ID_HOSPEDE", Reserva.Id_Hospede);
             comando.Parameters.AddWithValue("@VALOR_TOTAL", Reserva.ValorTotal);
             comando.Parameters.AddWithValue("@STATUS_RESERVA", Reserva.Status_Reserva);
-
+            comando.Parameters.AddWithValue("@AUTOR", Reserva.Id_UserLogado);
             try
             {
                 conexao.Open();

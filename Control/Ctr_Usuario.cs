@@ -47,5 +47,10 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
             resp = Dao_Usuario.Logar(Usuario);
             return resp;
         }
+        public int Obter_IdUser(Usuario Usuario)
+        {
+            int Id_User = Dao_Usuario.Buscar_Id_User(Usuario);
+            return Id_User;
+        }
     }
 }

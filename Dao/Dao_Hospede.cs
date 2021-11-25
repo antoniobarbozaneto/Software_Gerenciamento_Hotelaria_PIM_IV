@@ -26,7 +26,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
         public void Create(Hospede Hospede)
         {
-            string comandoSql = "INSERT INTO tbl_Hospede (Nome, Dt_Nascimento, Rg, Cpf, Passaporte, Rua, Numero, Bairro, Cidade, Cep, Telefone, Celular_Um, Celular_Dois, Email, Observacao, Situacao) Values (@NOME, @DT_NASCIMENTO, @RG, @CPF, @PASSAPORTE, @RUA, @NUMERO, @BAIRRO, @CIDADE, @CEP, @TELEFONE, @CELULAR_UM, @CELULAR_DOIS, @EMAIL, @OBS, @SITUACAO)";
+            string comandoSql = "INSERT INTO tbl_Hospede (Nome, Dt_Nascimento, Rg, Cpf, Passaporte, Rua, Numero, Bairro, Cidade, Cep, Telefone, Celular_Um, Celular_Dois, Email, Observacao, Situacao, Autor) Values (@NOME, @DT_NASCIMENTO, @RG, @CPF, @PASSAPORTE, @RUA, @NUMERO, @BAIRRO, @CIDADE, @CEP, @TELEFONE, @CELULAR_UM, @CELULAR_DOIS, @EMAIL, @OBS, @SITUACAO, @AUTOR)";
 
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
@@ -47,6 +47,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             comando.Parameters.AddWithValue("@EMAIL", Hospede.Email);
             comando.Parameters.AddWithValue("@OBS", Hospede.Obs);
             comando.Parameters.AddWithValue("@SITUACAO", Hospede.Situacao_h);
+            comando.Parameters.AddWithValue("@AUTOR", Hospede.Id_UserLogado);
             try
             {
                 conexao.Open();
@@ -66,7 +67,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
         public void Update(Hospede Hospede)
         {
-            string comandoSql = "UPDATE tbl_Hospede SET Nome = @NOME, Dt_Nascimento = @DT_NASCIMENTO,Rg = @RG, Cpf = @CPF, Passaporte = @PASSAPORTE, Rua = @RUA, Numero = @NUMERO, Bairro = @BAIRRO, Cidade = @CIDADE, Cep = @CEP, Telefone = @TELEFONE, Celular_Um = @CELULAR_UM, Celular_Dois = @CELULAR_DOIS, Email = @EMAIL, Observacao = @OBS, Situacao = @SITUACAO WHERE ID_HOSPEDE = @ID_HOSPEDE";
+            string comandoSql = "UPDATE tbl_Hospede SET Nome = @NOME, Dt_Nascimento = @DT_NASCIMENTO,Rg = @RG, Cpf = @CPF, Passaporte = @PASSAPORTE, Rua = @RUA, Numero = @NUMERO, Bairro = @BAIRRO, Cidade = @CIDADE, Cep = @CEP, Telefone = @TELEFONE, Celular_Um = @CELULAR_UM, Celular_Dois = @CELULAR_DOIS, Email = @EMAIL, Observacao = @OBS, Situacao = @SITUACAO, Autor = @AUTOR WHERE ID_HOSPEDE = @ID_HOSPEDE";
 
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
@@ -87,7 +88,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             comando.Parameters.AddWithValue("@EMAIL", Hospede.Email);
             comando.Parameters.AddWithValue("@OBS", Hospede.Obs);
             comando.Parameters.AddWithValue("@SITUACAO", Hospede.Situacao_h);
-
+            comando.Parameters.AddWithValue("@AUTOR", Hospede.Id_UserLogado);
             try
             {
                 conexao.Open();

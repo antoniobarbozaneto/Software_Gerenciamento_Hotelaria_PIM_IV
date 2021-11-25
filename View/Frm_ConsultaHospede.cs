@@ -137,6 +137,10 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             dataGridView_Hospedes.Columns["Valor_Diaria"].Visible = false;
             dataGridView_Hospedes.Columns["Refeicao"].Visible = false;
             dataGridView_Hospedes.Columns["Situacao"].Visible = false;
+            dataGridView_Hospedes.Columns["Id"].Visible = false;
+            dataGridView_Hospedes.Columns["Senha"].Visible = false;
+            dataGridView_Hospedes.Columns["User"].Visible = false;
+            dataGridView_Hospedes.Columns["Id_UserLogado"].Visible = false;
         }
 
         public void SetaDadosGridParaForms()

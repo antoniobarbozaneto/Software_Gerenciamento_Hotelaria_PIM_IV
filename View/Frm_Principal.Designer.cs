@@ -50,6 +50,7 @@
             this.lbl_usuario = new System.Windows.Forms.Label();
             this.lbl_DateTime = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbl_User = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -183,7 +184,7 @@
             // consultaToolStripMenuItem4
             // 
             this.consultaToolStripMenuItem4.Name = "consultaToolStripMenuItem4";
-            this.consultaToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.consultaToolStripMenuItem4.Size = new System.Drawing.Size(138, 22);
             this.consultaToolStripMenuItem4.Text = "Consulta";
             this.consultaToolStripMenuItem4.Click += new System.EventHandler(this.consultaToolStripMenuItem4_Click);
             // 
@@ -251,6 +252,20 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // lbl_User
+            // 
+            this.lbl_User.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_User.AutoSize = true;
+            this.lbl_User.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_User.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_User.ForeColor = System.Drawing.Color.White;
+            this.lbl_User.Location = new System.Drawing.Point(67, 425);
+            this.lbl_User.Name = "lbl_User";
+            this.lbl_User.Size = new System.Drawing.Size(36, 16);
+            this.lbl_User.TabIndex = 7;
+            this.lbl_User.Text = "User";
+            this.lbl_User.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,6 +273,7 @@
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = global::Software_Gerenciamento_Hotelaria_PIM_IV.Properties.Resources.Bkg;
             this.ClientSize = new System.Drawing.Size(704, 450);
+            this.Controls.Add(this.lbl_User);
             this.Controls.Add(this.lbl_DateTime);
             this.Controls.Add(this.lbl_usuario);
             this.Controls.Add(this.pictureBox1);
@@ -301,6 +317,7 @@
         public System.Windows.Forms.Label lbl_usuario;
         public System.Windows.Forms.Label lbl_DateTime;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Label lbl_User;
     }
 }
 

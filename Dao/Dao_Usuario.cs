@@ -218,7 +218,35 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             {
                 conexao.Close();
             }
+        }
+        public int Buscar_Id_User(Usuario Usuario)
+        {
+            int Id_Usuario = 0;
+            string comandoSql = "SELECT id_Usuario FROM tbl_Usuario WHERE Usuario = @USUARIO";
+            NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
+            comando.Parameters.AddWithValue("@USUARIO", Usuario.User);
+
+            try
+            {
+                conexao.Open();
+                NpgsqlDataReader rd = comando.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    Id_Usuario = rd.GetInt32(0);
+                }
+            }
+            catch (NpgsqlException ex)
+            {
+                // Handle the SQL Exception as you wish
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                conexao.Close();
+            }
+            return Id_Usuario;
         }
     }
 }

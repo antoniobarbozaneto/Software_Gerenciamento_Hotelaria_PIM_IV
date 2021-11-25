@@ -17,7 +17,6 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         TipoQuarto TipoQuarto;
         Ctr_TipoQuarto Ctr_TipoQuarto;
         bool ver_resp;
-
         public Frm_CadastroTipoQuarto()
         {
             TipoQuarto = new TipoQuarto();
@@ -25,8 +24,9 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             InitializeComponent();
         }
 
-        private void Frm_CadastroTipoQuarto_Load(object sender, EventArgs e)
+        private void Frm_CadastroTipoQuarto_Load(object sender, EventArgs e)        
         {
+
             ver_resp = Verifica_CreateOrUpdate();
         }
 
@@ -34,7 +34,6 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         {
             if (VerificaCampos() == true)
             {
-
                 TipoQuarto.Tipo = txb_Tipo.Text;
                 TipoQuarto.Qtd_Max = Convert.ToInt32(txb_QtdHospede.Text);
                 TipoQuarto.Valor_Diaria = Convert.ToDouble(txb_ValorDiaria.Text);

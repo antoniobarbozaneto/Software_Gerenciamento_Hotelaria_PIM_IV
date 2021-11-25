@@ -65,6 +65,6 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
                 resp = false; //quarto nunca reservado
             }
             return resp;
-        }
+        }        
     }
 }

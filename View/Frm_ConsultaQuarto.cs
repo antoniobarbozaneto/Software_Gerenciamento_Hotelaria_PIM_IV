@@ -151,7 +151,10 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         {
             if (dataGridView_Quartos.Columns.Count > 3)
             {
-              
+               dataGridView_Quartos.Columns["Id"].Visible = false;
+               dataGridView_Quartos.Columns["Senha"].Visible = false;
+               dataGridView_Quartos.Columns["User"].Visible = false;
+               dataGridView_Quartos.Columns["Id_UserLogado"].Visible = false;
                dataGridView_Quartos.Columns["Qtd_Max"].Visible = false;
                dataGridView_Quartos.Columns["Valor_Diaria"].Visible = false;
                dataGridView_Quartos.Columns["Refeicao"].Visible = false;

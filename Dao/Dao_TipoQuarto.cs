@@ -25,15 +25,15 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
         public void Create(TipoQuarto TipoQuarto)
         {
-            string comandoSql = "INSERT INTO tbl_TipoQuarto (Tipo, Qtd_Hospede, Valor_Diaria, Refeicao) VALUES (@TIPO, @QTD_HOSPEDE, @VALOR_DIARIA, @REFEICAO)";
+            string comandoSql = "INSERT INTO tbl_TipoQuarto (Tipo, Qtd_Hospede, Valor_Diaria, Refeicao, Autor) VALUES (@TIPO, @QTD_HOSPEDE, @VALOR_DIARIA, @REFEICAO, @AUTOR)";
 
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
             comando.Parameters.AddWithValue("@TIPO", TipoQuarto.Tipo);
             comando.Parameters.AddWithValue("@QTD_HOSPEDE", TipoQuarto.Qtd_Max);
-            comando.Parameters.AddWithValue("VALOR_DIARIA", TipoQuarto.Valor_Diaria);
-            comando.Parameters.AddWithValue("REFEICAO", TipoQuarto.Refeicao);
-
+            comando.Parameters.AddWithValue("@VALOR_DIARIA", TipoQuarto.Valor_Diaria);
+            comando.Parameters.AddWithValue("@REFEICAO", TipoQuarto.Refeicao);
+            comando.Parameters.AddWithValue("@AUTOR", TipoQuarto.Id_UserLogado);
             try
             {
                 conexao.Open();
@@ -53,13 +53,14 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
         public void Update(TipoQuarto TipoQuarto)
         {
-            string comandoSql = "UPDATE tbl_tipoQuarto SET Tipo = @TIPO, Qtd_Hospede = @QTD_HOSPEDE, Valor_Diaria = @VALOR_DIARIA, Refeicao = @REFEICAO WHERE Tipo = @TIPO";
+            string comandoSql = "UPDATE tbl_tipoQuarto SET Tipo = @TIPO, Qtd_Hospede = @QTD_HOSPEDE, Valor_Diaria = @VALOR_DIARIA, Refeicao = @REFEICAO, Autor = @AUTOR WHERE Tipo = @TIPO";
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
             comando.Parameters.AddWithValue("@TIPO", TipoQuarto.Tipo);
             comando.Parameters.AddWithValue("@QTD_HOSPEDE", TipoQuarto.Qtd_Max);
             comando.Parameters.AddWithValue("VALOR_DIARIA", TipoQuarto.Valor_Diaria);
             comando.Parameters.AddWithValue("REFEICAO", TipoQuarto.Refeicao);
+            comando.Parameters.AddWithValue("@AUTOR", TipoQuarto.Id_UserLogado);
 
             try
             {
@@ -166,6 +167,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                         Qtd_Max = Convert.ToInt32(rd["QTD_HOSPEDE"]),
                         Valor_Diaria = Convert.ToDouble(rd["VALOR_DIARIA"]),
                         Refeicao = Convert.ToString(rd["REFEICAO"]),
+                        Id = Convert.ToInt32(rd["AUTOR"])
                     }); ;
 
                 }
@@ -218,6 +220,6 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
                 conexao.Close();
             }
             return Qtd_QuartoUsado;
-        }
+        }        
     }
 }

@@ -25,7 +25,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
         public void Create(Quarto Quarto)
         {
-            string comandoSql = "INSERT INTO tbl_Quarto (Numero, Andar, Status, Tipo_Quarto, Situacao) VALUES (@NUMERO, @ANDAR, @STATUS, @TIPO_QUARTO, @SITUACAO)";
+            string comandoSql = "INSERT INTO tbl_Quarto (Numero, Andar, Status, Tipo_Quarto, Situacao, Autor) VALUES (@NUMERO, @ANDAR, @STATUS, @TIPO_QUARTO, @SITUACAO, @AUTOR)";
 
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
@@ -34,6 +34,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             comando.Parameters.AddWithValue("@STATUS", Quarto.Status);
             comando.Parameters.AddWithValue("@TIPO_QUARTO", Quarto.Tipo);
             comando.Parameters.AddWithValue("@SITUACAO", Quarto.Situacao);
+            comando.Parameters.AddWithValue("@AUTOR", Quarto.Id_UserLogado);
 
             try
             {
@@ -54,7 +55,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
 
         public void Update(Quarto Quarto)
         {
-            string comandoSql = "UPDATE tbl_Quarto SET Numero = @NUMERO, Andar = @ANDAR, Status = @STATUS, Situacao = @SITUACAO, Tipo_Quarto = @TIPO_QUARTO WHERE Numero = @NUMERO";
+            string comandoSql = "UPDATE tbl_Quarto SET Numero = @NUMERO, Andar = @ANDAR, Status = @STATUS, Situacao = @SITUACAO, Tipo_Quarto = @TIPO_QUARTO, Autor = @Autor WHERE Numero = @NUMERO";
 
             NpgsqlCommand comando = new NpgsqlCommand(comandoSql, conexao);
 
@@ -63,6 +64,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Dao
             comando.Parameters.AddWithValue("STATUS", Quarto.Status);
             comando.Parameters.AddWithValue("TIPO_QUARTO", Quarto.Tipo);
             comando.Parameters.AddWithValue("@SITUACAO", Quarto.Situacao);
+            comando.Parameters.AddWithValue("@AUTOR", Quarto.Id_UserLogado);
 
             try
             {

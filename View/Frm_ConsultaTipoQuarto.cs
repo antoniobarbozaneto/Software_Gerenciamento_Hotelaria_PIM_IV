@@ -60,6 +60,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
         private void Frm_ConsultaTipoQuarto_Load(object sender, EventArgs e)
         {
             CarregaListaTipoQuarto();
+            EscondeColunas();
         }
 
         private void btn_Buscar_Click(object sender, EventArgs e)
@@ -133,6 +134,16 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             }
 
             Frm_CadastroTipoQuarto.ShowDialog();
+        }
+        public void EscondeColunas()
+        {
+            if (dataGridView_TipoQuarto.Columns.Count > 0)
+            {
+                dataGridView_TipoQuarto.Columns["Id"].Visible = false;
+                dataGridView_TipoQuarto.Columns["Senha"].Visible = false;
+                dataGridView_TipoQuarto.Columns["User"].Visible = false;
+                dataGridView_TipoQuarto.Columns["Id_UserLogado"].Visible = false;
+            }
         }
     }
 }
