@@ -1,0 +1,12 @@
+Usuários e senhas para login:
+-----------------------------
+
+USUARIO 	| SENHA		| STATUS
+----------------------------------------
+NETO    	| 123		| ATIVO
+CLAYTON 	| 123		| ATIVO
+LEONARDO 	| 123		| ATIVO
+LUCAS 		| 123		| ATIVO
+ERNESTO 	| 123		| ATIVO
+DUMMY 		| 123		| INATIVO
+XPTOP 		| 123		| INATIVO

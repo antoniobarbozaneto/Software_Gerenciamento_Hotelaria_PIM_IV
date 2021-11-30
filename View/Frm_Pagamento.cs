@@ -69,9 +69,6 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
 
                 if (cbx_FormaPag.Text == "Cartão Débito")
                 {
-                    //Pagamento.FormPagamento = cbx_FormaPag.Text;
-                    //Pagamento.Num_Reserva = Convert.ToInt32(txb_NumReserva.Text);
-                    //Pagamento.ValorTotal = Convert.ToDouble(txb_ValorTotal.Text);
                     txb_ValorPago.Text = Convert.ToString(Ctr_Pagamento.Realizar_Pagamento(Pagamento));
                     this.Close();
                 }
@@ -79,9 +76,6 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                 {
                     if (cbx_FormaPag.Text == "Cartão Crédito")
                     {
-                        //Pagamento.FormPagamento = cbx_FormaPag.Text;
-                        //Pagamento.Num_Reserva = Convert.ToInt32(txb_NumReserva.Text);
-                        //Pagamento.ValorTotal = Convert.ToDouble(txb_ValorTotal.Text);
                         Pagamento.NumParcela = Convert.ToInt32(cbx_Parcelas.Text);
                         Pagamento.ValorPago = Convert.ToDouble(txb_ValorPago.Text);
                         txb_ValorParcela.Text = Convert.ToString(Ctr_Pagamento.Realizar_Pagamento(Pagamento));
@@ -91,9 +85,6 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                     {
                         if (cbx_FormaPag.Text == "Dinheiro")
                         {
-                            //Pagamento.FormPagamento = cbx_FormaPag.Text;
-                            //Pagamento.Num_Reserva = Convert.ToInt32(txb_NumReserva.Text);
-                            //Pagamento.ValorTotal = Convert.ToDouble(txb_ValorTotal.Text);
                             Pagamento.ValorPago = Convert.ToDouble(txb_ValorPago.Text);
 
                             if (Ctr_Pagamento.VerificaValorPago(Pagamento) == false)

@@ -55,7 +55,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
             }
             else
             {
-                if (Ctr_Usuario.Verifica_SituacaoHospede(Usuario) == true)
+                if (Ctr_Usuario.Verifica_SituacaoUsuario(Usuario) == true)
                 {
                     MessageBox.Show("Este Usuário não pode ser excluido, é permitido apenas alterá-lo.", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -92,7 +92,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.View
                         Usuario.User = txb_Consulta.Text;
                     }
                 }
-                dataGridView_Usuarios.DataSource = Ctr_Usuario.Busca_Hospede(Usuario);
+                dataGridView_Usuarios.DataSource = Ctr_Usuario.Busca_Usuario(Usuario);
             }
             else
             {

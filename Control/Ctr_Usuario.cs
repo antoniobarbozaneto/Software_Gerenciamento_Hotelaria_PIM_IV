@@ -36,7 +36,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
             return Lista_Usuario;
         }
 
-        public List<Usuario> Busca_Hospede(Usuario Usuario)
+        public List<Usuario> Busca_Usuario(Usuario Usuario)
         {
             Lista_Usuario = Dao_Usuario.BuscarLista_Usuario(Usuario);
             return Lista_Usuario;
@@ -52,7 +52,7 @@ namespace Software_Gerenciamento_Hotelaria_PIM_IV.Control
             int Id_User = Dao_Usuario.Buscar_Id_User(Usuario);
             return Id_User;
         }
-        public bool Verifica_SituacaoHospede(Usuario Usuario)
+        public bool Verifica_SituacaoUsuario(Usuario Usuario)
         {
             bool resp = false;
 
