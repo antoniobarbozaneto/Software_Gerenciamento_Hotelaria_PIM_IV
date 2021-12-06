@@ -1,0 +1,13 @@
+--BD Postegrsql
+CREATE TABLE tbl_Quarto(
+Numero VARCHAR(255) NOT NULL,
+Andar  VARCHAR(255) NOT NULL,
+Status VARCHAR(255),
+Situacao VARCHAR(255) NOT NULL,
+Tipo_Quarto VARCHAR(255) NOT NULL,
+Autor INT NOT NULL
+);
+
+ALTER TABLE tbl_Quarto ADD CONSTRAINT PK_Quarto PRIMARY KEY (Numero);
+ALTER TABLE tbl_Quarto ADD CONSTRAINT Fk_TipoQuarto FOREIGN KEY (Tipo_Quarto) REFERENCES tbl_TipoQuarto(Tipo);
+ALTER TABLE tbl_Quarto ADD CONSTRAINT FK_Usuario FOREIGN KEY (Autor) REFERENCES tbl_Usuario(id_usuario);
